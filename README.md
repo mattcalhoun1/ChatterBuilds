@@ -42,8 +42,8 @@ devices holding mesh packets in their cache are not able to decrypt the packet p
 
 ## Change Log
 
-| Date | Short Description | Longer Description |
-| --- | --- |
+|      Date    | Short Description | Longer Description |
+| ------------ | ----------------- | ------------------ |
 | 2024-08-01 | Mesh Improvements | Improve mesh path finding, lock time changes except for root, more. |
 | 2024-08-08 | Channel Hopping | Add ability to hop channels for security and also to be an RF "good citizen" |
 | 2024-08-09 | Hopping + Fixes | Change channel hopping for mesh hops and for onboarding. Also, a few bug fixes. |
