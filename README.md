@@ -6,11 +6,6 @@ See [http://chatters.io](https://www.chatters.io/)
 
 ChatterBuilds contains prebuilt binary firmware for devices that support the Chatters protocol.
 
-Currently only the Communicator devices is supported. This device is also known as the "ChatterBox".
-The ChatterBox is based on Adafruit M4 SAMD51, RFM95W, 256/512kb FRAM, and the DS3231 realtime clock.
-
-[<img src="https://img.youtube.com/vi/rJjFlZsUep0/maxresdefault.jpg" width="50%">](https://youtu.be/rJjFlZsUep0)
-
 About Chatters (protocol is in a different repo):
 Chatters is a secure mesh communication platform that can use pretty much any medium to pass encrypted messages around. Within Chatters, 
 the group of trusted mesh-connected devices is called a "Cluster". All devices in the cluster share a couple of symmetric keys and also
@@ -39,6 +34,16 @@ it is guaranteed to be authentic.
 Chatters also uses a distributed mesh cache, where each device in the cluster is responsible for holding encrypted packets,
 as requested, for delivery throughout the cluster. Typically, these packets are asymmetrically encrypted, so even the
 devices holding mesh packets in their cache are not able to decrypt the packet payloads.
+
+## Compatibility
+Currently the [ChatterBox](https://chatters.io/chatterbox) is the only supported device. The repo containing code for various devices is [ChatterDevices](https://github.com/mattcalhoun1/ChatterDevices). Within that repo, ChatterBox is called _Communicator_.
+
+The ChatterBox is designed to be a device [you can build](https://www.chatters.io/build) yourself, with some decent soldering skills. It is based on Adafruit M4 SAMD51, RFM95W, 256/512kb FRAM, and the DS3231 realtime clock.
+
+Compatibility with devices from other manufacturers is in the works.
+
+[<img src="https://img.youtube.com/vi/rJjFlZsUep0/maxresdefault.jpg" width="50%">](https://youtu.be/rJjFlZsUep0)
+
 
 ## Change Log
 
