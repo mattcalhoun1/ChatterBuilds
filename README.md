@@ -3,6 +3,7 @@ This repo contains prebuilt binary firmware for devices that support the Chatter
 # What is ChatterBox and Chatters?
 
 See [http://chatters.io](https://www.chatters.io/)
+
 [<img src="https://img.youtube.com/vi/9tA2zRDCW6Q/maxresdefault.jpg" width="50%">](https://youtu.be/9tA2zRDCW6Q)
 [<img src="https://img.youtube.com/vi/ilig2YCvYEw/maxresdefault.jpg" width="50%">](https://youtu.be/ilig2YCvYEw)
 
