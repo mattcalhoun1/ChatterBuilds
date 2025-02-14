@@ -1,0 +1,12 @@
+{
+    "name": "GPS Node (INTL)",
+    "version": "1.6.3",
+    "builds": [
+        {
+            "chipFamily": "ESP32-S3",
+            "parts": [
+              { "path": "chatter_node_exp.bin", "offset": 0 }
+            ]
+          }
+    ]
+ }

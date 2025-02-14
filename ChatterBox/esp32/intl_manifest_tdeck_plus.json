@@ -1,0 +1,12 @@
+{
+    "name": "ChatterBox TDeck+ (INTL)",
+    "version": "1.6.6",
+    "builds": [
+        {
+            "chipFamily": "ESP32-S3",
+            "parts": [
+              { "path": "chatter_tdeck_plus_exp.bin", "offset": 0 }
+            ]
+          }
+    ]
+  }

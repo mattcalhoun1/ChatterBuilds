@@ -1,0 +1,12 @@
+{
+    "name": "ChatterBox M100 (USA)",
+    "version": "1.6.6",
+    "builds": [
+        {
+            "chipFamily": "ESP32-S3",
+            "parts": [
+              { "path": "chatter_tdeck_m100.bin", "offset": 0 }
+            ]
+          }
+    ]
+  }

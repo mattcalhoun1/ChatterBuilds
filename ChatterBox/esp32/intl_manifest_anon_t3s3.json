@@ -1,0 +1,12 @@
+{
+    "name": "Anon Mini Node (INTL)",
+    "version": "1.6.3",
+    "builds": [
+        {
+            "chipFamily": "ESP32-S3",
+            "parts": [
+              { "path": "chatter_anon_node_t3s3_exp.bin", "offset": 0 }
+            ]
+          }
+    ]
+ }
