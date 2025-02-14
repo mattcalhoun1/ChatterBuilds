@@ -1,45 +1,83 @@
 This repo contains prebuilt binary firmware for devices that support the Chatters protocol.
 
 # What is ChatterBox and Chatters?
-
-See [http://chatters.io](https://www.chatters.io/)
+See [http://chatters.io](https://www.chatters.io/).
 
 [<img src="https://img.youtube.com/vi/9tA2zRDCW6Q/maxresdefault.jpg" width="30%">](https://youtu.be/9tA2zRDCW6Q) [<img src="https://img.youtube.com/vi/ilig2YCvYEw/maxresdefault.jpg" width="30%">](https://youtu.be/ilig2YCvYEw)
 
+Although you can download the firmware binaries from this repo, you
+will find it much easier to install from one of our download sites:
+* [chatters.io](https://chatters.io/flash)
+* [offgridcomms.club](https://content.chatters.io/esp32/index.html)
+* [meshcomms.club](https://www.meshcomms.club/firmware/esp32/index.html)
 
-### Chatters
+## Chatters Protocol
 Chatters is a secure mesh communication protocol and platform that can use pretty much any medium to pass encrypted messages around. Within Chatters, 
-a private group of trusted mesh-connected devices is called a "Cluster". All devices in the cluster share a set of symmetric keys and also
-each device has its own asymmetric elliptic curve keypair. This combination allows for secure group communication, as well as secure one-on-one 
-communication, where devices assisting in mesh delivery between a pair of devices are not able to decrypt the payloads.
+a private group of trusted mesh-connected devices is called a "Cluster". All devices in the cluster or channel share a set of symmetric keys.
+These keys allow for secure group communication and unpredictable (to outsiders) synchronized frequency hopping.
 
+### Clusters
+A Chatters Cluster is a group of associated devices, each with a unique address, with access given by a "root" device.
+The root device is the one that initialized the cluster. Only a root can onboard new identifiable devices.
+
+Within a cluter, each device has its own asymmetric elliptic curve keypair. This allows direct messages 
+to be end-to-end asymmetrically encrypted. This means trusted on-cluster devices assisting in mesh delivery are not able to decrypt the payloads, even
+though they can assist with delivery.
+
+### Channels
+Channels is a newer feature of Chatters, and allows for encrypted/signed broadcasts and unpredictable synchronized frequency
+hopping without the necessity of a cluster. There is no "root" device in a channel. Instead, a channel ID and set of passwords
+are shared however people want, and those allow devices to have secure communication. Within a channel, there is only
+symmetric encryption and only broadcasts (no DM), so everyone in the channel within mesh range can see the message.
+
+### Acknowledgements / Confirmations
+For direct messages within a cluster, chatters supports packet level acknowledgements as well as message-level signed acknowledgements. Message-level acknowledgements are digitally signed by the recipient, so if a confirmation is received, it is guaranteed to be authentic.
+
+For broadcasts (such as within a Channel) there is no confirmation that a specific device received the broadcast. Instead, you can 
+receive confirmation that another device has picked up and accepted the transmission, so it will continue to travel until expiry.
+
+### Location
+Unless disabled, all on-cluster ChatterBox devices are sharing GPS data of themselves and others regularly for all GPS-equipped nodes and communicators.
+Within a channel, location can optionally be shared with each broadcast message.
+
+### Meshing
 Chatters uses a couple of advanced mesh algorithms and techniques, allowing it to route messages through paths that are shortest and most
 likely to succeed. Each Chatters device maintains a live ever-changing mesh graph, which is the device's view of how other devices are 
 connected. This graph is constructed and maintained by monitoring traffic, pings, and other techniques.
-
-Within a Chatters cluster, devices can be connected to other cluster devices using any combination of the following: LoRa, UDP, Wired via Serial, CAN (wired). Currently, only the LoRa option is active in the UI of ChatterBox.
-
-Chatters automatically uses best path, but each device along the way decides which medium will be used for the next hop. For instance, if the cluster is generally LoRa based, but two devices are connected via CAN, it is likely that CAN connection
-will be used, since it is faster and more likely to succeed than any wireless hop.
-
-Chatters supports packet level acknolwedgements as well as message-level signed acknowledgements. Message-level acknowledgements are digitally signed by the recipient, so if a confirmation is received, it is guaranteed to be authentic.
 
 Chatters uses a distributed mesh cache, where each device in the cluster is responsible for holding encrypted packets,
 as requested, for delivery throughout the cluster. Typically, these packets are asymmetrically encrypted, so even the
 devices holding mesh packets in their cache are not able to decrypt the packet payloads.
 
-## Hardware Compatibility
+### Connectivity
+Within a Chatters cluster, devices can be connected to other cluster devices using any combination of the following: LoRa, UDP, Wired via Serial, CAN (wired). Currently, only the LoRa option is active in the UI of ChatterBox.
+
+Chatters automatically uses best path, but each device along the way decides which medium will be used for the next hop. For instance, if the cluster is generally LoRa based, but two devices are connected via CAN, it is likely that CAN connection
+will be used, since it is faster and more likely to succeed than any wireless hop.
+
+## Chatters Devices
+All devices within Chatters support the distributed mesh cache, path planning, and other important features.
+
+### Communicators
+ChatterBox [Mesh Communicators](https://www.offgridcomms.club/help/t-deck-assembly/) are devices you can carry around and use to share location, send/receive messages, and interact with other devices/sensors in a cluster or channel.
+They have a touchscreen and keypad for easy use.
+
+We also have [T-Deck Plus](https://www.offgridcomms.club/help/setting-up-t-deck-plus/) firmware that doesn't require any soldering/assembly.
+
+### Nodes
+ChatterBox Mesh Nodes are devices that work in the background to extend the range and resilience of your cluster or channel.
+You may want to use one as a base station and connect a good LoRa antenna or LoRa amplifier to it for best results.
+Currently, you can follow our instructions to build yourself...
+* [Mesh GPS Node](https://www.offgridcomms.club/help/t-beam-assembly/)
+* [Mesh E-Paper Node](https://www.offgridcomms.club/help/e-paper-mini-node/)
+* [Mesh Proximity Sensor](https://www.offgridcomms.club/help/proximity-sensing-node/)
+
+### Hardware Compatibility
 In order to fully support the ChatterBox protocol, devices that are going to run it must have a few key components that allow the meshing and caching to work properly, and allow the cluster to remain secure and private. 
 * GPS and/or a realtime clock to guarantee accurate time. Both is best.
 * Storage for frequently-updated encrypted data. FRAM and SD cards are supported, SPIFFS flash is experimental.
 * A decent amount of memory. If FRAM is available, 192 KB of memory is sufficient. If SD is utilized, closer to 1 MB is required.
 * ESP32 and SAMD51 are the currently supported hardware architectures
-
-Chatters is very new (first released fall/2024), see: [ChatterBox](https://chatters.io/chatterbox). ChatterBox is designed to be a device [you can build](https://www.chatters.io/build) yourself..
-
-
-[<img src="https://img.youtube.com/vi/rJjFlZsUep0/maxresdefault.jpg" width="50%">](https://youtu.be/rJjFlZsUep0)
-
 
 ## Change Log
 
