@@ -17,6 +17,7 @@ These keys allow for secure group communication and unpredictable (to outsiders)
 
 ### Direct Messages / Broadcasts
 All messages, whether direct (to a specific device) or broadcast are encrypted during transmission and at rest.
+
 ![home screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/screen_home.png?raw=true)
 
 ### Clusters
