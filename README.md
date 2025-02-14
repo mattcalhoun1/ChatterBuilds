@@ -45,6 +45,7 @@ receive confirmation that another device has picked up and accepted the transmis
 
 ### Location
 ![location screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/screen_location.png?raw=true)
+
 Unless disabled, all on-cluster ChatterBox devices are sharing GPS data of themselves and others regularly for all GPS-equipped nodes and communicators.
 Within a channel, location can optionally be shared with each broadcast message.
 
