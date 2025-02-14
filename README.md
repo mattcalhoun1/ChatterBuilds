@@ -1,7 +1,6 @@
-This repo contains prebuilt binary firmware for devices that support the Chatters protocol.
+This repo contains prebuilt binary firmware for devices that support the Chatters protocol. See [http://chatters.io](https://www.chatters.io/).
 
 # What is ChatterBox and Chatters?
-See [http://chatters.io](https://www.chatters.io/).
 
 [<img src="https://img.youtube.com/vi/9tA2zRDCW6Q/maxresdefault.jpg" width="30%">](https://youtu.be/9tA2zRDCW6Q) [<img src="https://img.youtube.com/vi/ilig2YCvYEw/maxresdefault.jpg" width="30%">](https://youtu.be/ilig2YCvYEw)
 
@@ -16,13 +15,20 @@ Chatters is a secure mesh communication protocol and platform that can use prett
 a private group of trusted mesh-connected devices is called a "Cluster". All devices in the cluster or channel share a set of symmetric keys.
 These keys allow for secure group communication and unpredictable (to outsiders) synchronized frequency hopping.
 
+### Direct Messages / Broadcasts
+All messages, whether direct (to a specific device) or broadcast are encrypted during transmission and at rest.
+![home screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/screen_home.png?raw=true)
+
 ### Clusters
 A Chatters Cluster is a group of associated devices, each with a unique address, with access given by a "root" device.
 The root device is the one that initialized the cluster. Only a root can onboard new identifiable devices.
 
+![neighbors screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/screen_neighbors.png?raw=true)
+
 Within a cluter, each device has its own asymmetric elliptic curve keypair. This allows direct messages 
 to be end-to-end asymmetrically encrypted. This means trusted on-cluster devices assisting in mesh delivery are not able to decrypt the payloads, even
 though they can assist with delivery.
+
 
 ### Channels
 Channels is a newer feature of Chatters, and allows for encrypted/signed broadcasts and unpredictable synchronized frequency
@@ -37,8 +43,10 @@ For broadcasts (such as within a Channel) there is no confirmation that a specif
 receive confirmation that another device has picked up and accepted the transmission, so it will continue to travel until expiry.
 
 ### Location
+![location screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/screen_location.png?raw=true)
 Unless disabled, all on-cluster ChatterBox devices are sharing GPS data of themselves and others regularly for all GPS-equipped nodes and communicators.
 Within a channel, location can optionally be shared with each broadcast message.
+
 
 ### Meshing
 Chatters uses a couple of advanced mesh algorithms and techniques, allowing it to route messages through paths that are shortest and most
