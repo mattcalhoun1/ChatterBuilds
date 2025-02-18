@@ -100,3 +100,4 @@ In order to fully support the ChatterBox protocol, devices that are going to run
 | 2024-12-31 | Time Synchronization | Allow time synchronization when GPS and RTC are not present. Improve broadcast |
 | 2025-01-31 | Improve DM / Meshing | Alter mesh algorithm to take advantage of differing tx power between devices, opportunistic delivery, improved frequency hopping |
 | 2025-02-01 | Open channels | Added concept of open channels, nodes can display messages, visual pixel map showing device locations |
+| 2025-02-18 | Flash Support + Heltec | Added flash storage support, so SD cards are not required. Also added Heltec E290 node option |

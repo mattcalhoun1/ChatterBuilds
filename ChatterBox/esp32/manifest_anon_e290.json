@@ -1,12 +1,12 @@
 {
-    "name": "GPS Node (USA)",
+    "name": "Heltec E290 Anon Node (USA)",
     "version": "1.6.4",
     "new_install_prompt_erase":true,
     "builds": [
         {
             "chipFamily": "ESP32-S3",
             "parts": [
-              { "path": "chatter_node_usa.bin", "offset": 0 }
+              { "path": "chatter_anon_node_e290_usa.bin", "offset": 0 }
             ]
           }
     ]

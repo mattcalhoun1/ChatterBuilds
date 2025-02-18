@@ -1,6 +1,7 @@
 {
     "name": "ChatterBox TDeck+ (USA)",
     "version": "1.6.7",
+    "new_install_prompt_erase":true,
     "builds": [
         {
             "chipFamily": "ESP32-S3",
