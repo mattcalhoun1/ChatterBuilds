@@ -1,6 +1,6 @@
 {
     "name": "Anon Mini Node (INTL)",
-    "version": "1.6.4",
+    "version": "1.6.5",
     "new_install_prompt_erase":true,    
     "builds": [
         {

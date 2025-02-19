@@ -1,6 +1,6 @@
 {
     "name": "Heltec E290 Anon Node (USA)",
-    "version": "1.6.4",
+    "version": "1.6.5",
     "new_install_prompt_erase":true,
     "builds": [
         {
