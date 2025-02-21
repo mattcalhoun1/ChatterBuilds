@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MeshComms - Secure Off-Grid Mesh Communication</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!--<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>-->
+		<script src="assets/js/jquery.min.js"></script>
+
+		<!--<script src="https://checkout.freemius.com/checkout.min.js"></script>-->
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+                            <span class="icon"><img src="images/logo_circular.png" height="90" width="90"/></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+                                <div style="min-width: 280px;max-width: 400px;">
+								<h2>Secure Off-Grid Mesh Comms</h2>
+									<div style="font-size: larger; text-align: left;">
+                                    ChatterBox is a secure, private, <a href="https://www.chatters.io/offgrid-comms-kit">off-grid messaging</a> and location system.
+									<br><br>
+									<a href="https://www.chatters.io/offgrid-comms-kit"><img src="images/team_kit.png" width="400"></a>
+									<br><br>
+									Locate and securely message trusted individuals nearby without using phones, internet, or any traditional infrastructure.
+									</div>
+                               </div>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li style="text-align: left; font-size: larger;"><a href="https://www.chatters.io/build" style="font-size: .8em;"><img style="vertical-align: middle;" width="24" src="images/diy.png"> Build</a></li>
+								<li style="text-align: left; font-size: larger;"><a href="#learn" style="font-size: .8em;"><img style="vertical-align: middle;" width="24" src="images/information.png"> Learn</a></li>
+								<li style="text-align: left; font-size: larger;"> <a href="ChatterBox/esp32/index.html" style="font-size: .8em;"><img style="vertical-align: middle;" src="images/download.png"> Download</a></li>
+								<!--<li style="text-align: left; font-size: larger;"><a href="#contact" style="font-size: .8em;"><img style="vertical-align: middle;" src="images/icon_mail.png"> Contact</a></li>-->
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- lookup -->
+							<article id="learn">
+								<h2 class="major">Learn about ChatterBox</h2>
+								<!--<span class="image main"><img src="images/pic01.jpg" alt="" /></span>-->
+                                <p style="font-size: larger;">ChatterBox is a secure off-grid mesh communication and location sharing system that allows you to <a href="https://www.chatters.io/offgrid-comms-kit">communicate during a grid outage</a> with trusted individuals in your area.</p>
+								<iframe src="https://player.vimeo.com/video/1050082410?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="400" height="400" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="ChatterBox Mesh Off-Grid Comms and Location Sharing - Short Explainer"></iframe>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+                                <p>
+                                    For questions concerning licensing or anything else, visit us at:<br>
+                                    <a href="https://chatters.io">chatters.io</a>
+									<br>
+									<a href="https://www.altwaredevelopment.com">AltwareDevelopment</a>
+                                </p>
+							</article>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<a href="https://www.altwaredevelopment.com"><img src="images/aw_logo.png"></a>
+						<p class="copyright">&copy; 2025, ALTWARE DEVELOPMENT LLC</p>
+						<div><a href="https://www.chatters.io/firmware-terms" target="_blank">Licensing Terms</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=231dce06-8e9a-4313-b75e-84309f1417f4" target="_blank">Privacy Policy</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=e655b5b6-6933-4ade-bc27-b11714070cc5" target="_blank">Refund Policy</a></div>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+			<!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-FT07G9QEL0"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-FT07G9QEL0');
+			</script>
+
+
+			<!-- freemius
+			<script type="text/javascript">
+				(function(){
+					var freemiusHandler = FS.Checkout.configure({
+						name : 'ChatterBox License',
+						plugin_id: '16741',
+						public_key: 'pk_0e5831c2fd6b8fa0703a25d69b6c9'//,
+						//image: 'images/icon_purchase.png'
+					});
+					var plans = {
+						single: '27935', 
+						three:     '27936',
+						five:     '27937'
+					};
+				
+					var addBuyHandler = function (plan, planID){
+						$('#' + plan + '-purchase').on('click', function (e) {
+							freemiusHandler.open({
+								plan_id : planID,
+								licenses: 1,
+								hide_licenses: true,
+								// You can consume the response for after purchase logic.
+								success : function (response) {
+									// alert(response.user.email);
+									window.location = "https://content.chatters.io/complete.html";
+								},
+								cancel: function (response) {
+									// alert(response.user.email);
+									window.location = "https://content.chatters.io/index.html";
+								}
+							});
+				
+							e.preventDefault();
+						});
+					};
+				
+					for (var plan in plans) {
+						if (!plans.hasOwnProperty(plan))
+							continue;
+				
+						addBuyHandler(plan, plans[plan]);
+					}
+				})();
+				</script>
+			-->
+
+        </body>
+</html>
