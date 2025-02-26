@@ -1,12 +1,12 @@
 {
-    "name": "ChatterBox M100 (INTL)",
+    "name": "ChatterBox Rokland (USA)",
     "version": "1.6.9",
     "new_install_prompt_erase":true,
     "builds": [
         {
             "chipFamily": "ESP32-S3",
             "parts": [
-              { "path": "chatter_tdeck_m100_exp.bin", "offset": 0 }
+              { "path": "chatter_tdeck_m100.bin", "offset": 0 }
             ]
           }
     ]
