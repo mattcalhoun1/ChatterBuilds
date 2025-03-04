@@ -195,8 +195,10 @@
                       </li>
                     </div>
 
-                    <br>
+                    <div style="background-color: #ffffff;">
+                      <br>
                     <center><b>Nodes</b></center>
+                    <div style="font-size: smaller; text-align: center;">Visible/addressed nodes within a <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">private cluster</a></div>
                     <li>
                           <label><input type="radio" name="type" value="tbeam_supreme" /><i>GPS Node</i> - TBeam Supreme</label>
                           </li>
@@ -209,6 +211,12 @@
                         <li style="color: #666666">
                           <label><input type="radio" name="type" value="e290" /><i>Heltec E290 Node</i> - (GPS and/or RTC) </label>
                         </li>
+                      </div>
+                      <hr/>
+
+                      <div style="background-color: #ededed;">
+                        <div style="font-size: smaller; text-align: center;">Broadcast-only/read-only nodes OR <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">open channel</a> nodes</div>
+ 
                         <li style="color: #666666">
                           <label><input type="radio" name="type" value="anon_tbeam_supreme" /><i>Anon GPS Node</i> - TBeam Supreme</label>
                         </li>
@@ -221,6 +229,7 @@
                         <li style="color: #666666">
                           <label><input type="radio" name="type" value="anon_e290" /><i>Anon Heltec E290 Node</i> - (GPS and/or RTC) </label>
                         </li>
+                        </div>
                     </ul>
                     <p class="button-row" align="center">
                           <esp-web-install-button class="invisible"></esp-web-install-button>
