@@ -166,7 +166,7 @@
             </td>
           </tr>
           <tr>
-              <td>
+              <td valign="top">
                   <center>
                     <img src="images/product_names.png" width="600px">
                   </center>
@@ -197,24 +197,24 @@
                     <div style="background-color: #ffffff;">
                       <br>
                     <center><b>Nodes</b></center>
-                    <div style="font-size: smaller; text-align: center;">Visible/addressed nodes within a <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">private cluster</a></div>
+                    <div style="font-size: smaller; text-align: center;">Visible/addressed nodes within a <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">private cluster</a>. This is also the firmware for proximity / relay nodes (except for heltec).</div>
                     <li>
                           <label><input type="radio" name="type" value="tbeam_supreme" /><i>GPS Node</i> - TBeam Supreme</label>
                           </li>
                         <li>
                           <label><input type="radio" name="type" value="t3s3_paper" /><i>E-Paper Mini Node</i> - T3S3 (DFR GPS+RTC) </label>
                         </li>
-                        <li style="color: #666666">
+                        <li>
                           <label><input type="radio" name="type" value="t3s3" /><i>Mini Node</i> - T3S3 (DFR GPS+RTC) </label>
                         </li>
-                        <li style="color: #666666">
+                        <li>
                           <label><input type="radio" name="type" value="e290" /><i>Heltec E290 Node</i> - (GPS and/or RTC) </label>
                         </li>
                       </div>
                       <hr/>
 
                       <div style="background-color: #ededed;">
-                        <div style="font-size: smaller; text-align: center;">Broadcast-only/read-only nodes OR <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">open channel</a> nodes</div>
+                        <div style="font-size: smaller; text-align: center;">Broadcast-only/read-only nodes OR <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">open channel</a> nodes. These do not support proximity/relay functions.</div>
  
                         <li style="color: #666666">
                           <label><input type="radio" name="type" value="anon_tbeam_supreme" /><i>Anon GPS Node</i> - TBeam Supreme</label>
@@ -306,6 +306,12 @@
         <td><b><a href="docs/chatterbox_clusters_vs_channels.pdf">Private Clusters vs Channels</a></b><br>
         Your devices can exist within private clusters and/or they can utilize open (but secure) channels
       </td>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td><b><a href="docs/chatterbox_commands.pdf">ChatterBox Remote Commands</a></b><br>
+        ChatterBox supports sending remote commands to other on-cluster devices
+      </td>
+
       <tr>
         <td valign="middle" align="right"><img src="images/pdf.png"></td>
         <td><b><a href="docs/chatterbox_channels.pdf">Setting Up and Using Channels</a></b><br>
@@ -583,6 +589,42 @@
         </td>
 
       </tr>
+
+
+
+      <tr>
+        <td width="33%" valign="top">
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay Paper Node</div>
+            <div style="float:right;"><img src="images/node_paper.png"></div>
+            <table style="font-size: smaller;">
+              <tr><td colspan="2">T3S3 paper node with added mmwave proximity senser and (optionally) relay/switch function</td></tr>
+              <tr><td align="right"><a href="assembly/epaper_proximity_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/epaper_proximity_node_assembly.pdf">Assembly Instructions</a></td></tr>
+              <tr><td align="right"><a href="assembly/proximity_paper_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/proximity_paper_3d.zip">Printable Enclosure</a></td></tr>
+            </table>
+        </td>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Heltec Vision e290 Paper Node</div>
+          <div style="float:right;"><img width="100" src="images/e290.png"></div>
+
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Larger paper screen, but you'll need to download an enclosure elsewhere.</td></tr>
+            <tr><td align="right"><a href="assembly/chatterbox_heltec_e290_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/chatterbox_heltec_e290_node_assembly.pdf">Assembly Instructions</a></td></tr>
+          </table>
+        </td>
+        <!--<td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Mini Node</div>
+          <div style="float:right;"><img src="images/node_mini.png"></div>
+
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Non-GPS, low power node. Based on T3S3.</td></tr>
+            <tr><td align="right"><a href="assembly/UserGuides/Mini_Node_Buttons.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/Mini_Node_Buttons.pdf">User Guide</a></td></tr>
+            <tr><td align="right"><a href="assembly/chatterbox_mini_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/chatterbox_mini_node_assembly.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="assembly/mini_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/mini_node_3d.zip">Printable Enclosure</a></td></tr>
+          </table>
+        </td>-->
+
+      </tr>
+
     </table>
   </center>  
   <br>
