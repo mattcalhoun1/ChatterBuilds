@@ -102,3 +102,4 @@ In order to fully support the ChatterBox protocol, devices that are going to run
 | 2025-02-01 | Open channels | Added concept of open channels, nodes can display messages, visual pixel map showing device locations |
 | 2025-02-18 | Flash Support + Heltec | Added flash storage support, so SD cards are not required. Also added Heltec E290 node option |
 | 2025-03-06 | Free Public Channel | Open/public channel is free, requiring no license. Improved command UI. |
+| 2025-03-08 | DST + Timezone | Allow private nodes to remotely accept DST and timezone changes from communicators |

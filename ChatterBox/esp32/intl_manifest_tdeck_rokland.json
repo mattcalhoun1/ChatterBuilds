@@ -1,6 +1,6 @@
 {
     "name": "ChatterBox Rokland (INTL)",
-    "version": "1.7.0",
+    "version": "1.7.1",
     "new_install_prompt_erase":true,
     "builds": [
         {
