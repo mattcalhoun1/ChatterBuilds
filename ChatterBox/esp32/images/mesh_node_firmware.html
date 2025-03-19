@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Download ChatterBox Mesh Node Firmware</title>
+    <meta
+      name="description"
+      content="Download ChatterBox secure mesh node firmware. Encrypted and signed LoRa communication for T-Beam Supreme, T3S3, T3S3 E-Paper, and Heltec e290."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <!--<meta name="color-scheme" content="dark light" />-->
+    <style>
+      body {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Ubuntu, sans-serif;
+        padding: 0;
+        margin: 0;
+        line-height: 1.4;
+      }
+      .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px;
+      }
+      h2 {
+        margin-top: 2em;
+      }
+      h3 {
+        margin-top: 1.5em;
+      }
+      a {
+        color: #03a9f4;
+      }
+      .invisible {
+        visibility: hidden;
+      }
+      .hidden {
+        display: none;
+      }
+      esp-web-install-button[install-unsupported] {
+        visibility: inherit;
+      }
+      .content pre {
+        max-width: 100%;
+        overflow-y: scroll;
+      }
+      .footer {
+        margin-top: 24px;
+        border-top: 1px solid #666;
+        padding-top: 24px;
+        text-align: center;
+      }
+      .footer .initiative {
+        font-style: italic;
+        margin-top: 16px;
+      }
+      table {
+        border-spacing: 0;
+      }
+      td {
+        padding: 8px;
+        /*border-bottom: 1px solid #666;*/
+      }
+      .radios li {
+        list-style: none;
+        line-height: 2em;
+      }
+      @media (prefers-color-scheme: light) {
+        body {
+          background-color: #fff;
+          color: #2f3a5a;
+        }
+        a {
+          color: #58a6ff;
+        }
+      }
+    </style>
+    <script type="module" src="js/install-button.js?module"></script>
+    <!--<script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>-->
+
+    <link rel="stylesheet" href="js/jquery/jquery-ui.css">
+    <link rel="stylesheet" href="js/jquery/jquery-ui.theme.css">
+    <script src="js/jquery/external/jquery/jquery.js"></script>
+    <script src="js/jquery/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#tabs" ).tabs();
+    } );
+    </script>    
+  </head>
+  <body>
+    <div class="content" style="min-width: 800px;">
+      <div style="float:left"><a href="https://chatters.io"><img src="images/logo_circular.png" height="75px" width="75px"></a></div>
+      <div style="float:right"><a href="https://chatters.io"><img id="flag" src="images/usa.png" height="75px" width="75px"></a></div>
+      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">ChatterBox Mesh Node Firmware</h1></div>
+
+      <div style="font-size: x-small; float: right; text-align: center;">
+        Looking for <a href="tdeck_firmware.html">T-Deck Firmware</a>?<br> 
+        <a href="tdeck_firmware.html"><img alt="tdeck firmware download" src="images/tdeck_firmware_download.png" height="75"></a>
+
+      </div>
+
+      <div>
+      <table border="0" style="background-color:#E5E5E5; " >
+        <tr border="0">
+          <td style="vertical-align: top; text-align: center;" width="200px">
+            <b>Where are you located?</b><br>
+          <!--<td width="140px">-->
+          <select name="country" id="country" onchange="configVersion()">
+            <option name="usa" value="usa" selected="selected">Inside USA</option>
+            <option name="international" value="international">Outside USA</option>
+          </select>
+        </td>
+          <td width="600px" style="vertical-align: top;">
+              <i>If you are in the USA, choose the USA version. Otherwise, choose the Non-USA version. Use the same slection for <b>all</b> of your devices!</i>
+          </td>
+          <td width="200px" style="font-size:smaller; vertical-align: top; text-align: right;"><b><a href="mesh_node_firmware.html">Node</a>: 1.7.4</b> (03/18/2025)<br><b><a href="tdeck_firmware.html">Comm</a>: 1.7.4</b> (03/18/2025)</td>
+        </tr>
+      </table>
+      </div>
+
+
+    <div id="tabs" style="min-width: 800px;">
+      <ul>
+        <li><a href="#tab-flash">Mesh Node Firmware</a></li>
+        <li><a href="#tab-using">Using ChatterBox</a></li>
+        <li><a href="#tab-video">Demo Videos</a></li>
+        <li><a href="#tab-flash-help">Flash Instructions</a></li>
+        <li><a href="#tab-assembly">Assembling Devices</a></li>
+      </ul>
+      <div id="tab-flash">
+        <div class="content" style="min-width: 800px;">
+          <p style="font-size: smaller;">
+            <b>Note:</b> The ChatterBox mesh node firmware is a <a href="https://chatters.io/licensing">licensed</a> product, but the node firmware is currently free for download</a>.
+          </p>
+
+      <table border="1" style="background-color: #ddd">
+          <tr>
+              <td valign="top" colspan="2">
+                      <div style="float:right"><a href="https://chatters.io"><img id="flag2" src="images/usa.png" height="75px" width="75px"></a></div>
+                      <p style="font-size: smaller;">
+                          <b>
+                            By downloading this firmware, you are agreeing to <a href="https://www.chatters.io/firmware-terms">the terms</a>,
+                            agreeing to abide by all laws and regulations while using this firmware, and agreeing to hold harmless the developer,
+                            Altware Development LLC.</b>  Altware Development LLC is not responsible for any data loss or other issues that might arise with with <i>your
+                            device</i> before, during, or after flashing. Unless you agree to those terms, don't use this tool or download our firmware.
+                      </p>
+              </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color: #fff;">
+              <b>1. Recommended (not required)</b> - For all but Heltec, SD cards may be used if you choose. SD cards must be <a href="https://www.offgridcomms.club/help/compatible-sd-cards/">compatible</a> (not all are).</b><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <center>
+              <b>2. Identify Your Node Device Below</b><br>
+              If you have any questions, consult the device seller or builder.
+              </center>
+            </td>
+            <td style="background-color: #fff;">
+              <center>
+              <b>3. Select Node Firmware Below</b><br>
+              After connecting your device and putting it in "boot mode", select it from the list below.
+              </center>
+            </td>
+          </tr>
+          <tr>
+              <td valign="top">
+                  <center>
+                    <img src="images/mesh_node_firmware.png" width="500px">
+                  </center>
+              </td>
+              <td width="400px" valign="top" style="min-width: 400px; background-color: #fff;">
+                  <div>
+                      <!--<h2>Flashing Tool</h2>-->
+                    <ul class="radios">
+                        <div style="background-color: #dedede;">
+                            <center><b>Private Cluster Mesh Nodes</b></center>
+                            <div style="font-size: smaller; text-align: center;">Full-featured secure mesh nodes within a <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">private cluster</a>. This is also the firmware for proximity / relay nodes.</div>
+                            <li>
+                                <label><input type="radio" name="type" value="t3s3_paper" /><i>E-Paper Mini Node</i> - T3S3 (DFR GPS+RTC) </label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="type" value="tbeam_supreme" /><i>GPS Node</i> - TBeam Supreme</label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="type" value="t3s3" /><i>Solar Node</i> - T3S3 (DFR GPS+RTC) </label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="type" value="e290" /><i>Heltec E290 Node</i> - (GPS and/or RTC) </label>
+                            </li>
+                        </div>
+                        <br>
+        
+                        <div style="background-color: #ededed;">
+                            <center><b>Open Channel / Anon Mesh Nodes</b></center>
+
+                            <div style="font-size: smaller; text-align: center;">Broadcast-only/read-only nodes OR <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">open channel</a> nodes. These do not support remote commands.</div>
+        
+                            <li style="color: #666666">
+                                <label><input type="radio" name="type" value="anon_t3s3_paper" /><i>Anon E-Paper Mini Node</i> - T3S3 (+RTC) </label>
+                            </li>
+                            <li style="color: #666666">
+                                <label><input type="radio" name="type" value="anon_tbeam_supreme" /><i>Anon GPS Node</i> - TBeam Supreme</label>
+                            </li>
+                            <li style="color: #666666">
+                                <label><input type="radio" name="type" value="anon_t3s3" /><i>Anon Solar Node</i> - T3S3 (+RTC) </label>
+                            </li>
+                            <li style="color: #666666">
+                                <label><input type="radio" name="type" value="anon_e290" /><i>Anon Heltec E290 Node</i> - (GPS and/or RTC) </label>
+                            </li>
+                        </div>
+
+
+                    </ul>
+                    <p class="button-row" align="center">
+                          <esp-web-install-button class="invisible"></esp-web-install-button>
+                      </p>
+                    </div>                
+              </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+                <div id="binaries_usa">
+                    <b>Alternative Instructions:</b> If you know what you are doing and want to install mesh node firmware
+                    using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binaries here (USA): 
+                    <br><br>
+                    <a href="chatter_node_usa.bin">GPS Node</a>
+                    <a href="chatter_node_t3s3_paper_usa.bin">E-Paper Mini Node</a>
+                    <a href="chatter_node_t3s3_usa.bin">Solar Node</a>
+                    <a href="chatter_node_e290_usa.bin">Heltec E290 Node</a>
+                    <a href="chatter_anon_node_usa.bin">Anon GPS Node</a>
+                    <a href="chatter_anon_node_t3s3_paper_usa.bin">E-Paper Anon Mini Node</a>
+                    <a href="chatter_anon_node_t3s3_usa.bin">Anon Mini Node</a>
+                    <a href="chatter_anon_node_e290_usa.bin">Heltec E290 Anon Node</a>
+                  </div>
+                  <div id="binaries_non_usa" style="visibility: hidden;">
+                    <b>Alternative Instructions:</b> If you know what you are doing and want to install mesh node firmware
+                    using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binaries here (Non-USA): 
+                    <br><br>
+                    <a href="chatter_node_exp.bin">GPS Node</a>
+                    <a href="chatter_node_t3s3_paper_exp.bin">E-Paper Mini Node</a>
+                    <a href="chatter_node_t3s3_exp.bin">Solar Node</a>
+                    <a href="chatter_node_e290_exp.bin">Heltec E290 Node</a>
+                    <a href="chatter_anon_node_exp.bin">Anon GPS Node</a>
+                    <a href="chatter_anon_node_t3s3_paper_exp.bin">E-Paper Anon Mini Node</a>
+                    <a href="chatter_anon_node_t3s3_exp.bin">Anon Mini Node</a>
+                    <a href="chatter_anon_node_e290_exp.bin">Heltec E290 Anon Node</a>
+                  </div>
+                </td>
+          </tr>
+          </table>
+
+        </div>
+      </div>
+  <div id="tab-using">
+    <table>
+      <tr>
+        <td valign="top">
+
+    <table style="font-size: smaller; width: 500px;">
+      <tr>
+        <td colspan="2">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Basic Usage</div>
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td>
+          <b><a href="docs/Using_ChatterBox.pdf">Using a Communicator</a></b><br>
+          Basic operation of a ChatterBox communicator
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td>
+          <b><a href="docs/Chatterbox_Message_Types.pdf">Message Types</a></b><br>
+          How ChatterBox treats direct messages vs broadcasts
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td><b><a href="docs/chatterbox_clusters_vs_channels.pdf">Private Clusters vs Channels</a></b><br>
+        Your devices can exist within private clusters and/or they can utilize open (but secure) channels
+      </td>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td><b><a href="docs/chatterbox_commands.pdf">ChatterBox Remote Commands</a></b><br>
+        ChatterBox supports sending remote commands to other on-cluster devices
+      </td>
+
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td><b><a href="docs/chatterbox_channels.pdf">Setting Up and Using Channels</a></b><br>
+        How to set up and use a new or existing channel on communicators and nodes
+      </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td>
+          <b><a href="docs/Using_Location.pdf">Using Location</a></b><br>
+          How GNSS is integrated with ChatterBox and how you can make use of it
+        </td>
+      </tr>
+
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td>
+          <b><a href="docs/Time_Synchronization.pdf">Time Synchronization</a></b><br>
+          How to keep proper time on your devices. This is important!
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Nodes</div>
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td>
+          <b><a href="docs/GPS_Node_Buttons.pdf">Using a GPS Node</a></b><br>
+          Basic operation of a ChatterBox GPS node (T-Beam Supreme)
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td>
+          <b><a href="docs/Utilizing_Node.pdf">Utilizing a Node</a></b><br>
+          How to position and use a node for delivery assistance, packet caching, location caching, and more
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td>
+          <b><a href="docs/Utilizing_Multiple_Nodes.pdf">Utilizing Multiple Nodes</a></b><br>
+          Using multiple nodes presents more opportunities for assuring delivery
+        </td>
+      </tr>
+    </table>
+  </td>
+  <td valign="top">
+    <div style="float:right;">
+      <img src="images/screen_home.png">
+    </div>
+    <div style="float:right;">
+      <img src="images/screen_neighbors.png">
+    </div>
+    <div style="float:right;">
+      <img src="images/screen_location.png">
+    </div>
+  </td>
+</tr>
+</table>
+
+  </div>
+  <div id="tab-video">
+    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">How Messages are Delivered</div>
+    <div style="text-align: center;">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/ilig2YCvYEw"></iframe>
+    </div>
+
+    <br>
+    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Onboarding a Device</div>
+    <div style="text-align: center;">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/Z63ywhKLUcA"></iframe>
+    </div>
+
+    <br>
+    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Creating a Private Cluster</div>
+    <div style="text-align: center;">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/7yGMLj9mc-c"></iframe>
+    </div>
+
+    <br>
+    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Configuring a Secure / Open Channel</div>
+    <div style="text-align: center;">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/qik1Gu3WmEk"></iframe>
+    </div>
+
+  </div>
+
+  <div id="tab-flash-help">
+    <table>
+      <tr style="background-color: #dedede;">
+        <td colspan="3"><h3>1. If using an SD card (recommended), ensure you have a <i>compatible</i> card installed</h3></td>
+      </tr>
+      <tr>
+        <td style="width: 20px;"></td>
+          <td style="font-size: smaller;">
+              These devices ARE VERY PICKY about SD cards. <b>Consider buying a new SD card from the <a href="https://www.offgridcomms.club/help/compatible-sd-cards/">known compatible list</a>.</b>
+              SD cards are cheap, and your time is not. The cards on that list typically work right out of the box. However, if your device seems to have trouble using the SD card (gets stuck mounting/decrypting),
+              reformat the card using <a href="https://www.offgridcomms.club/help/formatting-sd-card/">these instructions</a>.
+          </td>
+          <td align="middle"><img src="images/micro-sd.png"></td>
+      </tr>
+      <tr style="background-color: #dedede;">
+          <td colspan="3"><h3>2. Open a supported browser</h3></td>
+      </tr>
+      <tr>
+        <td style="width: 20px;"></td>
+          <td style="font-size: smaller;">You must be using a "standard" browser, such as Chrome, etc.</td>
+          <td align="middle"><img src="images/chrome.png"></td>
+      </tr>
+      <tr style="background-color: #dedede;">
+          <td colspan="3"><h3>3. Plug your device into a USB connection</h3></td>
+      </tr>
+      <tr>
+        <td style="width: 20px;"></td>
+          <td style="font-size: smaller;">IMPORTANT: You must be using a good quality <b>data transmission cable</b>, not just a power cable. I use <a href="https://a.co/d/hlZNtWH">these</a>.</td>
+          <td align="middle"><img src="images/flash_tdeck.png"></td>
+      </tr>
+      <tr style="background-color: #dedede;">
+          <td colspan="3"><h3>4. Put the device in "boot mode"</h3></td>
+      </tr>
+      <tr>
+        <td style="width: 20px;"></td>
+          <td style="font-size: smaller;">
+              <table>
+                <tr>
+                  <th>GPS Node</th><th>E-Paper Mini Node</th></tr>
+                  <td style="vertical-align: top;">
+                    <ol>
+                      <li>Press and hold boot button</li>
+                      <li>Press and release reset button</li>
+                      <li>Release the boot button</li>
+                      <li>Device is now in boot mode</li>
+                    </ol>
+                  </td>
+                  <td style="vertical-align: top;">
+                    <ol>
+                      <li>Power off the device</li>
+                      <li>Press and hold the boot button (back of device, press with paper clip/etc)</li>
+                      <li>Power on the device</li>
+                      <li>Release the boot button</li>
+                      <li>Device is now in boot mode</li>
+                    </ol>
+                  </td>
+                </tr>
+              </table>
+          </td>
+          <td align="middle"><img src="images/t-beam-buttons.png"></td>
+      </tr>
+      <tr style="background-color: #dedede;">
+          <td colspan="3"><h3>5. Use the <i>Flashing Tool</i> to execute the flash</h3></td>
+      </tr>
+      <tr>
+        <td style="width: 20px;"></td>
+          <td colspan="2" style="font-size: smaller;">
+            When prompted, select the USB port that is connected to your device.
+            The firmware flashing tool should properly recognize the device, and you should be able to click through the prompts to complete the install.
+            If it fails or of your device doesn't come back on properly after the flashing, it doesn't mean your device is destroyed, just repeat the steps
+            carefully again from start to finish, and <b>make sure you select the proper device</b>.
+            <br><br>
+            For instance, if you have a T-Beam Supreme and you select to install the Heltec firmware, the flashing
+            tool will happily install the wrong firmware, and then your device won't boot. It's no problem, just repeat the instructions with the correct options.
+          </td>
+      </tr>
+      <tr style="background-color: #dedede;">
+          <td colspan="3"><h3>6. Restart the device</h3></td>
+      </tr>
+      <tr>
+        <td style="width: 20px;"></td>
+          <td style="font-size: smaller;">The flashing tool doesn't normally restart the devices properly, so wait for the flasher to say it's done, then disconnect your device, then power it off and back on.</td>
+          <td></td>
+      </tr>
+    </table>
+
+<div class="footer">
+  <a href="https://chatters.io">ChatterBox Secure Off-Grid Texting</a> &mdash;
+  Installer powered by <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a>.
+</div>
+
+</div>
+
+<div id="tab-assembly">
+  <center>
+    <table>
+      <tr>
+        <td>ChatterBox communicators and nodes can be assembled using mostly (or all) components you can purchase from Amazon, Ali Express, and other sources.</td>
+      </tr>
+    </table>
+  
+    <br>
+  
+    <table>
+      <tr>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Custom Communicator</div>
+          <div style="float:right;"><img src="images/communicator.png"></div>
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Based on T-Deck. Communicate messages and location securely.</td></tr>
+            <tr><td align="right"><a href="assembly/tdeck_custom_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/tdeck_custom_assembly.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="assembly/UserGuides/Using_ChatterBox.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/Using_ChatterBox.pdf">User Guide</a></td></tr>
+            <tr><td align="right"><a href="assembly/custom_communicator_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/custom_communicator_3d.zip">Printable Enclosure</a></td></tr>
+          </table>
+        </td>
+        <td width="33%" valign="top">
+
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">GPS Node</div>
+            <div style="float:right;"><img src="images/node_gps.png"></div>
+            <table style="font-size: smaller;">
+              <tr><td colspan="2">Fully functional node with GPS based on T-Beam Supreme</td></tr>
+              <tr><td align="right"><a href="assembly/gps_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/gps_node_assembly.pdf">Assembly Instructions</a></td></tr>
+              <tr><td align="right"><a href="assembly/UserGuides/GPS_Node_Buttons.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/GPS_Node_Buttons.pdf">User Guide</a></td></tr>
+              <tr><td align="right"><a href="assembly/gps_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/gps_node_3d.zip">Printable Enclosure</a></td></tr>
+            </table>
+        </td>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">E-Paper Mini Node</div>
+          <div style="float:right;"><img src="images/node_paper.png"></div>
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Non-GPS, low power node with E-Paper display. Based on T3S3 E-Paper.</td></tr>
+            <tr><td align="right"><a href="assembly/epaper_mini_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/epaper_mini_node_assembly.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="assembly/UserGuides/Paper_Mini_Node_Buttons.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/Paper_Mini_Node_Buttons.pdf">User Guide</a></td></tr>
+            <tr><td align="right"><a href="assembly/paper_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/paper_node_3d.zip">Printable Enclosure</a></td></tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td width="33%" valign="top">
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay GPS Node</div>
+            <div style="float:right;"><img src="images/node_proximity.png"></div>
+            <table style="font-size: smaller;">
+              <tr><td colspan="2">GPS node with added mmwave proximity senser and (optionally) relay/switch function</td></tr>
+              <tr><td align="right"><a href="assembly/proximity_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/proximity_node_assembly.pdf">Assembly Instructions</a></td></tr>
+              <tr><td align="right"><a href="assembly/relay_prox_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/relay_prox_node_3d.zip">Printable Enclosure</a></td></tr>
+            </table>
+        </td>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">GPS Relay Node</div>
+          <div style="float:right;"><img src="images/node_proximity.png"></div>
+
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">GPS node with relay (switch) functionality.</td></tr>
+            <tr><td align="right"><a href="assembly/gps_relay_node.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/gps_relay_node.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="assembly/relay_prox_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/relay_prox_node_3d.zip">Printable Enclosure</a></td></tr>
+          </table>
+        </td>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Mini Node</div>
+          <div style="float:right;"><img src="images/node_mini.png"></div>
+
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Non-GPS, low power node. Based on T3S3.</td></tr>
+            <tr><td align="right"><a href="assembly/UserGuides/Mini_Node_Buttons.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/Mini_Node_Buttons.pdf">User Guide</a></td></tr>
+            <tr><td align="right"><a href="assembly/chatterbox_mini_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/chatterbox_mini_node_assembly.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="assembly/mini_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/mini_node_3d.zip">Printable Enclosure</a></td></tr>
+          </table>
+        </td>
+
+      </tr>
+
+
+
+      <tr>
+        <td width="33%" valign="top">
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay Paper Node</div>
+            <div style="float:right;"><img src="images/node_paper.png"></div>
+            <table style="font-size: smaller;">
+              <tr><td colspan="2">T3S3 paper node with added mmwave proximity senser and (optionally) relay/switch function</td></tr>
+              <tr><td align="right"><a href="assembly/epaper_proximity_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/epaper_proximity_node_assembly.pdf">Assembly Instructions</a></td></tr>
+              <tr><td align="right"><a href="assembly/proximity_paper_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/proximity_paper_3d.zip">Printable Enclosure</a></td></tr>
+            </table>
+        </td>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Heltec Vision e290 Paper Node</div>
+          <div style="float:right;"><img width="100" src="images/e290.png"></div>
+
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Larger paper screen, but you'll need to download an enclosure elsewhere.</td></tr>
+            <tr><td align="right"><a href="assembly/chatterbox_heltec_e290_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/chatterbox_heltec_e290_node_assembly.pdf">Assembly Instructions</a></td></tr>
+          </table>
+        </td>
+        <!--<td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Mini Node</div>
+          <div style="float:right;"><img src="images/node_mini.png"></div>
+
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Non-GPS, low power node. Based on T3S3.</td></tr>
+            <tr><td align="right"><a href="assembly/UserGuides/Mini_Node_Buttons.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/Mini_Node_Buttons.pdf">User Guide</a></td></tr>
+            <tr><td align="right"><a href="assembly/chatterbox_mini_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/chatterbox_mini_node_assembly.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="assembly/mini_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/mini_node_3d.zip">Printable Enclosure</a></td></tr>
+          </table>
+        </td>-->
+
+      </tr>
+
+    </table>
+  </center>  
+  <br>
+  <div style="text-align: center;">
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/9tA2zRDCW6Q"></iframe>
+  </div>
+
+</div>
+
+</div>    <!-- tabs -->
+
+</div>    <!-- main -->
+
+<script>
+      function configVersion () {
+        if (isUsa()) {
+          document.getElementById("flag").src = "images/usa.png";
+          document.getElementById("flag2").src = "images/usa.png";
+          document.getElementById("binaries_non_usa").style = "visibility:hidden;";
+          document.getElementById("binaries_usa").style = "visibility:visible;";
+          document.querySelectorAll('input[name="type"]').forEach(radio =>
+          radio.addEventListener("change", () => {
+            const button = document.querySelector('esp-web-install-button');
+            button.manifest = `./manifest_${radio.value}.json`;
+            button.classList.remove('invisible');
+          }
+          ));
+        }
+        else {
+          document.getElementById("flag").src = "images/non_usa.png";
+          document.getElementById("flag2").src = "images/non_usa.png";
+          document.getElementById("binaries_non_usa").style = "visibility:visible;";
+          document.getElementById("binaries_usa").style = "visibility:hidden;";
+          document.querySelectorAll('input[name="type"]').forEach(radio =>
+          radio.addEventListener("change", () => {
+            const button = document.querySelector('esp-web-install-button');
+            button.manifest = `./intl_manifest_${radio.value}.json`;
+            button.classList.remove('invisible');
+          }
+          ));
+        }
+
+      }
+    </script>
+    <script>
+      function isUsa () {
+        return document.getElementById("country").value == "usa";
+      }
+    </script>
+    <script>
+      // config the version to default on load
+      configVersion();
+    </script>
+
+			<!-- Google tag (gtag.js) -->
+       <!-- api site 
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-FT07G9QEL0"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-FT07G9QEL0');
+			</script>    -->
+
+    <!-- comms site -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-56KJN5SG2S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-56KJN5SG2S');
+    </script>
+
+  </body>
+</html>
