@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>ChatterBox Secure Mesh Firmware</title>
+    <title>Download ChatterBox Mesh Node Firmware</title>
     <meta
       name="description"
-      content="Download encrypted mesh comms firmware for T-Deck and node firmware for Lilygo, Heltec, and others."
+      content="Download ChatterBox secure mesh node firmware. Encrypted and signed LoRa communication for T-Beam Supreme, T3S3, T3S3 E-Paper, and Heltec e290."
     />
     <meta name="viewport" content="width=device-width" />
     <!--<meta name="color-scheme" content="dark light" />-->
@@ -92,63 +92,164 @@
     <div class="content" style="min-width: 800px;">
       <div style="float:left"><a href="https://chatters.io"><img src="images/logo_circular.png" height="75px" width="75px"></a></div>
       <div style="float:right"><a href="https://chatters.io"><img id="flag" src="images/usa.png" height="75px" width="75px"></a></div>
-      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">ChatterBox Secure Mesh Firmware</h1></div>
+      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">ChatterBox Mesh Node Firmware</h1></div>
+
+      <div style="font-size: x-small; float: right; text-align: center;">
+        Looking for <a href="tdeck_firmware.html">T-Deck Firmware</a>?<br> 
+        <a href="tdeck_firmware.html"><img alt="tdeck firmware download" src="images/tdeck_firmware_download.png" height="75"></a>
+
+      </div>
+
+      <div>
+      <table border="0" style="background-color:#E5E5E5; " >
+        <tr border="0">
+          <td style="vertical-align: top; text-align: center;" width="200px">
+            <b>Where are you located?</b><br>
+          <!--<td width="140px">-->
+          <select name="country" id="country" onchange="configVersion()">
+            <option name="usa" value="usa" selected="selected">Inside USA</option>
+            <option name="international" value="international">Outside USA</option>
+          </select>
+        </td>
+          <td width="600px" style="vertical-align: top;">
+              <i>If you are in the USA, choose the USA version. Otherwise, choose the Non-USA version. Use the same slection for <b>all</b> of your devices!</i>
+          </td>
+          <td width="200px" style="font-size:smaller; vertical-align: top; text-align: right;"><b><a href="mesh_node_firmware.html">Node</a>: 1.7.4</b> (03/18/2025)<br><b><a href="tdeck_firmware.html">Comm</a>: 1.7.4</b> (03/18/2025)</td>
+        </tr>
+      </table>
+      </div>
 
 
     <div id="tabs" style="min-width: 800px;">
       <ul>
-        <li><a href="#tab-flash">Firmware Flasher</a></li>
+        <li><a href="#tab-flash">Mesh Node Firmware</a></li>
         <li><a href="#tab-using">Using ChatterBox</a></li>
         <li><a href="#tab-video">Demo Videos</a></li>
         <li><a href="#tab-flash-help">Flash Instructions</a></li>
         <li><a href="#tab-assembly">Assembling Devices</a></li>
       </ul>
       <div id="tab-flash">
-        <!--<div class="content" style="min-width: 800px;border-radius: 3; border-width: 2px; background-color: bisque;">
-          <p>
-            As of v1.5, SD cards are no longer <i>required</i> on nodes, but still required on T-Decks. Be aware these devices ARE VERY PICKY about SD cards. For new devices, <b>consider buying a new SD card from the <a href="https://www.offgridcomms.club/help/compatible-sd-cards/">known compatible list</a>.</b>
-          </p>
-        </div>-->
         <div class="content" style="min-width: 800px;">
+          <p style="font-size: smaller;">
+            <b>Note:</b> The ChatterBox mesh node firmware is a <a href="https://chatters.io/licensing">licensed</a> product, but the node firmware is currently free for download</a>.
+          </p>
 
-      <table border="1">
+      <table border="1" style="background-color: #ddd">
           <tr>
-            <th width="50%" style="background-color: #ddd;">
-              <center>
-              <table><tr><td style="text-align: right;"><a href="tdeck_firmware.html"><img src="images/download.png" height="22"></a></td><td style="text-align: left;"><a href="tdeck_firmware.html">Download</a> communicator firmware for T-Deck</td></tr></table>
-              </center>
-            </th>
-            <th width="50%" style="background-color: #ddd;">
-              <center>
-              <table><tr><td style="text-align: right;"><a href="mesh_node_firmware.html"><img src="images/download.png" height="22"></a></td><td style="text-align: left;"><a href="mesh_node_firmware.html">Download</a> node firmware</td></tr></table>
-              </center>              
-            </th>
+              <td valign="top" colspan="2">
+                      <div style="float:right"><a href="https://chatters.io"><img id="flag2" src="images/usa.png" height="75px" width="75px"></a></div>
+                      <p style="font-size: smaller;">
+                          <b>
+                            By downloading this firmware, you are agreeing to <a href="https://www.chatters.io/firmware-terms">the terms</a>,
+                            agreeing to abide by all laws and regulations while using this firmware, and agreeing to hold harmless the developer,
+                            Altware Development LLC.</b>  Altware Development LLC is not responsible for any data loss or other issues that might arise with with <i>your
+                            device</i> before, during, or after flashing. Unless you agree to those terms, don't use this tool or download our firmware.
+                      </p>
+              </td>
           </tr>
           <tr>
-            <td style="vertical-align: top;">
+            <td colspan="2" style="background-color: #fff;">
+              <b>1. Recommended (not required)</b> - For all but Heltec, SD cards may be used if you choose. SD cards must be <a href="https://www.offgridcomms.club/help/compatible-sd-cards/">compatible</a> (not all are).</b><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <center>
-                <a alt="Download tdeck mesh firmware" href="tdeck_firmware.html"><img width="390" src="images/tdeck_firmware.png"></a>
+              <b>2. Identify Your Node Device Below</b><br>
+              If you have any questions, consult the device seller or builder.
               </center>
-              <ul>
-                <li>Encrypted / signed messaging for T-Deck</li>
-                <li>Secure location sharing</li>
-                <li>Issue remote mesh commands</li>
-                <li>Smart auto-learning mesh algorithm</li>
-                <li><a href="https://chatters.io">Learn more</a></li>
-              </ul>
             </td>
-            <td style="vertical-align: top;">
+            <td style="background-color: #fff;">
               <center>
-                <a alt="Download mesh node firmware" href="mesh_node_firmware.html"><img width="390" src="images/mesh_node_firmware.png"></a>
-                </center>
-                <ul>
-                  <li>Mesh node firmware for T-Beam Supreme, T3S3, T3S3 E-Paper, and Heltec e290</li>
-                  <li>Packet caching, forwarding, and repeating</li>
-                  <li>Hold messages for up to 24 hours</li>
-                  <li>Asymmetric encryption means nodes cannot decrypt direct messages</li>
-                  <li><a href="https://chatters.io">Learn more</a></li>
-                </ul>
+              <b>3. Select Node Firmware Below</b><br>
+              After connecting your device and putting it in "boot mode", select it from the list below.
+              </center>
             </td>
+          </tr>
+          <tr>
+              <td valign="top">
+                  <center>
+                    <img src="images/mesh_node_firmware.png" width="500px">
+                  </center>
+              </td>
+              <td width="400px" valign="top" style="min-width: 400px; background-color: #fff;">
+                  <div>
+                      <!--<h2>Flashing Tool</h2>-->
+                    <ul class="radios">
+                        <div style="background-color: #dedede;">
+                            <center><b>Private Cluster Mesh Nodes</b></center>
+                            <div style="font-size: smaller; text-align: center;">Full-featured secure mesh nodes within a <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">private cluster</a>. This is also the firmware for proximity / relay nodes.</div>
+                            <li>
+                                <label><input type="radio" name="type" value="t3s3_paper" /><i>E-Paper Mini Node</i> - T3S3 (DFR GPS+RTC) </label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="type" value="tbeam_supreme" /><i>GPS Node</i> - TBeam Supreme</label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="type" value="t3s3" /><i>Solar Node</i> - T3S3 (DFR GPS+RTC) </label>
+                            </li>
+                            <li>
+                                <label><input type="radio" name="type" value="e290" /><i>Heltec E290 Node</i> - (GPS and/or RTC) </label>
+                            </li>
+                        </div>
+                        <br>
+        
+                        <div style="background-color: #ededed;">
+                            <center><b>Open Channel / Anon Mesh Nodes</b></center>
+
+                            <div style="font-size: smaller; text-align: center;">Broadcast-only/read-only nodes OR <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">open channel</a> nodes. These do not support remote commands.</div>
+        
+                            <li style="color: #666666">
+                                <label><input type="radio" name="type" value="anon_t3s3_paper" /><i>Anon E-Paper Mini Node</i> - T3S3 (+RTC) </label>
+                            </li>
+                            <li style="color: #666666">
+                                <label><input type="radio" name="type" value="anon_tbeam_supreme" /><i>Anon GPS Node</i> - TBeam Supreme</label>
+                            </li>
+                            <li style="color: #666666">
+                                <label><input type="radio" name="type" value="anon_t3s3" /><i>Anon Solar Node</i> - T3S3 (+RTC) </label>
+                            </li>
+                            <li style="color: #666666">
+                                <label><input type="radio" name="type" value="anon_e290" /><i>Anon Heltec E290 Node</i> - (GPS and/or RTC) </label>
+                            </li>
+                        </div>
+
+
+                    </ul>
+                    <p class="button-row" align="center">
+                          <esp-web-install-button class="invisible"></esp-web-install-button>
+                      </p>
+                    </div>                
+              </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+                <div id="binaries_usa">
+                    <b>Alternative Instructions:</b> If you know what you are doing and want to install mesh node firmware
+                    using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binaries here (USA): 
+                    <br><br>
+                    <a href="chatter_node_usa.bin">GPS Node</a>
+                    <a href="chatter_node_t3s3_paper_usa.bin">E-Paper Mini Node</a>
+                    <a href="chatter_node_t3s3_usa.bin">Solar Node</a>
+                    <a href="chatter_node_e290_usa.bin">Heltec E290 Node</a>
+                    <a href="chatter_anon_node_usa.bin">Anon GPS Node</a>
+                    <a href="chatter_anon_node_t3s3_paper_usa.bin">E-Paper Anon Mini Node</a>
+                    <a href="chatter_anon_node_t3s3_usa.bin">Anon Mini Node</a>
+                    <a href="chatter_anon_node_e290_usa.bin">Heltec E290 Anon Node</a>
+                  </div>
+                  <div id="binaries_non_usa" style="visibility: hidden;">
+                    <b>Alternative Instructions:</b> If you know what you are doing and want to install mesh node firmware
+                    using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binaries here (Non-USA): 
+                    <br><br>
+                    <a href="chatter_node_exp.bin">GPS Node</a>
+                    <a href="chatter_node_t3s3_paper_exp.bin">E-Paper Mini Node</a>
+                    <a href="chatter_node_t3s3_exp.bin">Solar Node</a>
+                    <a href="chatter_node_e290_exp.bin">Heltec E290 Node</a>
+                    <a href="chatter_anon_node_exp.bin">Anon GPS Node</a>
+                    <a href="chatter_anon_node_t3s3_paper_exp.bin">E-Paper Anon Mini Node</a>
+                    <a href="chatter_anon_node_t3s3_exp.bin">Anon Mini Node</a>
+                    <a href="chatter_anon_node_e290_exp.bin">Heltec E290 Anon Node</a>
+                  </div>
+                </td>
           </tr>
           </table>
 
@@ -282,7 +383,6 @@
   </div>
 
   <div id="tab-flash-help">
-    <center><p><a href="https://www.offgridcomms.club/help/flashing-t-deck-2/">View a video</a> demonstration of flashing a T-Deck Plus</p></center>
     <table>
       <tr style="background-color: #dedede;">
         <td colspan="3"><h3>1. If using an SD card (recommended), ensure you have a <i>compatible</i> card installed</h3></td>
@@ -320,16 +420,7 @@
           <td style="font-size: smaller;">
               <table>
                 <tr>
-                  <th>T-Deck or T-Deck Plus</th><th>GPS Node</th><th>E-Paper Mini Node</th></tr>
-                  <td style="vertical-align: top;">
-                    <ol>
-                      <li>Power off the device</li>
-                      <li>Press and hold trackball button</li>
-                      <li>Power on the device</li>
-                      <li>Release the trackball button</li>
-                      <li>Device is now in boot mode</li>
-                    </ol>
-                  </td>
+                  <th>GPS Node</th><th>E-Paper Mini Node</th></tr>
                   <td style="vertical-align: top;">
                     <ol>
                       <li>Press and hold boot button</li>
@@ -363,7 +454,7 @@
             If it fails or of your device doesn't come back on properly after the flashing, it doesn't mean your device is destroyed, just repeat the steps
             carefully again from start to finish, and <b>make sure you select the proper device</b>.
             <br><br>
-            For instance, if you have a T-Deck with the M100 module onboard, and you select to install the ChatterBox Custom firmware, the flashing
+            For instance, if you have a T-Beam Supreme and you select to install the Heltec firmware, the flashing
             tool will happily install the wrong firmware, and then your device won't boot. It's no problem, just repeat the instructions with the correct options.
           </td>
       </tr>
@@ -389,11 +480,6 @@
     <table>
       <tr>
         <td>ChatterBox communicators and nodes can be assembled using mostly (or all) components you can purchase from Amazon, Ali Express, and other sources.</td>
-        <!--<td align="right"><a href="assembly.zip"><img src="images/zip.png"></a></td>
-        <td style="font-size: smaller;">
-          <a href="assembly.zip">All Assembly Instructions</a><br>
-          Along with 3D printable enclosures
-        </td>-->
       </tr>
     </table>
   
