@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Download ChatterBox SAMD51 Firmware</title>
+    <meta
+      name="description"
+      content="Download ChatterBox SAMD51 node firmware. Encrypted and signed LoRa communication for the ChatterBox custom SAMD51 platform."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <!--<meta name="color-scheme" content="dark light" />-->
+    <style>
+      body {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Ubuntu, sans-serif;
+        padding: 0;
+        margin: 0;
+        line-height: 1.4;
+      }
+      .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px;
+      }
+      h2 {
+        margin-top: 2em;
+      }
+      h3 {
+        margin-top: 1.5em;
+      }
+      a {
+        color: #03a9f4;
+      }
+      .invisible {
+        visibility: hidden;
+      }
+      .hidden {
+        display: none;
+      }
+      esp-web-install-button[install-unsupported] {
+        visibility: inherit;
+      }
+      .content pre {
+        max-width: 100%;
+        overflow-y: scroll;
+      }
+      .footer {
+        margin-top: 24px;
+        border-top: 1px solid #666;
+        padding-top: 24px;
+        text-align: center;
+      }
+      .footer .initiative {
+        font-style: italic;
+        margin-top: 16px;
+      }
+      table {
+        border-spacing: 0;
+      }
+      td {
+        padding: 8px;
+        /*border-bottom: 1px solid #666;*/
+      }
+      .radios li {
+        list-style: none;
+        line-height: 2em;
+      }
+      @media (prefers-color-scheme: light) {
+        body {
+          background-color: #fff;
+          color: #2f3a5a;
+        }
+        a {
+          color: #58a6ff;
+        }
+      }
+    </style>
+    <script type="module" src="js/install-button.js?module"></script>
+    <!--<script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>-->
+
+    <link rel="stylesheet" href="../esp32/js/jquery/jquery-ui.css">
+    <link rel="stylesheet" href="../esp32/js/jquery/jquery-ui.theme.css">
+    <script src="../esp32/js/jquery/external/jquery/jquery.js"></script>
+    <script src="../esp32/js/jquery/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#tabs" ).tabs();
+    } );
+    </script>    
+  </head>
+  <body>
+    <div class="content" style="min-width: 800px;">
+      <div style="float:left"><a href="https://chatters.io"><img src="../esp32/images/logo_circular.png" height="75px" width="75px"></a></div>
+      <div style="float:right"><a href="https://chatters.io"><img id="flag" src="../esp32/images/usa.png" height="75px" width="75px"></a></div>
+      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">ChatterBox SAMD51 Mesh Node Firmware</h1></div>
+
+      <div style="font-size: x-small; float: right; text-align: center;">
+        Looking for <a href="../esp32/tdeck_firmware.html">T-Deck Firmware</a>?<br> 
+        <a href="../esp32/tdeck_firmware.html"><img alt="tdeck firmware download" src="../esp32/images/tdeck_firmware_download.png" height="75"></a>
+
+      </div>
+
+      <div>
+      <table border="0" style="background-color:#E5E5E5; " >
+        <tr border="0">
+          <td style="vertical-align: top; text-align: center;" width="200px">
+            <b>Where are you located?</b><br>
+          <!--<td width="140px">-->
+          <select name="country" id="country" onchange="configVersion()">
+            <option name="usa" value="usa" selected="selected">Inside USA</option>
+            <!--<option name="international" value="international">Outside USA</option>-->
+          </select>
+        </td>
+          <td width="600px" style="vertical-align: top;">
+              <i>The ChatterBox custom SAMD51 platform is currently only available for use within the USA.</i>
+          </td>
+          <td width="200px" style="font-size:smaller; vertical-align: top; text-align: right;"><b>Node: 1.7.4</b> (03/21/2025)<br><b><a href="../esp32/tdeck_firmware.html">Comm</a>: 1.7.4</b> (03/18/2025)</td>
+        </tr>
+      </table>
+      </div>
+
+
+    <div id="tabs" style="min-width: 800px;">
+      <ul>
+        <li><a href="#tab-flash">Mesh Node Firmware</a></li>
+        <li><a href="#tab-using">Using ChatterBox</a></li>
+        <li><a href="#tab-video">Demo Videos</a></li>
+        <li><a href="#tab-assembly">Assembling Devices</a></li>
+      </ul>
+      <div id="tab-flash">
+        <div class="content" style="min-width: 800px;">
+          <p style="font-size: smaller;">
+            <b>Note:</b> The ChatterBox mesh node firmware is a <a href="https://chatters.io/licensing">licensed</a> product, but the node firmware is currently free for download</a>.
+          </p>
+
+      <table border="1" style="background-color: #ddd">
+          <tr>
+              <td valign="top" colspan="2">
+                      <div style="float:right"><a href="https://chatters.io"><img id="flag2" src="../esp32/images/usa.png" height="75px" width="75px"></a></div>
+                      <p style="font-size: smaller;">
+                          <b>
+                            By downloading this firmware, you are agreeing to <a href="https://www.chatters.io/firmware-terms">the terms</a>,
+                            agreeing to abide by all laws and regulations while using this firmware, and agreeing to hold harmless the developer,
+                            Altware Development LLC.</b>  Altware Development LLC is not responsible for any data loss or other issues that might arise with with <i>your
+                            device</i> before, during, or after flashing. Unless you agree to those terms, don't use this tool or download our firmware.
+                      </p>
+              </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color: #fff;">
+              <b>1. This firmware is for the SAMD51 platform only (shown below). If this isn't your device, you are probably looking for our ESP32-based <a href="../esp32/mesh_node_firmware.html">mesh node firmware</a>.</b>
+              Currently only <i>node</i> firmware can be downloaded for the SAMD51 platform. The touchscreen functionality is being redesigned and communicator firmware is forthcoming.
+              <br>
+              <br>
+              <center>
+                <img src="images/all_devices.png" width="400px">
+              </center>
+
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color: #fff; vertical-align: top;" width="33%">
+              <b>2. <a href="node/node_usa.zip"><img style="vertical-align: middle;" height="20" src="images/download.png"></a> <a href="node/node_usa.zip">Download</a> The Firmware</b><br>
+                <br>
+                Unzip its contents to somewhere on your PC. You will want the <i>CURRENT.UF2</i> file from it, which is the binary compiled firmware.
+                <br><br>
+                <b>Your existing cluster/data will <i>not</i> be erased</b> during this process. All that data is on your node's FRAM and remains untouched
+                by this process.
+            </td>
+            <td>
+                <b>3. Copy Firmware To Your Node</b><br>
+                <ul>
+                    <li>Connect the Node to your PC via USB <i>data</i> cable (not charging cable)</li>
+                    <li>Power the device on</li>
+                    <li>Double-tap the reset button quickly (nearest the power switch)</li>
+                    <li>The light should start flashing different colors</li>
+                    <li>The device should appear as a flash drive to your PC</li>
+                    <li>On your PC, open the flash drive</li>
+                    <li>Copy the file <i>CURRENT.UF2</i> over top of the existing one on the device</li>
+                    <li>The node should automatically reboot</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <b>4. OPTIONAL: If you want to clear your device</b><br>
+                    <ul>
+                        <li>This procedure will wipe any config / cluster / data from your device</li>
+                        <li>Power the device off</li>
+                        <li>Press and hold the boot button (furthest from the power switch)</li>
+                        <li>Power on the device, while still holding the boot button</li>
+                        <li>Continue to hold the boot button for 10 seconds</li>
+                        <li>Release the boot button and leave the device alone for 60 seconds or so</li>
+                        <li>The device should now be in onboard mode (purple light)</li>
+                        <li>You may now onboard this new node to your cluster</li>
+                    </ul>
+                  </td>
+    
+            </tr>
+          </table>
+
+        </div>
+      </div>
+  <div id="tab-using">
+    <table>
+      <tr>
+        <td valign="top">
+
+    <table style="font-size: smaller; width: 500px;">
+      <tr>
+        <td colspan="2">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Basic Usage</div>
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="../esp32/images/pdf.png"></td>
+        <td>
+          <b><a href="../esp32/docs/Using_ChatterBox.pdf">Using a Communicator</a></b><br>
+          Basic operation of a ChatterBox communicator
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="../esp32/images/pdf.png"></td>
+        <td>
+          <b><a href="../esp32/docs/Chatterbox_Message_Types.pdf">Message Types</a></b><br>
+          How ChatterBox treats direct messages vs broadcasts
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="../esp32/images/pdf.png"></td>
+        <td><b><a href="../esp32/docs/chatterbox_clusters_vs_channels.pdf">Private Clusters vs Channels</a></b><br>
+        Your devices can exist within private clusters and/or they can utilize open (but secure) channels
+      </td>
+      <tr>
+        <td valign="middle" align="right"><img src="../esp32/images/pdf.png"></td>
+        <td><b><a href="../esp32/docs/chatterbox_commands.pdf">ChatterBox Remote Commands</a></b><br>
+        ChatterBox supports sending remote commands to other on-cluster devices
+      </td>
+
+      <tr>
+        <td valign="middle" align="right"><img src="../esp32/images/pdf.png"></td>
+        <td><b><a href="../esp32/docs/chatterbox_channels.pdf">Setting Up and Using Channels</a></b><br>
+        How to set up and use a new or existing channel on communicators and nodes
+      </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="../esp32/images/pdf.png"></td>
+        <td>
+          <b><a href="../esp32/docs/Using_Location.pdf">Using Location</a></b><br>
+          How GNSS is integrated with ChatterBox and how you can make use of it
+        </td>
+      </tr>
+
+      <tr>
+        <td valign="middle" align="right"><img src="../esp32/images/pdf.png"></td>
+        <td>
+          <b><a href="../esp32/docs/Time_Synchronization.pdf">Time Synchronization</a></b><br>
+          How to keep proper time on your devices. This is important!
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Nodes</div>
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="../esp32/images/pdf.png"></td>
+        <td>
+          <b><a href="../esp32/docs/GPS_Node_Buttons.pdf">Using a GPS Node</a></b><br>
+          Basic operation of a ChatterBox GPS node (T-Beam Supreme)
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="../esp32/images/pdf.png"></td>
+        <td>
+          <b><a href="../esp32/docs/Utilizing_Node.pdf">Utilizing a Node</a></b><br>
+          How to position and use a node for delivery assistance, packet caching, location caching, and more
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="../esp32/images/pdf.png"></td>
+        <td>
+          <b><a href="../esp32/docs/Utilizing_Multiple_Nodes.pdf">Utilizing Multiple Nodes</a></b><br>
+          Using multiple nodes presents more opportunities for assuring delivery
+        </td>
+      </tr>
+    </table>
+  </td>
+  <td valign="top">
+    <div style="float:right;">
+      <img src="../esp32/images/screen_home.png">
+    </div>
+    <div style="float:right;">
+      <img src="../esp32/images/screen_neighbors.png">
+    </div>
+    <div style="float:right;">
+      <img src="../esp32/images/screen_location.png">
+    </div>
+  </td>
+</tr>
+</table>
+
+  </div>
+  <div id="tab-video">
+    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">How Messages are Delivered</div>
+    <div style="text-align: center;">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/ilig2YCvYEw"></iframe>
+    </div>
+
+    <br>
+    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Onboarding a Device</div>
+    <div style="text-align: center;">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/Z63ywhKLUcA"></iframe>
+    </div>
+
+    <br>
+    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Creating a Private Cluster</div>
+    <div style="text-align: center;">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/7yGMLj9mc-c"></iframe>
+    </div>
+
+    <br>
+    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Configuring a Secure / Open Channel</div>
+    <div style="text-align: center;">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/qik1Gu3WmEk"></iframe>
+    </div>
+
+  </div>
+
+
+
+<div id="tab-assembly">
+  <center>
+    <table>
+      <tr>
+        <td>ChatterBox communicators and nodes can be assembled using mostly (or all) components you can purchase from Amazon, Ali Express, and other sources.</td>
+      </tr>
+    </table>
+    <table style="width: 500px;">
+      <tr>
+        <td>
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">SAMD51 ChatterBox Node</div>
+            <div style="float:right;"><img src="images/samd_node_small.png"></div>
+            <table style="font-size: smaller;">
+              <tr><td colspan="2">This is our ChatterBox custom SAMD51 platform, which uses the lower-power SAMD51 processor, FRAM, and an RFM95 LoRa transceiver.</td></tr>
+              <tr><td align="right"><a href="assembly/ChatterBox_Build.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="assembly/ChatterBox_Build.pdf">Assembly Instructions</a></td></tr>
+              <tr><td align="right"><a href="docs/Samd51_Node_Buttons.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="docs/Samd51_Node_Buttons.pdf">User Guide</a></td></tr>
+              <tr><td align="right"><a href="chatterbox_samd_enclosures.zip"><img width="20" src="../esp32/images/3d.png"></a></td><td><a href="chatterbox_samd_enclosures.zip">Printable Enclosures</a></td></tr>
+            </table>
+        </td>
+      </tr>
+    </table>
+  
+    <br>
+  
+    <table>
+      <tr>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Custom Communicator</div>
+          <div style="float:right;"><img src="../esp32/images/communicator.png"></div>
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Based on T-Deck. Communicate messages and location securely.</td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/tdeck_custom_assembly.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/tdeck_custom_assembly.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/UserGuides/Using_ChatterBox.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/UserGuides/Using_ChatterBox.pdf">User Guide</a></td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/custom_communicator_3d.zip"><img width="20" src="../esp32/images/3d.png"></a></td><td><a href="../esp32/assembly/custom_communicator_3d.zip">Printable Enclosure</a></td></tr>
+          </table>
+        </td>
+        <td width="33%" valign="top">
+
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">GPS Node</div>
+            <div style="float:right;"><img src="../esp32/images/node_gps.png"></div>
+            <table style="font-size: smaller;">
+              <tr><td colspan="2">Fully functional node with GPS based on T-Beam Supreme</td></tr>
+              <tr><td align="right"><a href="../esp32/assembly/gps_node_assembly.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/gps_node_assembly.pdf">Assembly Instructions</a></td></tr>
+              <tr><td align="right"><a href="../esp32/assembly/UserGuides/GPS_Node_Buttons.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/UserGuides/GPS_Node_Buttons.pdf">User Guide</a></td></tr>
+              <tr><td align="right"><a href="../esp32/assembly/gps_node_3d.zip"><img width="20" src="../esp32/images/3d.png"></a></td><td><a href="../esp32/assembly/gps_node_3d.zip">Printable Enclosure</a></td></tr>
+            </table>
+        </td>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">E-Paper Mini Node</div>
+          <div style="float:right;"><img src="../esp32/images/node_paper.png"></div>
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Non-GPS, low power node with E-Paper display. Based on T3S3 E-Paper.</td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/epaper_mini_node_assembly.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/epaper_mini_node_assembly.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/UserGuides/Paper_Mini_Node_Buttons.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/UserGuides/Paper_Mini_Node_Buttons.pdf">User Guide</a></td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/paper_node_3d.zip"><img width="20" src="../esp32/images/3d.png"></a></td><td><a href="../esp32/assembly/paper_node_3d.zip">Printable Enclosure</a></td></tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td width="33%" valign="top">
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay GPS Node</div>
+            <div style="float:right;"><img src="../esp32/images/node_proximity.png"></div>
+            <table style="font-size: smaller;">
+              <tr><td colspan="2">GPS node with added mmwave proximity senser and (optionally) relay/switch function</td></tr>
+              <tr><td align="right"><a href="../esp32/assembly/proximity_node_assembly.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/proximity_node_assembly.pdf">Assembly Instructions</a></td></tr>
+              <tr><td align="right"><a href="../esp32/assembly/relay_prox_node_3d.zip"><img width="20" src="../esp32/images/3d.png"></a></td><td><a href="../esp32/assembly/relay_prox_node_3d.zip">Printable Enclosure</a></td></tr>
+            </table>
+        </td>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">GPS Relay Node</div>
+          <div style="float:right;"><img src="../esp32/images/node_proximity.png"></div>
+
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">GPS node with relay (switch) functionality.</td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/gps_relay_node.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/gps_relay_node.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/relay_prox_node_3d.zip"><img width="20" src="../esp32/images/3d.png"></a></td><td><a href="../esp32/assembly/relay_prox_node_3d.zip">Printable Enclosure</a></td></tr>
+          </table>
+        </td>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Solar Node</div>
+          <div style="float:right;"><img src="../esp32/images/solar_node.png"></div>
+
+          <table style="font-size: smaller;">
+            <tr><td colspan="2"><i>Solar powered</i> node (non-GPS). Based on T3S3.</td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/UserGuides/Solar_Instructions.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/UserGuides/Solar_Instructions.pdf">User Guide</a></td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/build_mesh_solar_node.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/build_mesh_solar_node.pdf">Assembly Instructions</a></td></tr>
+          </table>
+        </td>
+
+      </tr>
+
+
+
+      <tr>
+        <td width="33%" valign="top">
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay Paper Node</div>
+            <div style="float:right;"><img src="../esp32/images/node_paper.png"></div>
+            <table style="font-size: smaller;">
+              <tr><td colspan="2">T3S3 paper node with added mmwave proximity senser and (optionally) relay/switch function</td></tr>
+              <tr><td align="right"><a href="../esp32/assembly/epaper_proximity_node_assembly.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/epaper_proximity_node_assembly.pdf">Assembly Instructions</a></td></tr>
+              <tr><td align="right"><a href="../esp32/assembly/proximity_paper_3d.zip"><img width="20" src="../esp32/images/3d.png"></a></td><td><a href="../esp32/assembly/proximity_paper_3d.zip">Printable Enclosure</a></td></tr>
+            </table>
+        </td>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Heltec Vision e290 Paper Node</div>
+          <div style="float:right;"><img width="100" src="../esp32/images/e290.png"></div>
+
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Larger paper screen, but you'll need to download an enclosure elsewhere.</td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/chatterbox_heltec_e290_node_assembly.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/chatterbox_heltec_e290_node_assembly.pdf">Assembly Instructions</a></td></tr>
+          </table>
+        </td>
+        <td width="33%" valign="top">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Mini Node</div>
+          <div style="float:right;"><img src="../esp32/images/node_mini.png"></div>
+
+          <table style="font-size: smaller;">
+            <tr><td colspan="2">Non-GPS, low power node. Based on T3S3.</td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/UserGuides/Mini_Node_Buttons.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/UserGuides/Mini_Node_Buttons.pdf">User Guide</a></td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/chatterbox_mini_node_assembly.pdf"><img width="20" src="../esp32/images/pdf.png"></a></td><td><a href="../esp32/assembly/chatterbox_mini_node_assembly.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="../esp32/assembly/mini_node_3d.zip"><img width="20" src="../esp32/images/3d.png"></a></td><td><a href="../esp32/assembly/mini_node_3d.zip">Printable Enclosure</a></td></tr>
+          </table>
+        </td>
+
+      </tr>
+
+    </table>
+  </center>  
+  <br>
+  <div style="text-align: center;">
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/9tA2zRDCW6Q"></iframe>
+  </div>
+
+</div>
+
+</div>    <!-- tabs -->
+
+</div>    <!-- main -->
+
+<script>
+      function configVersion () {
+        if (isUsa()) {
+          document.getElementById("flag").src = "../esp32/images/usa.png";
+          document.getElementById("flag2").src = "../esp32/images/usa.png";
+          document.getElementById("binaries_non_usa").style = "visibility:hidden;";
+          document.getElementById("binaries_usa").style = "visibility:visible;";
+          document.querySelectorAll('input[name="type"]').forEach(radio =>
+          radio.addEventListener("change", () => {
+            const button = document.querySelector('esp-web-install-button');
+            button.manifest = `./manifest_${radio.value}.json`;
+            button.classList.remove('invisible');
+          }
+          ));
+        }
+        else {
+          document.getElementById("flag").src = "../esp32/images/non_usa.png";
+          document.getElementById("flag2").src = "../esp32/images/non_usa.png";
+          document.getElementById("binaries_non_usa").style = "visibility:visible;";
+          document.getElementById("binaries_usa").style = "visibility:hidden;";
+          document.querySelectorAll('input[name="type"]').forEach(radio =>
+          radio.addEventListener("change", () => {
+            const button = document.querySelector('esp-web-install-button');
+            button.manifest = `./intl_manifest_${radio.value}.json`;
+            button.classList.remove('invisible');
+          }
+          ));
+        }
+
+      }
+    </script>
+    <script>
+      function isUsa () {
+        return document.getElementById("country").value == "usa";
+      }
+    </script>
+    <script>
+      // config the version to default on load
+      configVersion();
+    </script>
+
+			<!-- Google tag (gtag.js) -->
+       <!-- api site 
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-FT07G9QEL0"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-FT07G9QEL0');
+			</script>    -->
+
+    <!-- comms site -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-56KJN5SG2S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-56KJN5SG2S');
+    </script>
+
+  </body>
+</html>
