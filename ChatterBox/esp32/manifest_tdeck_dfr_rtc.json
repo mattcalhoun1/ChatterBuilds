@@ -1,6 +1,6 @@
 {
     "name": "ChatterBox DFR+ (USA)",
-    "version": "1.7.4",
+    "version": "1.7.5",
     "new_install_prompt_erase":true,
     "builds": [
         {
