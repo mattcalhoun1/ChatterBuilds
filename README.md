@@ -103,3 +103,4 @@ In order to fully support the ChatterBox protocol, devices that are going to run
 | 2025-02-18 | Flash Support + Heltec | Added flash storage support, so SD cards are not required. Also added Heltec E290 node option |
 | 2025-03-06 | Free Public Channel | Open/public channel is free, requiring no license. Improved command UI. |
 | 2025-03-08 | DST + Timezone | Allow private nodes to remotely accept DST and timezone changes from communicators |
+| 2025-03-27 | True RNG + fixes | Hardware RNG for T-Deck, faster time acquisition, fix occasional sx1262 deadlock |
