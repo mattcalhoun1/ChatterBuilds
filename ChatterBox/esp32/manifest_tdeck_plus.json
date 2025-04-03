@@ -1,6 +1,6 @@
 {
     "name": "ChatterBox TDeck+ (USA)",
-    "version": "1.7.6",
+    "version": "1.7.7",
     "new_install_prompt_erase":true,
     "builds": [
         {
