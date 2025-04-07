@@ -1,6 +1,6 @@
 {
     "name": "GPS Node (USA)",
-    "version": "1.7.8",
+    "version": "1.7.9",
     "new_install_prompt_erase":true,
     "builds": [
         {
