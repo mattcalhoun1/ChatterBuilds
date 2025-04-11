@@ -1,6 +1,6 @@
 {
     "name": "ChatterBox Custom (INTL)",
-    "version": "1.7.9",
+    "version": "1.8.0",
     "new_install_prompt_erase":true,    
     "builds": [
         {
