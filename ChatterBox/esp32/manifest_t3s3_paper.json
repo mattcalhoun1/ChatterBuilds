@@ -1,6 +1,6 @@
 {
     "name": "E-Paper Mini Node (USA)",
-    "version": "1.8.0",
+    "version": "1.8.1",
     "new_install_prompt_erase":true,
     "builds": [
         {
