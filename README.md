@@ -106,3 +106,4 @@ In order to fully support the ChatterBox protocol, devices that are going to run
 | 2025-03-27 | True RNG + fixes | Hardware RNG for T-Deck, faster time acquisition, fix occasional sx1262 deadlock |
 | 2025-04-11 | MQTT Support | MQTT is supported in parallel with LoRa or by itself, on tdecks |
 | 2025-04-15 | MQTT/TLS + fixes | Enable TLS for MQTT, memory fixes on t-deck |
+| 2023-04-23 | Amp Control | Add ability to power amps on/off on demand for nodes |
