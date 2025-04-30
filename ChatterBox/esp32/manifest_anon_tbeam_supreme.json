@@ -1,6 +1,6 @@
 {
     "name": "Anon GPS Node (USA)",
-    "version": "1.6.7",
+    "version": "1.8.7",
     "new_install_prompt_erase":true,
     "builds": [
         {
