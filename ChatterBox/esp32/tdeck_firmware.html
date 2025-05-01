@@ -179,31 +179,36 @@
                   </center>
               </td>
               <td width="400px" valign="top" style="min-width: 400px; background-color: #fff;">
+                <p class="button-row" align="center">
+                  <esp-web-install-button class="invisible"></esp-web-install-button>
+              </p>
+
                   <div>
                       <!--<h2>Flashing Tool</h2>-->
                       <ul class="radios">
                         <div style="background-color: #dedede;">
                           <center><b>Communicator Firmware</b></center>
                           <li>
-                            <label><input type="radio" name="type" value="tdeck_custom" /> Custom Firmware</label>
+                            <label><input type="radio" name="type" value="tdeck_custom" onclick="showDevicePreview ('tdeck_custom')" /> Custom Firmware</label>
                         </li>
                         <li>
-                          <label><input type="radio" name="type" value="tdeck_rokland" /> Rokland T-Deck Firmware</label>
+                          <label><input type="radio" name="type" value="tdeck_rokland" onclick="showDevicePreview ('tdeck_rokland')"/> Rokland T-Deck Firmware</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="type" value="tdeck_plus" /> TDeck+ Firmware</label>
+                            <label><input type="radio" name="type" value="tdeck_plus" onclick="showDevicePreview ('tdeck_plus')" /> TDeck+ Firmware</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="type" value="tdeck_m100" /> All Others</label>
+                            <label><input type="radio" name="type" value="tdeck_m100" onclick="showDevicePreview ('tdeck_m100')" /> All Others</label>
                         </li>
-                        <li style="color: #666666">
+                        <!--<li style="color: #666666">
                             <label><input type="radio" name="type" value="tdeck_dfr_rtc" /> DFR Mesh Firmware</label>
-                        </li>
+                        </li>-->
                         </div>
 
                         <div style="background-color: #ffffff;">
                             <br>
                             <center><b>Which Version?</b></center>
+                            <div style="float:left;width:95px;" id="device_preview"></div>
 
                             <div style="font-size: smaller;">
                                 If your device is not listed, choose the <i>All Others</i> option, as it's most likely to work with the widest variety of t-deck based devices.
@@ -212,9 +217,6 @@
                             </div>
                         </div>
                       </ul>
-                        <p class="button-row" align="center">
-                            <esp-web-install-button class="invisible"></esp-web-install-button>
-                        </p>
                     </div>                
               </td>
           </tr>
@@ -596,6 +598,10 @@
 </div>    <!-- main -->
 
 <script>
+      function showDevicePreview (deviceName) {
+        document.getElementById("device_preview").innerHTML = "<img src=\"images/" + deviceName + "_sm.png\">";
+      }
+
       function configVersion () {
         if (isUsa()) {
           document.getElementById("flag").src = "images/usa.png";

@@ -173,26 +173,33 @@
                   </center>
               </td>
               <td width="400px" valign="top" style="min-width: 400px; background-color: #fff;">
-                  <div>
+                <p class="button-row" align="center">
+                  <esp-web-install-button class="invisible"></esp-web-install-button>
+              </p>
+              <div>
                       <!--<h2>Flashing Tool</h2>-->
                     <ul class="radios">
                         <div style="background-color: #dedede;">
                             <center><b>Private Cluster Mesh Nodes</b></center>
                             <div style="font-size: smaller; text-align: center;">Full-featured secure mesh nodes within a <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">private cluster</a>. This is also the firmware for proximity / relay nodes.</div>
                             <li>
-                                <label><input type="radio" name="type" value="t3s3_paper" /><i>E-Paper Mini Node</i> - T3S3 (GPS and/or RTC) </label>
+                                <label><input type="radio" name="type" value="t3s3_paper" onclick="showDevicePreview ('node_paper')" /><i>E-Paper Mini Node</i> - T3S3 (GPS and/or RTC) </label>
                             </li>
                             <li>
-                                <label><input type="radio" name="type" value="tbeam_supreme" /><i>GPS Node</i> - TBeam Supreme</label>
+                                <label><input type="radio" name="type" value="tbeam_supreme" onclick="showDevicePreview ('node_gps')" /><i>GPS Node</i> - TBeam Supreme</label>
                             </li>
                             <li>
-                                <label><input type="radio" name="type" value="t3s3" /><i>Solar Node</i> - T3S3 (GPS and/or RTC) </label>
+                                <label><input type="radio" name="type" value="t3s3" onclick="showDevicePreview ('node_t3s3')"/><i>Solar Node</i> - T3S3 (GPS and/or RTC) </label>
                             </li>
                             <li>
-                                <label><input type="radio" name="type" value="e290" /><i>Heltec E290 Node</i> - (GPS and/or RTC) </label>
+                                <label><input type="radio" name="type" value="e290" onclick="showDevicePreview ('node_e290')"/><i>Heltec E290 Node</i> - (GPS and/or RTC) </label>
                             </li>
                         </div>
                         <br>
+
+                        <div style="min-height: 120px; text-align: center;" id="device_preview"></div>
+
+                        <hr>
         
                         <div style="background-color: #ededed;">
                             <center><b>Open Channel / Anon Mesh Nodes</b></center>
@@ -200,24 +207,21 @@
                             <div style="font-size: smaller; text-align: center;">Broadcast-only/read-only nodes OR <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">open channel</a> nodes. These do not support remote commands.</div>
         
                             <li style="color: #666666">
-                                <label><input type="radio" name="type" value="anon_t3s3_paper" /><i>Anon E-Paper Mini Node</i> - T3S3 (+RTC) </label>
+                                <label><input type="radio" name="type" value="anon_t3s3_paper" onclick="showDevicePreview ('node_paper')" /><i>Anon E-Paper Mini Node</i> - T3S3 (+RTC) </label>
                             </li>
                             <li style="color: #666666">
-                                <label><input type="radio" name="type" value="anon_tbeam_supreme" /><i>Anon GPS Node</i> - TBeam Supreme</label>
+                                <label><input type="radio" name="type" value="anon_tbeam_supreme" onclick="showDevicePreview ('node_gps')"/><i>Anon GPS Node</i> - TBeam Supreme</label>
                             </li>
                             <li style="color: #666666">
-                                <label><input type="radio" name="type" value="anon_t3s3" /><i>Anon Solar Node</i> - T3S3 (+RTC) </label>
+                                <label><input type="radio" name="type" value="anon_t3s3" onclick="showDevicePreview ('node_t3s3')"/><i>Anon Solar Node</i> - T3S3 (+RTC) </label>
                             </li>
                             <li style="color: #666666">
-                                <label><input type="radio" name="type" value="anon_e290" /><i>Anon Heltec E290 Node</i> - (GPS and/or RTC) </label>
+                                <label><input type="radio" name="type" value="anon_e290" onclick="showDevicePreview ('node_e290')"/><i>Anon Heltec E290 Node</i> - (GPS and/or RTC) </label>
                             </li>
                         </div>
 
 
                     </ul>
-                    <p class="button-row" align="center">
-                          <esp-web-install-button class="invisible"></esp-web-install-button>
-                      </p>
                     </div>                
               </td>
           </tr>
@@ -609,6 +613,10 @@
 </div>    <!-- main -->
 
 <script>
+      function showDevicePreview (deviceName) {
+        document.getElementById("device_preview").innerHTML = "<img src=\"images/" + deviceName + ".png\">";
+      }
+
       function configVersion () {
         if (isUsa()) {
           document.getElementById("flag").src = "images/usa.png";
