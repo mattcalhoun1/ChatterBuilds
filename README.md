@@ -109,3 +109,4 @@ In order to fully support the ChatterBox protocol, devices that are going to run
 | 2025-04-23 | Amp Control | Add ability to power amps on/off on demand for nodes |
 | 2025-05-01 | UI Improvements | Critical device tagging, GPS improvements, more |
 | 2025-05-04 | Fix battery level indicator on tdeck |
+| 2025-05-05 | Make SD cards portable between T-Decks, fix flash storage issue |
