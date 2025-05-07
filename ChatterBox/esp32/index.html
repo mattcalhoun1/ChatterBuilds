@@ -101,7 +101,7 @@
         <li><a href="#tab-using">Using ChatterBox</a></li>
         <li><a href="#tab-video">Demo Videos</a></li>
         <li><a href="#tab-flash-help">Flash Instructions</a></li>
-        <li><a href="#tab-assembly">Assembling Devices</a></li>
+        <li><a href="#tab-assembly">Build a Device</a></li>
       </ul>
       <div id="tab-flash">
         <!--<div class="content" style="min-width: 800px;border-radius: 3; border-width: 2px; background-color: bisque;">
@@ -133,30 +133,41 @@
                 <br>
                 <a href="tdeck_firmware.html"><img src="images/download_button.png" width="175"></a>
               </center>
-              <ul>
+
+              <center>
+              <table style="background: #dedede; font-size: smaller;"><tr><td style="text-align: right;"><a href="docs/Onboard_Communicator.pdf"><img src="images/pdf.png"></a></td><td><a href="docs/Onboard_Communicator.pdf">Onboard a Communicator</a> - How to add a new communicator to your cluster</td></tr></table>
+              </center>
+
+              <ul style="font-size: smaller;">
                 <li>Encrypted / signed messaging for T-Deck</li>
                 <li>Secure location sharing</li>
                 <li>Issue remote mesh commands</li>
                 <li>Smart auto-learning mesh algorithm</li>
                 <li><a href="https://chatters.io">Learn more</a></li>
               </ul>
+
             </td>
             <td style="vertical-align: top;">
               <center>
-                <a alt="Download mesh node firmware" href="mesh_node_firmware.html"><img width="300" src="images/mesh_node_firmware.png"></a>
+                <a alt="Download mesh node firmware" href="mesh_node_firmware.html"><img width="250" src="images/mesh_node_firmware.png"></a>
                 </center>
                 <center>
                   <br>
                   <a href="mesh_node_firmware.html"><img src="images/download_button.png" width="175"></a>
                 </center>
-                <ul>
+
+                <center>
+                <table style="background: #dedede; font-size: smaller;"><tr><td style="text-align: right;"><a href="docs/Onboard_Node.pdf"><img src="images/pdf.png"></a></td><td><a href="docs/Onboard_Node.pdf">Onboard a Node</a> - How to add a new node to your cluster</td></tr></table>
+                </center>
+
+                <ul style="font-size: smaller;">
                   <li>Mesh node firmware for T-Beam Supreme, T3S3, T3S3 E-Paper, and Heltec e290</li>
                   <li>Packet caching, forwarding, and repeating</li>
                   <li>Hold messages for up to 24 hours</li>
                   <li>Asymmetric encryption means nodes cannot decrypt direct messages</li>
                   <li><a href="https://chatters.io">Learn more</a></li>
                 </ul>
-  
+
               </td>
           </tr>
           </table>
@@ -201,6 +212,13 @@
         <td>
           <b><a href="docs/Using_ChatterBox.pdf">Using a Communicator</a></b><br>
           Basic operation of a ChatterBox communicator
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td>
+          <b><a href="docs/Onboard_Communicator.pdf">Onboarding a Communicator</a></b><br>
+          Adding a ChatterBox communicator to your existing cluster
         </td>
       </tr>
       <tr>
@@ -252,6 +270,13 @@
       <tr>
         <td colspan="2">
           <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Nodes</div>
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td>
+          <b><a href="docs/Onboard_Node.pdf">Onboarding a Node</a></b><br>
+          Adding a new ChatterBox node to your existing cluster
         </td>
       </tr>
       <tr>
@@ -433,8 +458,14 @@
         </td>-->
       </tr>
     </table>
-  
-    <br>
+
+    <div style="background-color: #dedede; border-radius: 5px; border-color: #000; border-style: solid;">
+    <table>
+      <tr style="height:15px;"><td style="text-align: right;"><img width=15 src="images/pdf.png"></td><td><a href="assembly/Basic_ChatterBox_Nodes.pdf">Basic / GPS Node</a></td><td style="font-size: smaller;">Build a simple node with no soldering, built on Lilygo T3S3 or E-Paper T3S3</td></tr>
+      <tr style="height:15px;"><td style="text-align: right;"><img width=15 src="images/pdf.png"></td><td><a href="assembly/Proximity_ChatterBox_Nodes.pdf">Proximity Sensing Node</a></td><td style="font-size: smaller;">Build a node with Proximity sensing capabilities, using a doppler-based sensor</td></tr>
+      <tr style="height:15px;"><td style="text-align: right;"><img width=15 src="images/pdf.png"></td><td><a href="assembly/Remote_Switch_ChatterBox_Nodes.pdf">Remote Switch Node</a></td><td style="font-size: smaller;">Build a node with the ability to remotely control a switch (proximity sensing nodes can also do this)</td></tr>
+    </table>
+    </div>
   
     <table>
       <tr>
