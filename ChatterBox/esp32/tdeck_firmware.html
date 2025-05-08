@@ -176,6 +176,12 @@
               <td valign="top">
                   <center>
                     <img src="images/tdeck_firmware.png" width="600px">
+
+                    <table style="width: 550px;">
+                      <tr style="height:15px;"><td style="text-align: right;" width="5%"><img height="20" style="vertical-align: text-top;" src="images/tdeck_rokland_sm.png"></td><td style="font-size: smaller;" width="22%"><a href="https://chatters.io/products">T-Deck Complete</a></td><td style="font-size: smaller;" width="73%">Buy a fully-assembled T-Deck Complete from <a href="https://chatters.io/products">us</a> or <a href="https://store.rokland.com/products/lilygo-t-deck-portable-microcontroller-programmer-lora-915-mhz-h642?ref=lufoqrur&variant=42122265690195">Rokland</a></td></tr>
+                      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_plus_sm.png"></td><td style="font-size: smaller;"><a href="https://chatters.io/products">T-Deck Plus</a></td><td style="font-size: smaller;">Buy a fully-assembled T-Deck Plus from <a href="https://chatters.io/products">us</a> <a href="https://amzn.to/4eWMhEF">Amazon</a>, or <a href="https://store.rokland.com/products/lilygo-t-deck-portable-microcontroller-programmer-lora-915-mhz-h642?ref=lufoqrur&variant=42283977834579">Rokland</a></td></tr>
+                    </table>                
+                          
                   </center>
               </td>
               <td width="400px" valign="top" style="min-width: 400px; background-color: #fff;">
@@ -256,24 +262,29 @@
       <tr>
         <td valign="top">
 
+
+          
+
     <table style="font-size: smaller; width: 500px;">
       <tr>
         <td colspan="2">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Basic Usage</div>
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">How ChatterBox Works</div>
         </td>
       </tr>
       <tr>
         <td valign="middle" align="right"><img src="images/pdf.png"></td>
         <td>
-          <b><a href="docs/Using_ChatterBox.pdf">Using a Communicator</a></b><br>
-          Basic operation of a ChatterBox communicator
+          <b><a href="docs/chatterbox_protocol_lora_mqtt.pdf">ChatterBox Communication Protocol</a></b><br>
+          ChatterBox communicates securely by combining mesh, encryption, and digital signatures with LoRa and MQTT.
         </td>
       </tr>
       <tr>
         <td valign="middle" align="right"><img src="images/pdf.png"></td>
         <td>
           <b><a href="docs/Chatterbox_Message_Types.pdf">Message Types</a></b><br>
-          How ChatterBox treats direct messages vs broadcasts
+          A direct message is targeted to a specific person/device, and uses asymmetric encryption.
+          A broadcast is sent to the entire cluster, using symmetric encryption, so all devices can read it.
+          Message expiry (you select) controls how long a message stays "alive".
         </td>
       </tr>
       <tr>
@@ -286,8 +297,23 @@
       <tr>
         <td valign="middle" align="right"><img src="images/pdf.png"></td>
         <td><b><a href="docs/chatterbox_clusters_vs_channels.pdf">Private Clusters vs Channels</a></b><br>
-        Your devices can exist within private clusters and/or they can utilize open (but secure) channels
+        Your devices can exist within private clusters and/or they can utilize open (but secure) channels.
+        Clusters offer <i>much</i> more functionality and better performance, but are limited to 90 devices.
+        Channels can be unlimited in size, but are limited to broadcast messages.
       </td>
+
+      <tr>
+        <td colspan="2">
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Basic Usage</div>
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="right"><img src="images/pdf.png"></td>
+        <td>
+          <b><a href="docs/Using_ChatterBox.pdf">Using a Communicator</a></b><br>
+          Basic operation of a ChatterBox communicator
+        </td>
+      </tr>
       <tr>
         <td valign="middle" align="right"><img src="images/pdf.png"></td>
         <td><b><a href="docs/chatterbox_commands.pdf">ChatterBox Remote Commands</a></b><br>
@@ -346,13 +372,16 @@
   </td>
   <td valign="top">
     <div style="float:right;">
-      <img src="images/screen_home.png">
+      <a href="docs/Using_ChatterBox.pdf"><img style="min-width:400px; max-width: 400px;" src="images/home_annotated.png"></a>
+    </div>
+    <div style="float:right; background-color: #dedede;">
+      <a href="docs/Using_ChatterBox.pdf"><img style="min-width:400px; max-width: 400px;" src="images/neighbors_annotated.png"></a>
     </div>
     <div style="float:right;">
-      <img src="images/screen_neighbors.png">
+      <a href="docs/Using_ChatterBox.pdf"><img style="min-width:400px; max-width: 400px;" src="images/devices_annotated.png"></a>
     </div>
-    <div style="float:right;">
-      <img src="images/screen_location.png">
+    <div style="float:right; background-color: #dedede;">
+      <a href="docs/Using_Location.pdf"><img style="min-width:400px; max-width: 400px;" src="images/location_screen_annotated.png"></a>
     </div>
   </td>
 </tr>
@@ -473,26 +502,28 @@
 
 <div id="tab-assembly">
   <center>
-    <table>
-      <tr>
-        <td>ChatterBox communicators and nodes can be assembled using mostly (or all) components you can purchase from Amazon, Ali Express, and other sources.</td>
-        <!--<td align="right"><a href="assembly.zip"><img src="images/zip.png"></a></td>
-        <td style="font-size: smaller;">
-          <a href="assembly.zip">All Assembly Instructions</a><br>
-          Along with 3D printable enclosures
-        </td>-->
-      </tr>
-    </table>
   
-    <div style="background-color: #dedede; border-radius: 5px; border-color: #000; border-style: solid;">
-      <table>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/location.png"></td><td><a href="assembly/Basic_ChatterBox_Nodes.pdf">Basic / GPS Node</a></td><td style="font-size: smaller;">Build a simple node with no soldering, built on Lilygo T3S3 or E-Paper T3S3</td></tr>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/proximity.png"></td><td><a href="assembly/Proximity_ChatterBox_Nodes.pdf">Proximity Sensing Node</a></td><td style="font-size: smaller;">Build a node with Proximity sensing capabilities, using a doppler-based sensor</td></tr>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/robot.png"></td><td><a href="assembly/Remote_Switch_ChatterBox_Nodes.pdf">Remote Switch Node</a></td><td style="font-size: smaller;">Build a node with the ability to remotely control a switch (proximity sensing nodes can also do this)</td></tr>
-      </table>
+    <div style="width:5%; min-width:30px; height:220px; float:left;"></div>
+    <div style="width:20%; min-width: 320px; text-align: center; float:left;">
+      <iframe width="320" height="200" src="https://www.youtube.com/embed/9tA2zRDCW6Q"></iframe>
     </div>
-    
+ 
+    <div style="float:left; height: 220px; width: 5%; min-width: 10px;"></div>
+
+    <div style="float:left; width:60%; min-width:400px; background-color: #dedede; border-radius: 5px; border-color: #000; border-style: solid;">
     <table>
+      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_rokland_sm.png"></td><td style="font-size: smaller;"><a href="https://chatters.io/products">T-Deck Complete</a></td><td style="font-size: smaller;">Buy a fully-assembled T-Deck Complete from <a href="https://chatters.io/products">us</a> or <a href="https://store.rokland.com/products/lilygo-t-deck-portable-microcontroller-programmer-lora-915-mhz-h642?ref=lufoqrur&variant=42122265690195">Rokland</a></td></tr>
+      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_plus_sm.png"></td><td style="font-size: smaller;"><a href="https://chatters.io/products">T-Deck Plus</a></td><td style="font-size: smaller;">Buy a fully-assembled T-Deck Plus from <a href="https://chatters.io/products">us</a> <a href="https://amzn.to/4eWMhEF">Amazon</a>, or <a href="https://store.rokland.com/products/lilygo-t-deck-portable-microcontroller-programmer-lora-915-mhz-h642?ref=lufoqrur&variant=42283977834579">Rokland</a></td></tr>
+      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/location.png"></td><td style="font-size: smaller;"><a href="assembly/Basic_ChatterBox_Nodes.pdf">Basic / GPS Node</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a simple node with no soldering or built on Lilygo T3S3 or E-Paper T3S3</td></tr>
+      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/proximity.png"></td><td style="font-size: smaller;"><a href="assembly/Proximity_ChatterBox_Nodes.pdf">Proximity Sensing Node</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a node with Proximity sensing capabilities, using a doppler-based sensor</td></tr>
+      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/robot.png"></td><td style="font-size: smaller;"><a href="assembly/Remote_Switch_ChatterBox_Nodes.pdf">Remote Switch Node</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a node with the ability to remotely control a switch (proximity sensing nodes can also do this)</td></tr>
+    </table>
+    </div>
+
+    
+    <table style="clear:left;">
+      <tr><td>&nbsp;</td></tr>
+      <tr><td colspan="3" style="font-size: larger; background-color: #dedede; text-align: center;">More Build DIY Options</td></tr>
       <tr>
         <td width="33%" valign="top">
           <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Custom Communicator</div>
@@ -597,10 +628,6 @@
 
     </table>
   </center>  
-  <br>
-  <div style="text-align: center;">
-    <iframe width="420" height="315" src="https://www.youtube.com/embed/9tA2zRDCW6Q"></iframe>
-  </div>
 
 </div>
 
