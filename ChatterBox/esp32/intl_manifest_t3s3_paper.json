@@ -1,6 +1,6 @@
 {
-    "name": "E-Paper Mini Node (INTL)",
-    "version": "2.0.0",
+    "name": "T3S3 E-Paper Node (INTL)",
+    "version": "2.1.0",
     "new_install_prompt_erase":true,    
     "builds": [
         {
