@@ -1,6 +1,6 @@
 {
     "name": "ChatterBox M100 (INTL)",
-    "version": "2.1.2",
+    "version": "2.2.0",
     "new_install_prompt_erase":true,
     "builds": [
         {
