@@ -1,0 +1,13 @@
+{
+    "name": "ChatterBox Pager (USA)",
+    "version": "2.2.1",
+    "new_install_prompt_erase":true,
+    "builds": [
+        {
+            "chipFamily": "ESP32-S3",
+            "parts": [
+              { "path": "chatter_pager.bin", "offset": 0 }
+            ]
+          }
+    ]
+  }
