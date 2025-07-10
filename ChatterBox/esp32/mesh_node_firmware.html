@@ -411,6 +411,13 @@
 
   </div>
   <div id="tab-video">
+    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Setting up a Lilygo Pager</div>
+    <div style="text-align: center;">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/Lwdhl370V6A"></iframe>
+    </div>
+
+    <br>
+
     <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">How Messages are Delivered</div>
     <div style="text-align: center;">
       <iframe width="420" height="315" src="https://www.youtube.com/embed/ilig2YCvYEw"></iframe>
@@ -437,6 +444,12 @@
   </div>
 
   <div id="tab-flash-help">
+    <table>
+      <tr>
+        <td style="vertical-align: top;">
+    <a href="docs/pager_flash_instructions.pdf"><img style="max-width: 500px;" src="docs/pager_flash_instructions.png"></a>
+</td><td>    
+    <center><p><a href="https://www.offgridcomms.club/help/flashing-t-deck-2/">View a video</a> demonstration of flashing a T-Deck Plus</p></center>
     <table>
       <tr style="background-color: #dedede;">
         <td colspan="3"><h3>1. If using an SD card (recommended), ensure you have a <i>compatible</i> card installed</h3></td>
@@ -474,28 +487,20 @@
           <td style="font-size: smaller;">
               <table>
                 <tr>
-                  <th>GPS Node</th><th>E-Paper Mini Node</th></tr>
-                  <td style="vertical-align: top;">
-                    <ol>
-                      <li>Press and hold boot button</li>
-                      <li>Press and release reset button</li>
-                      <li>Release the boot button</li>
-                      <li>Device is now in boot mode</li>
-                    </ol>
-                  </td>
+                  <th>T-Deck or T-Deck Plus</th></tr>
                   <td style="vertical-align: top;">
                     <ol>
                       <li>Power off the device</li>
-                      <li>Press and hold the boot button (back of device, press with paper clip/etc)</li>
+                      <li>Press and hold trackball button</li>
                       <li>Power on the device</li>
-                      <li>Release the boot button</li>
+                      <li>Release the trackball button</li>
                       <li>Device is now in boot mode</li>
                     </ol>
                   </td>
                 </tr>
               </table>
           </td>
-          <td align="middle"><img src="images/t-beam-buttons.png"></td>
+          <td align="middle"><img src="images/tdeck_boot.png"></td>
       </tr>
       <tr style="background-color: #dedede;">
           <td colspan="3"><h3>5. Use the <i>Flashing Tool</i> to execute the flash</h3></td>
@@ -508,7 +513,7 @@
             If it fails or of your device doesn't come back on properly after the flashing, it doesn't mean your device is destroyed, just repeat the steps
             carefully again from start to finish, and <b>make sure you select the proper device</b>.
             <br><br>
-            For instance, if you have a T-Beam Supreme and you select to install the Heltec firmware, the flashing
+            For instance, if you have a T-Deck with the M100 module onboard, and you select to install the ChatterBox Custom firmware, the flashing
             tool will happily install the wrong firmware, and then your device won't boot. It's no problem, just repeat the instructions with the correct options.
           </td>
       </tr>
@@ -521,7 +526,9 @@
           <td></td>
       </tr>
     </table>
-
+</td>
+      </tr>
+    </table>
 <div class="footer">
   <a href="https://chatters.io">ChatterBox Secure Off-Grid Texting</a> &mdash;
   Installer powered by <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a>.
