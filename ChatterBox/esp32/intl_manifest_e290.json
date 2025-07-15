@@ -1,6 +1,6 @@
 {
     "name": "Heltec E290 Node (INTL)",
-    "version": "2.1.4",
+    "version": "2.3.0",
     "new_install_prompt_erase":true,    
     "builds": [
         {
