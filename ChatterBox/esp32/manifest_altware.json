@@ -1,0 +1,13 @@
+{
+    "name": "Altware Comm (USA)",
+    "version": "2.3.2",
+    "new_install_prompt_erase":true,
+    "builds": [
+        {
+            "chipFamily": "ESP32-S2",
+            "parts": [
+              { "path": "chatter_altware.bin", "offset": 0 }
+            ]
+          }
+    ]
+  }
