@@ -6,7 +6,7 @@
         {
             "chipFamily": "ESP32-S3",
             "parts": [
-              { "path": "chatter_altware.bin", "offset": 0 }
+              { "path": "chatter_altware_exp.bin", "offset": 0 }
             ]
           }
     ]
