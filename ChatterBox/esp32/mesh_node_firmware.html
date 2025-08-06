@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Download ChatterBox Mesh Node Firmware</title>
+    <title>Download Blackout Comms Mesh Link Firmware</title>
     <meta
       name="description"
-      content="Download ChatterBox secure mesh node firmware. Encrypted and signed LoRa communication for T-Beam Supreme, T3S3, T3S3 E-Paper, and Heltec e290."
+      content="Download Blackout Comms secure mesh link firmware. Encrypted and signed LoRa communication for T-Beam Supreme, T3S3, T3S3 E-Paper, and Heltec e290."
     />
     <meta name="viewport" content="width=device-width" />
     <!--<meta name="color-scheme" content="dark light" />-->
@@ -92,7 +92,7 @@
     <div class="content" style="min-width: 800px;">
       <div style="float:left"><a href="https://chatters.io"><img src="images/logo_circular.png" height="75px" width="75px"></a></div>
       <div style="float:right"><a href="https://chatters.io"><img id="flag" src="images/usa.png" height="75px" width="75px"></a></div>
-      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">ChatterBox Mesh Node Firmware</h1></div>
+      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">Blackout Comms Mesh Link Firmware</h1></div>
 
       <div style="font-size: x-small; float: right; text-align: center;">
         Looking for <a href="tdeck_firmware.html">Communicator Firmware</a>?<br> 
@@ -114,7 +114,7 @@
           <td width="600px" style="vertical-align: top;">
               <i>If you are in the USA, choose the USA version. Otherwise, choose the Non-USA version. Use the same slection for <b>all</b> of your devices!</i>
           </td>
-          <td width="200px" style="font-size:smaller; vertical-align: top; text-align: right;"><b><a href="mesh_node_firmware.html">Node</a>: 2.3.1</b> (07/16/2025)<br><b><a href="tdeck_firmware.html">Comm</a>: 2.3.1</b> (07/16/2025)</td>
+          <td width="200px" style="font-size:smaller; vertical-align: top; text-align: right;"><b><a href="mesh_node_firmware.html">Link</a>: 2.3.2</b> (08/04/2025)<br><b><a href="tdeck_firmware.html">Comm</a>: 2.3.2</b> (08/04/2025)</td>        </tr>
         </tr>
       </table>
       </div>
@@ -123,7 +123,7 @@
     <div id="tabs" style="min-width: 800px;">
       <ul>
         <li><a href="#tab-flash"><img style="vertical-align: text-top;" src="images/download.png" height="18">&nbsp;Node Firmware</a></li>
-        <li><a href="#tab-using"><img style="vertical-align: text-top;" src="images/logo_circular.png" height="18">&nbsp;Using ChatterBox</a></li>
+        <li><a href="#tab-using"><img style="vertical-align: text-top;" src="images/logo_circular.png" height="18">&nbsp;Using Blackout Comms</a></li>
         <li><a href="#tab-video"><img style="vertical-align: text-top;" src="images/youtube.png" height="18">&nbsp;Demo Videos</a></li>
         <li><a href="#tab-flash-help"><img style="vertical-align: text-top;" src="images/information.png" height="18">&nbsp;Flash Instructions</a></li>
         <li><a href="#tab-assembly"><img style="vertical-align: text-top;" src="images/robot.png" height="18">&nbsp;Assembling Devices</a></li>
@@ -131,7 +131,7 @@
       <div id="tab-flash">
         <div class="content" style="min-width: 800px;">
           <p style="font-size: smaller;">
-            <b>Note:</b> The ChatterBox mesh node firmware is a <a href="https://chatters.io/licensing">licensed</a> product, but the node firmware is currently free for download</a>.
+            <b>Note:</b> The Blackout Comms mesh link firmware is a <a href="https://chatters.io/licensing">licensed</a> product, but the link firmware is currently free for download</a>.
           </p>
 
       <table border="1" style="background-color: #ddd">
@@ -155,13 +155,13 @@
           <tr>
             <td style="font-size: smaller;">
               <center>
-              <b>2. Identify Your Node Device Below</b><br>
+              <b>2. Identify Your Link Device Below</b><br>
               If you have any questions, consult the device seller or builder.
               </center>
             </td>
             <td style="background-color: #fff; font-size: smaller;">
               <center>
-              <b>3. Select Node Firmware Below</b><br>
+              <b>3. Select Link Firmware Below</b><br>
               After connecting your device and putting it in "boot mode", select it from the list below.
               </center>
             </td>
@@ -175,13 +175,17 @@
               <td width="400px" valign="top" style="min-width: 400px; background-color: #fff;">
                 <p class="button-row" align="center">
                   <esp-web-install-button class="invisible"></esp-web-install-button>
+                  <center><div id="altware_install" style="display:none"><a href="../samd51/index.html"><img src="images/download_button.png" width="150"></a></div></center>
               </p>
               <div style="font-size: smaller;">
                       <!--<h2>Flashing Tool</h2>-->
                     <ul class="radios">
                         <div style="background-color: #dedede;">
-                            <center><b>Private Cluster Mesh Nodes</b></center>
-                            <div style="font-size: smaller; text-align: center;">Full-featured secure mesh nodes within a <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">private cluster</a>. This is also the firmware for proximity / relay nodes.</div>
+                            <center><b>Private Cluster Mesh Links</b></center>
+                            <div style="font-size: smaller; text-align: center;">Full-featured secure Blackout Comms links within a <a href="docs/blackout_comms_clusters_vs_channels.pdf">private cluster</a>. This is also the firmware for proximity / relay links.</div>
+                            <li>
+                                <label><input type="radio" name="type" value="altware" onclick="showDevicePreview ('altware')" />Altware</label>
+                            </li>
                             <li>
                                 <label><input type="radio" name="type" value="t3s3_paper" onclick="showDevicePreview ('node_paper')" />T3S3 E-Paper</label>
                             </li>
@@ -202,9 +206,9 @@
                         <hr>
         
                         <div style="background-color: #ededed;">
-                            <center><b>Open Channel / Anon Mesh Nodes</b></center>
+                            <center><b>Open Channel / Anon Mesh Links</b></center>
 
-                            <div style="font-size: smaller; text-align: center;">Broadcast-only/read-only nodes OR <a href="assembly/UserGuides/chatterbox_clusters_vs_channels.pdf">open channel</a> nodes. These do not support remote commands.</div>
+                            <div style="font-size: smaller; text-align: center;">Broadcast-only/read-only links OR <a href="docs/blackout_comms_clusters_vs_channels.pdf">open channel</a> nodes. These do not support remote commands.</div>
         
                             <li style="color: #666666">
                                 <label><input type="radio" name="type" value="anon_t3s3_paper" onclick="showDevicePreview ('node_paper')" />Anon T3S3 E-Paper</i></label>
@@ -227,36 +231,36 @@
           </tr>
           <tr>
             <td colspan="2" style="background-color: white;">
-              <center><table><tr><td style="text-align: right;"><a href="docs/Onboard_Node.pdf"><img src="images/pdf.png"></a></td><td><a href="docs/Onboard_Node.pdf">Onboard a Node</a> - How to add a new node to your cluster</td></tr></table></center>
+              <center><table><tr><td style="text-align: right;"><a href="docs/Onboard_Link.pdf"><img src="images/pdf.png"></a></td><td><a href="docs/Onboard_Link.pdf">Onboard a Link</a> - How to add a new link to your cluster</td></tr></table></center>
             </td>
           </tr>
           <tr>
             <td colspan="2">
                 <div id="binaries_usa">
-                    <b>Alternative Instructions:</b> If you know what you are doing and want to install mesh node firmware
+                    <b>Alternative Instructions:</b> If you know what you are doing and want to install Blackout Comms link firmware
                     using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binaries here (USA): 
                     <br><br>
-                    <a href="chatter_node_usa.bin">GPS Node</a>
-                    <a href="chatter_node_t3s3_paper_usa.bin">E-Paper Mini Node</a>
-                    <a href="chatter_node_t3s3_usa.bin">Solar Node</a>
-                    <a href="chatter_node_e290_usa.bin">Heltec E290 Node</a>
-                    <a href="chatter_anon_node_usa.bin">Anon GPS Node</a>
-                    <a href="chatter_anon_node_t3s3_paper_usa.bin">E-Paper Anon Mini Node</a>
-                    <a href="chatter_anon_node_t3s3_usa.bin">Anon Mini Node</a>
-                    <a href="chatter_anon_node_e290_usa.bin">Heltec E290 Anon Node</a>
+                    <a href="chatter_node_usa.bin">GPS Link</a>
+                    <a href="chatter_node_t3s3_paper_usa.bin">E-Paper Mini Link</a>
+                    <a href="chatter_node_t3s3_usa.bin">Solar Link</a>
+                    <a href="chatter_node_e290_usa.bin">Heltec E290 Link</a>
+                    <a href="chatter_anon_node_usa.bin">Anon GPS Link</a>
+                    <a href="chatter_anon_node_t3s3_paper_usa.bin">E-Paper Anon Mini Link</a>
+                    <a href="chatter_anon_node_t3s3_usa.bin">Anon Mini Link</a>
+                    <a href="chatter_anon_node_e290_usa.bin">Heltec E290 Anon Link</a>
                   </div>
                   <div id="binaries_non_usa" style="visibility: hidden;">
-                    <b>Alternative Instructions:</b> If you know what you are doing and want to install mesh node firmware
+                    <b>Alternative Instructions:</b> If you know what you are doing and want to install Blackout Comms link firmware
                     using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binaries here (Non-USA): 
                     <br><br>
-                    <a href="chatter_node_exp.bin">GPS Node</a>
-                    <a href="chatter_node_t3s3_paper_exp.bin">E-Paper Mini Node</a>
-                    <a href="chatter_node_t3s3_exp.bin">Solar Node</a>
-                    <a href="chatter_node_e290_exp.bin">Heltec E290 Node</a>
-                    <a href="chatter_anon_node_exp.bin">Anon GPS Node</a>
-                    <a href="chatter_anon_node_t3s3_paper_exp.bin">E-Paper Anon Mini Node</a>
-                    <a href="chatter_anon_node_t3s3_exp.bin">Anon Mini Node</a>
-                    <a href="chatter_anon_node_e290_exp.bin">Heltec E290 Anon Node</a>
+                    <a href="chatter_node_exp.bin">GPS Link</a>
+                    <a href="chatter_node_t3s3_paper_exp.bin">E-Paper Mini Link</a>
+                    <a href="chatter_node_t3s3_exp.bin">Solar Link</a>
+                    <a href="chatter_node_e290_exp.bin">Heltec E290 Link</a>
+                    <a href="chatter_anon_node_exp.bin">Anon GPS Link</a>
+                    <a href="chatter_anon_node_t3s3_paper_exp.bin">E-Paper Anon Mini Link</a>
+                    <a href="chatter_anon_node_t3s3_exp.bin">Anon Mini Link</a>
+                    <a href="chatter_anon_node_e290_exp.bin">Heltec E290 Anon Link</a>
                   </div>
                 </td>
           </tr>
@@ -272,20 +276,20 @@
           <table style="font-size: smaller; width: 500px;">
             <tr>
               <td colspan="2">
-                <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">How ChatterBox Works</div>
+                <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">How Blackout Comms Works</div>
               </td>
             </tr>
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
               <td>
-                <b><a href="docs/chatterbox_protocol_lora_mqtt.pdf">ChatterBox Communication Protocol</a></b><br>
-                ChatterBox communicates securely by combining mesh, encryption, and digital signatures with LoRa and MQTT.
+                <b><a href="docs/blackout_comms_protocol_lora_mqtt.pdf">Blackout Comms Communication Protocol</a></b><br>
+                Blackout Comms communicates securely by combining mesh, encryption, and digital signatures with LoRa and MQTT.
               </td>
             </tr>
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
               <td>
-                <b><a href="docs/Chatterbox_Message_Types.pdf">Message Types</a></b><br>
+                <b><a href="docs/Blackout_Comms_Message_Types.pdf">Message Types</a></b><br>
                 A direct message is targeted to a specific person/device, and uses asymmetric encryption.
                 A broadcast is sent to the entire cluster, using symmetric encryption, so all devices can read it.
                 Message expiry (you select) controls how long a message stays "alive".
@@ -293,18 +297,20 @@
             </tr>
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td><b><a href="docs/Activate_ChatterBox_Cloud.pdf">MQTT and Cloud Connectivity</a></b><br>
+              <td><b><a href="docs/Activate_Blackout_Comms_Cloud.pdf">MQTT and Cloud Connectivity</a></b><br>
                Any device in your cluster/channel can become an MQTT/cloud-enabled bridge, allowing your messages to
                securely travel across a hop of any distance, while still maintaining device-level payload encryption and signatures.
-            </td>
+              </td>
+            </tr>
       
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td><b><a href="docs/chatterbox_clusters_vs_channels.pdf">Private Clusters vs Channels</a></b><br>
+              <td><b><a href="docs/blackout_comms_clusters_vs_channels.pdf">Private Clusters vs Channels</a></b><br>
               Your devices can exist within private clusters and/or they can utilize open (but secure) channels.
               Clusters offer <i>much</i> more functionality and better performance, but are limited to 90 devices.
               Channels can be unlimited in size, but are limited to broadcast messages.
-            </td>
+              </td>
+            </tr>
       
             <tr>
               <td colspan="2">
@@ -314,42 +320,41 @@
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
               <td>
-                <b><a href="docs/Using_ChatterBox.pdf">Using a Communicator</a></b><br>
-                Basic operation of a ChatterBox communicator
+                <b><a href="docs/Using_Blackout Comms.pdf">Using a Communicator</a></b><br>
+                Basic operation of a Blackout Comms communicator
               </td>
             </tr>
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
               <td>
-                <b><a href="docs/chatterbox_communicator_settings.pdf">Communicator Settings</a></b><br>
-                Complete list of settings for ChatterBox communicator firmware
+                <b><a href="docs/blackout_comms_settings.pdf">Blackout Comms Settings</a></b><br>
+                Complete list of settings for Blackout Comms firmware
               </td>
             </tr>
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
               <td>
-                <b><a href="docs/chatterbox_data_storage.pdf">Data Storage</a></b><br>
+                <b><a href="docs/blackout_comms_data_storage.pdf">Data Storage</a></b><br>
                 How to backup your device or transfer your data to another device
               </td>
             </tr>
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td><b><a href="docs/chatterbox_commands.pdf">ChatterBox Remote Commands</a></b><br>
-              ChatterBox supports sending remote commands to other on-cluster devices
-              </td>
-            </tr>
+              <td><b><a href="docs/blackout_comms_commands.pdf">Blackout Comms Remote Commands</a></b><br>
+              Blackout Comms supports sending remote commands to other on-cluster devices
+            </td>
       
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td><b><a href="docs/chatterbox_channels.pdf">Setting Up and Using Channels</a></b><br>
-              How to set up and use a new or existing channel on communicators and nodes
-              </td>
+              <td><b><a href="docs/blackout_comms_channels.pdf">Setting Up and Using Channels</a></b><br>
+              How to set up and use a new or existing channel on communicators and links
+            </td>
             </tr>
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
               <td>
                 <b><a href="docs/Using_Location.pdf">Using Location</a></b><br>
-                How GNSS is integrated with ChatterBox and how you can make use of it
+                How GNSS is integrated with Blackout Comms and how you can make use of it
               </td>
             </tr>
       
@@ -369,38 +374,36 @@
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
               <td>
-                <b><a href="docs/GPS_Node_Buttons.pdf">Using a GPS Node</a></b><br>
-                Basic operation of a ChatterBox GPS node (T-Beam Supreme)
+                <b><a href="docs/GPS_Link_Buttons.pdf">Using a GPS-Enabled Link</a></b><br>
+                Basic operation of a Blackout Comms GPS-Enabled Link (T-Beam Supreme)
               </td>
             </tr>
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
               <td>
-                <b><a href="docs/Utilizing_Node.pdf">Utilizing a Node</a></b><br>
-                How to position and use a node for delivery assistance, packet caching, location caching, and more
+                <b><a href="docs/Utilizing_Link.pdf">Utilizing a Link</a></b><br>
+                How to position and use a link for delivery assistance, packet caching, location caching, and more
               </td>
             </tr>
             <tr>
               <td valign="middle" align="right"><img src="images/pdf.png"></td>
               <td>
-                <b><a href="docs/Utilizing_Multiple_Nodes.pdf">Utilizing Multiple Nodes</a></b><br>
-                Using multiple nodes presents more opportunities for assuring delivery
+                <b><a href="docs/Utilizing_Multiple_Links.pdf">Utilizing Multiple Links</a></b><br>
+                Using multiple mesh links presents more opportunities for assuring delivery
               </td>
             </tr>
           </table>
       
-
-
-  </td>
+        </td>
   <td valign="top">
     <div style="float:right;">
-      <a href="docs/Using_ChatterBox.pdf"><img style="min-width:400px; max-width: 400px;" src="images/home_annotated.png"></a>
+      <a href="docs/Using_Blackout_Comms.pdf"><img style="min-width:400px; max-width: 400px;" src="images/home_annotated.png"></a>
     </div>
     <div style="float:right; background-color: #dedede;">
-      <a href="docs/Using_ChatterBox.pdf"><img style="min-width:400px; max-width: 400px;" src="images/neighbors_annotated.png"></a>
+      <a href="docs/Using_Blackout_Comms.pdf"><img style="min-width:400px; max-width: 400px;" src="images/neighbors_annotated.png"></a>
     </div>
     <div style="float:right;">
-      <a href="docs/Using_ChatterBox.pdf"><img style="min-width:400px; max-width: 400px;" src="images/devices_annotated.png"></a>
+      <a href="docs/Using_Blackout_Comms.pdf"><img style="min-width:400px; max-width: 400px;" src="images/devices_annotated.png"></a>
     </div>
     <div style="float:right; background-color: #dedede;">
       <a href="docs/Using_Location.pdf"><img style="min-width:400px; max-width: 400px;" src="images/location_screen_annotated.png"></a>
@@ -410,7 +413,8 @@
 </table>
 
   </div>
-  <div id="tab-video">
+
+      <div id="tab-video">
     <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">How Messages are Delivered</div>
     <div style="text-align: center;">
       <iframe width="420" height="315" src="https://www.youtube.com/embed/ilig2YCvYEw"></iframe>
@@ -539,11 +543,11 @@
     <div style="float:left; width:40%; min-width:350px; background-color: #dedede; border-radius: 5px; border-color: #000; border-style: solid;">
       <table>
         <tr><td colspan="3" style="text-align: center; font-size: larger;">Communicators</td></tr>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_thermal_sm.png"></td><td style="font-size: smaller;"><a href="assembly/chatterbox_tdeck_thermal.pdf">T-Deck Thermal</a></td><td style="font-size: smaller;">Build your own ChatterBox communicator (with Thermal Cam)</td></tr>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_custom_sm.png"></td><td style="font-size: smaller;"><a href="assembly/tdeck_custom_assembly.pdf">T-Deck Custom</a></td><td style="font-size: smaller;">Build your own ChatterBox communicator</a></td></tr>
+        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_thermal_sm.png"></td><td style="font-size: smaller;"><a href="assembly/Blackout Comms_tdeck_thermal.pdf">T-Deck Thermal</a></td><td style="font-size: smaller;">Build your own Blackout Comms communicator (with Thermal Cam)</td></tr>
+        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_custom_sm.png"></td><td style="font-size: smaller;"><a href="assembly/tdeck_custom_assembly.pdf">T-Deck Custom</a></td><td style="font-size: smaller;">Build your own Blackout Comms communicator</a></td></tr>
         <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_rokland_sm.png"></td><td style="font-size: smaller;"><a href="https://chatters.io/products">T-Deck Complete</a></td><td style="font-size: smaller;">Buy a fully-assembled T-Deck Complete from <a href="https://chatters.io/products">us</a> or <a href="https://store.rokland.com/products/lilygo-t-deck-portable-microcontroller-programmer-lora-915-mhz-h642?ref=lufoqrur&variant=42122265690195">Rokland</a></td></tr>
         <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_plus_sm.png"></td><td style="font-size: smaller;"><a href="https://chatters.io/products">T-Deck Plus</a></td><td style="font-size: smaller;">Buy a fully-assembled T-Deck Plus from <a href="https://chatters.io/products">us</a> <a href="https://amzn.to/4eWMhEF">Amazon</a>, or <a href="https://store.rokland.com/products/lilygo-t-deck-portable-microcontroller-programmer-lora-915-mhz-h642?ref=lufoqrur&variant=42283977834579">Rokland</a></td></tr>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_amped_sm.png"></td><td style="font-size: smaller;"><a href="assembly/chatterbox_tdeck_amped.pdf">T-Deck Amped</a></td><td style="font-size: smaller;">Build s ChatterBox communicator with integrated Amp</td></tr>
+        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_amped_sm.png"></td><td style="font-size: smaller;"><a href="assembly/Blackout Comms_tdeck_amped.pdf">T-Deck Amped</a></td><td style="font-size: smaller;">Build s Blackout Comms communicator with integrated Amp</td></tr>
       </table>
 
     </div>
@@ -553,13 +557,13 @@
     <div style="float:left; width:40%; min-width:350px; background-color: #dedede; border-radius: 5px; border-color: #000; border-style: solid;">
     <table>
       <tr><td colspan="3" style="text-align: center; font-size: larger;">Nodes</td></tr>
-      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/logo_circular.png"></td><td style="font-size: smaller;">Thermal Node</td><td style="font-size: smaller;">Coming soon: Node with integrated thermal cam, capable of sending images via mesh</td></tr>
-      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/location.png"></td><td style="font-size: smaller;"><a href="assembly/Basic_ChatterBox_Nodes.pdf">Basic / GPS</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a simple node with no soldering or built on Lilygo T3S3 or E-Paper T3S3</td></tr>
-      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/proximity.png"></td><td style="font-size: smaller;"><a href="assembly/Proximity_ChatterBox_Nodes.pdf">Proximity Node</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a node with Proximity sensing capabilities, using a doppler-based sensor</td></tr>
-      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/robot.png"></td><td style="font-size: smaller;"><a href="assembly/Remote_Switch_ChatterBox_Nodes.pdf">Relay Node</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a node with the ability to remotely control a switch (proximity sensing nodes can also do this)</td></tr>
+      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/logo_circular.png"></td><td style="font-size: smaller;">Thermal</td><td style="font-size: smaller;">Coming soon: Link with integrated thermal cam, capable of sending images via mesh</td></tr>
+      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/location.png"></td><td style="font-size: smaller;"><a href="assembly/Basic_BlackoutComms_Link.pdf">Basic / GPS</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a simple mesh link with no soldering or built on Lilygo T3S3 or E-Paper T3S3</td></tr>
+      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/proximity.png"></td><td style="font-size: smaller;"><a href="assembly/Proximity_Blackout_Comms_Link.pdf">Proximity Link</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a mesh link with Proximity sensing capabilities, using a doppler-based sensor</td></tr>
+      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/robot.png"></td><td style="font-size: smaller;"><a href="assembly/Blackout_Comms_Remote_Switch.pdf">Remote Switch</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a link with the ability to remotely control a switch (proximity sensing nodes can also do this)</td></tr>
     </table>
     </div>
-    
+
     <table style="clear:left;">
       <tr><td>&nbsp;</td></tr>
       <tr><td colspan="3" style="font-size: larger; background-color: #dedede; text-align: center;">More Build DIY Options</td></tr>
@@ -570,23 +574,23 @@
           <table style="font-size: smaller;">
             <tr><td colspan="2">Based on T-Deck. Communicate messages and location securely.</td></tr>
             <tr><td align="right"><a href="assembly/tdeck_custom_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/tdeck_custom_assembly.pdf">Assembly Instructions</a></td></tr>
-            <tr><td align="right"><a href="assembly/UserGuides/Using_ChatterBox.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/Using_ChatterBox.pdf">User Guide</a></td></tr>
+            <tr><td align="right"><a href="docs/Using_Blackout_Comms.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="docs/Using_Blackout_Comms.pdf">User Guide</a></td></tr>
             <tr><td align="right"><a href="assembly/custom_communicator_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/custom_communicator_3d.zip">Printable Enclosure</a></td></tr>
           </table>
         </td>
         <td width="33%" valign="top">
 
-            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">GPS Node</div>
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">GPS Link</div>
             <div style="float:right;"><img src="images/node_gps.png"></div>
             <table style="font-size: smaller;">
-              <tr><td colspan="2">Fully functional node with GPS based on T-Beam Supreme</td></tr>
+              <tr><td colspan="2">Fully functional link with GPS based on T-Beam Supreme</td></tr>
               <tr><td align="right"><a href="assembly/gps_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/gps_node_assembly.pdf">Assembly Instructions</a></td></tr>
-              <tr><td align="right"><a href="assembly/UserGuides/GPS_Node_Buttons.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/GPS_Node_Buttons.pdf">User Guide</a></td></tr>
+              <tr><td align="right"><a href="docs/GPS_Link_Buttons.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="docs/GPS_Link_Buttons.pdf">User Guide</a></td></tr>
               <tr><td align="right"><a href="assembly/gps_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/gps_node_3d.zip">Printable Enclosure</a></td></tr>
             </table>
         </td>
         <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">E-Paper Mini Node</div>
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">E-Paper Mini Link</div>
           <div style="float:right;"><img src="images/node_paper.png"></div>
           <table style="font-size: smaller;">
             <tr><td colspan="2">Non-GPS, low power node with E-Paper display. Based on T3S3 E-Paper.</td></tr>
@@ -599,30 +603,30 @@
 
       <tr>
         <td width="33%" valign="top">
-            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay GPS Node</div>
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay GPS Link</div>
             <div style="float:right;"><img src="images/node_proximity.png"></div>
             <table style="font-size: smaller;">
-              <tr><td colspan="2">GPS node with added mmwave proximity senser and (optionally) relay/switch function</td></tr>
+              <tr><td colspan="2">GPS link with added mmwave proximity senser and (optionally) relay/switch function</td></tr>
               <tr><td align="right"><a href="assembly/proximity_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/proximity_node_assembly.pdf">Assembly Instructions</a></td></tr>
               <tr><td align="right"><a href="assembly/relay_prox_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/relay_prox_node_3d.zip">Printable Enclosure</a></td></tr>
             </table>
         </td>
         <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">GPS Relay Node</div>
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">GPS Relay Link</div>
           <div style="float:right;"><img src="images/node_proximity.png"></div>
 
           <table style="font-size: smaller;">
-            <tr><td colspan="2">GPS node with relay (switch) functionality.</td></tr>
+            <tr><td colspan="2">GPS link with relay (switch) functionality.</td></tr>
             <tr><td align="right"><a href="assembly/gps_relay_node.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/gps_relay_node.pdf">Assembly Instructions</a></td></tr>
             <tr><td align="right"><a href="assembly/relay_prox_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/relay_prox_node_3d.zip">Printable Enclosure</a></td></tr>
           </table>
         </td>
         <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Solar Node</div>
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Solar Link</div>
           <div style="float:right;"><img src="images/solar_node.png"></div>
 
           <table style="font-size: smaller;">
-            <tr><td colspan="2"><i>Solar powered</i> node (non-GPS). Based on T3S3.</td></tr>
+            <tr><td colspan="2"><i>Solar powered</i> link (non-GPS). Based on T3S3.</td></tr>
             <tr><td align="right"><a href="assembly/UserGuides/Solar_Instructions.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/Solar_Instructions.pdf">User Guide</a></td></tr>
             <tr><td align="right"><a href="assembly/build_mesh_solar_node.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/build_mesh_solar_node.pdf">Assembly Instructions</a></td></tr>
           </table>
@@ -634,7 +638,7 @@
 
       <tr>
         <td width="33%" valign="top">
-            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay Paper Node</div>
+            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay Paper Link</div>
             <div style="float:right;"><img src="images/node_paper.png"></div>
             <table style="font-size: smaller;">
               <tr><td colspan="2">T3S3 paper node with added mmwave proximity senser and (optionally) relay/switch function</td></tr>
@@ -643,16 +647,16 @@
             </table>
         </td>
         <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Heltec Vision e290 Paper Node</div>
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Heltec Vision e290 Paper Link</div>
           <div style="float:right;"><img width="100" src="images/e290.png"></div>
 
           <table style="font-size: smaller;">
             <tr><td colspan="2">Larger paper screen, but you'll need to download an enclosure elsewhere.</td></tr>
-            <tr><td align="right"><a href="assembly/chatterbox_heltec_e290_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/chatterbox_heltec_e290_node_assembly.pdf">Assembly Instructions</a></td></tr>
+            <tr><td align="right"><a href="assembly/heltec_e290_blackout_comms_link.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/heltec_e290_blackout_comms_link.pdf">Assembly Instructions</a></td></tr>
           </table>
         </td>
         <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Mini Node</div>
+          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Mini Link</div>
           <div style="float:right;"><img src="images/node_mini.png"></div>
 
           <table style="font-size: smaller;">
@@ -666,6 +670,7 @@
       </tr>
 
     </table>
+
   </center>  
 
 </div>
@@ -687,9 +692,23 @@
           document.getElementById("binaries_usa").style = "visibility:visible;";
           document.querySelectorAll('input[name="type"]').forEach(radio =>
           radio.addEventListener("change", () => {
-            const button = document.querySelector('esp-web-install-button');
-            button.manifest = `./manifest_${radio.value}.json`;
-            button.classList.remove('invisible');
+            if (radio.value == 'altware') {
+              // show link to samd page
+              document.querySelector('#altware_install').style.display = 'block';
+
+              // hide esp install button if its showing
+              const button = document.querySelector('esp-web-install-button');
+              //button.manifest = `./manifest_${radio.value}.json`;
+              button.classList.add('invisible');
+            }
+            else {
+              // hide samd page
+              document.querySelector('#altware_install').style.display = 'none';
+
+              const button = document.querySelector('esp-web-install-button');
+              button.manifest = `./manifest_${radio.value}.json`;
+              button.classList.remove('invisible');
+            }
           }
           ));
         }
@@ -700,6 +719,8 @@
           document.getElementById("binaries_usa").style = "visibility:hidden;";
           document.querySelectorAll('input[name="type"]').forEach(radio =>
           radio.addEventListener("change", () => {
+            document.querySelector('#altware_install').style.display = 'none';
+
             const button = document.querySelector('esp-web-install-button');
             button.manifest = `./intl_manifest_${radio.value}.json`;
             button.classList.remove('invisible');

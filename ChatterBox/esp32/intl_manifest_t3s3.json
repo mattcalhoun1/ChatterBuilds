@@ -1,6 +1,6 @@
 {
-    "name": "T3S3 OLED Node (INTL)",
-    "version": "2.3.1",
+    "name": "T3S3 OLED Link (INTL)",
+    "version": "2.3.2",
     "new_install_prompt_erase":true,    
     "builds": [
         {

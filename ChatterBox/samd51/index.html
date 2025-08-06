@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Download ChatterBox SAMD51 Firmware</title>
+    <title>Download Blackout Comms Firmware for Altware Link</title>
     <meta
       name="description"
-      content="Download ChatterBox SAMD51 node firmware. Encrypted and signed LoRa communication for the ChatterBox custom SAMD51 platform."
+      content="Download Blackout Comms link firmware. Encrypted and signed LoRa communication for the Blackout Comms custom SAMD51 platform."
     />
     <meta name="viewport" content="width=device-width" />
     <!--<meta name="color-scheme" content="dark light" />-->
@@ -75,8 +75,6 @@
         }
       }
     </style>
-    <script type="module" src="js/install-button.js?module"></script>
-    <!--<script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>-->
 
     <link rel="stylesheet" href="../esp32/js/jquery/jquery-ui.css">
     <link rel="stylesheet" href="../esp32/js/jquery/jquery-ui.theme.css">
@@ -92,7 +90,7 @@
     <div class="content" style="min-width: 800px;">
       <div style="float:left"><a href="https://chatters.io"><img src="../esp32/images/logo_circular.png" height="75px" width="75px"></a></div>
       <div style="float:right"><a href="https://chatters.io"><img id="flag" src="../esp32/images/usa.png" height="75px" width="75px"></a></div>
-      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">ChatterBox SAMD51 Mesh Node Firmware</h1></div>
+      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">Blackout Comms Firmware for Altware Link</h1></div>
 
       <div style="font-size: x-small; float: right; text-align: center;">
         Looking for <a href="../esp32/tdeck_firmware.html">T-Deck Firmware</a>?<br> 
@@ -112,25 +110,25 @@
           </select>
         </td>
           <td width="600px" style="vertical-align: top;">
-              <i>The ChatterBox custom SAMD51 platform is currently only available for use within the USA.</i>
+              <i>The Blackout Comms Altware Link firmware is currently only available for use within the USA.</i>
           </td>
-          <td width="200px" style="font-size:smaller; vertical-align: top; text-align: right;"><b>Node: 1.7.4</b> (03/21/2025)<br><b><a href="../esp32/tdeck_firmware.html">Comm</a>: 1.7.4</b> (03/18/2025)</td>
+          <td width="200px" style="font-size:smaller; vertical-align: top; text-align: right;"><b>Link: 2.3.2</b> (08/05/2025)<br><b><a href="../esp32/tdeck_firmware.html">Comm</a>: 2.3.2</b> (08/04/2025)</td>
         </tr>
       </table>
       </div>
 
 
     <div id="tabs" style="min-width: 800px;">
-      <ul>
+      <!--<ul>
         <li><a href="#tab-flash">Mesh Node Firmware</a></li>
         <li><a href="#tab-using">Using ChatterBox</a></li>
         <li><a href="#tab-video">Demo Videos</a></li>
         <li><a href="#tab-assembly">Assembling Devices</a></li>
-      </ul>
+      </ul>-->
       <div id="tab-flash">
         <div class="content" style="min-width: 800px;">
           <p style="font-size: smaller;">
-            <b>Note:</b> The ChatterBox mesh node firmware is a <a href="https://chatters.io/licensing">licensed</a> product, but the node firmware is currently free for download</a>.
+            <b>Note:</b> The Blackout Comms firmware is a <a href="https://chatters.io/licensing">licensed</a> product, but the Blackout Comms link firmware is currently free for download</a>.
           </p>
 
       <table border="1" style="background-color: #ddd">
@@ -148,43 +146,57 @@
           </tr>
           <tr>
             <td colspan="2" style="background-color: #fff;">
-              <b>1. This firmware is for the SAMD51 platform only (shown below). If this isn't your device, you are probably looking for our ESP32-based <a href="../esp32/mesh_node_firmware.html">mesh node firmware</a>.</b>
-              Currently only <i>node</i> firmware can be downloaded for the SAMD51 platform. The touchscreen functionality is being redesigned and communicator firmware is forthcoming.
-              <br>
-              <br>
-              <center>
-                <img src="images/all_devices.png" width="400px">
-              </center>
+              <div style="float:left;">
+                <img src="images/altware_node_back.png">
+              </div>
+              <div style="padding-left: 150px;">
+                <br>
+              <b>1. This firmware is for the Blackout Comms Altware link only (shown here).</b>
+                <br><br>If this isn't your device, you are probably looking for our ESP32-based <a href="../esp32/mesh_node_firmware.html">mesh link firmware</a>.
+              </b>
+              </div>
 
+              
             </td>
           </tr>
           <tr>
-            <td style="background-color: #fff; vertical-align: top;" width="33%">
+            <td style="vertical-align: top;" width="33%">
               <b>2. <a href="node/node_usa.zip"><img style="vertical-align: middle;" height="20" src="images/download.png"></a> <a href="node/node_usa.zip">Download</a> The Firmware</b><br>
                 <br>
+                <div style="font-size: smaller;">
                 Unzip its contents to somewhere on your PC. You will want the <i>CURRENT.UF2</i> file from it, which is the binary compiled firmware.
                 <br><br>
-                <b>Your existing cluster/data will <i>not</i> be erased</b> during this process. All that data is on your node's FRAM and remains untouched
+                <b>Your existing cluster/data will <i>not</i> be erased</b> during this process. All that data is on your link's FRAM and remains untouched
                 by this process.
+                </div>
             </td>
-            <td>
-                <b>3. Copy Firmware To Your Node</b><br>
-                <ul>
-                    <li>Connect the Node to your PC via USB <i>data</i> cable (not charging cable)</li>
-                    <li>Power the device on</li>
-                    <li>Double-tap the reset button quickly (nearest the power switch)</li>
-                    <li>The light should start flashing different colors</li>
-                    <li>The device should appear as a flash drive to your PC</li>
-                    <li>On your PC, open the flash drive</li>
-                    <li>Copy the file <i>CURRENT.UF2</i> over top of the existing one on the device</li>
-                    <li>The node should automatically reboot</li>
-                </ul>
+            </tr><tr>
+            <td style="background-color: #fff; vertical-align: top;">
+                <b>3. Copy Firmware To Your Altware Link</b><br>
+                <div>
+                  <div style="float:left; max-width: 400px;">
+                    <ul style="font-size: smaller;">
+                        <li>Connect the Altware device to your PC via USB <i>data</i> cable (not charging cable)</li>
+                        <li>Power the device on</li>
+                        <li>Double-tap the reset button quickly (nearest the power switch)</li>
+                        <li>The light should start flashing different colors</li>
+                        <li>The device should appear as a flash drive to your PC</li>
+                        <li>On your PC, open the flash drive</li>
+                        <li>Copy the file <i>CURRENT.UF2</i> over top of the existing one on the device</li>
+                        <li>The Altware link should automatically reboot</li>
+                    </ul>
+                  </div>
+                  <div style="float:right">
+                    <img src="images/reset_button.png" width="200">
+                  </div>
+                </div>
+                
               </td>
             </tr>
             <tr>
                 <td colspan="2">
                     <b>4. OPTIONAL: If you want to clear your device</b><br>
-                    <ul>
+                    <ul style="font-size: smaller;">
                         <li>This procedure will wipe any config / cluster / data from your device</li>
                         <li>Power the device off</li>
                         <li>Press and hold the boot button (furthest from the power switch)</li>
@@ -192,7 +204,7 @@
                         <li>Continue to hold the boot button for 10 seconds</li>
                         <li>Release the boot button and leave the device alone for 60 seconds or so</li>
                         <li>The device should now be in onboard mode (purple light)</li>
-                        <li>You may now onboard this new node to your cluster</li>
+                        <li>You may now onboard this new link to your cluster</li>
                     </ul>
                   </td>
     
@@ -201,7 +213,7 @@
 
         </div>
       </div>
-  <div id="tab-using">
+  <!--<div id="tab-using">
     <table>
       <tr>
         <td valign="top">
@@ -464,7 +476,7 @@
     <iframe width="420" height="315" src="https://www.youtube.com/embed/9tA2zRDCW6Q"></iframe>
   </div>
 
-</div>
+</div> -->
 
 </div>    <!-- tabs -->
 
