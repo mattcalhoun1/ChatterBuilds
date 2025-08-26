@@ -1,6 +1,6 @@
 {
     "name": "Blackout Comms Rokland (USA)",
-    "version": "2.3.4",
+    "version": "2.3.6",
     "new_install_prompt_erase":true,
     "builds": [
         {
