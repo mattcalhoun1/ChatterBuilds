@@ -1,6 +1,7 @@
 This repo contains prebuilt binary firmware for devices that support the Chatters protocol. See [http://chatters.io](https://www.chatters.io/).
 
-# What is ChatterBox and Chatters?
+# What is Blackout Comms and Chatters?
+Note: Not all documentation has been updated yet, but "ChatterBox" has been renamed to Blackout Comms, but still uses the Chatters protocol.
 
 [<img src="https://img.youtube.com/vi/9tA2zRDCW6Q/maxresdefault.jpg" width="30%">](https://youtu.be/9tA2zRDCW6Q) [<img src="https://img.youtube.com/vi/ilig2YCvYEw/maxresdefault.jpg" width="30%">](https://youtu.be/ilig2YCvYEw)
 
@@ -110,3 +111,4 @@ In order to fully support the ChatterBox protocol, devices that are going to run
 | 2025-05-01 | UI Improvements | Critical device tagging, GPS improvements, more |
 | 2025-05-04 | Fix battery level indicator on tdeck |
 | 2025-05-05 | Make SD cards portable between T-Decks, fix flash storage issue |
+| 2025-08-?? | ChatterBox is now Blackout Comms
