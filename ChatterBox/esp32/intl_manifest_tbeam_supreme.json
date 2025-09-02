@@ -1,6 +1,6 @@
 {
     "name": "T-Beam Supreme Link (INTL)",
-    "version": "2.3.6",
+    "version": "2.3.7",
     "new_install_prompt_erase":true,    
     "builds": [
         {
