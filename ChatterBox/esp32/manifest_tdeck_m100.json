@@ -1,6 +1,6 @@
 {
     "name": "Blackout Comms M100 (USA)",
-    "version": "2.3.8",
+    "version": "2.3.9",
     "new_install_prompt_erase":true,
     "builds": [
         {
