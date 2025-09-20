@@ -1,6 +1,6 @@
 {
     "name": "Blackout Comms Pager (INTL)",
-    "version": "2.3.8",
+    "version": "2.3.A",
     "new_install_prompt_erase":true,
     "builds": [
         {
