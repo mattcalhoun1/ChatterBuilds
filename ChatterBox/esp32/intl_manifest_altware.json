@@ -1,6 +1,6 @@
 {
     "name": "Blackout Comms (USA)",
-    "version": "2.3.9",
+    "version": "3.0.0",
     "new_install_prompt_erase":true,
     "builds": [
         {
