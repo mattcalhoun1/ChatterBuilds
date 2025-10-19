@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Blackout Comms Pager Firmware</title>
+    <meta
+      name="description"
+      content="Download Blackout Comms secure mesh comms firmware for Lilygo Pager. Encrypted and signed messages and location over LoRa."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <!--<meta name="color-scheme" content="dark light" />-->
+    <style>
+      body {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Ubuntu, sans-serif;
+        padding: 0;
+        margin: 0;
+        line-height: 1.4;
+      }
+      .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px;
+      }
+      h2 {
+        margin-top: 2em;
+      }
+      h3 {
+        margin-top: 1.5em;
+      }
+      a {
+        color: #03a9f4;
+      }
+      .invisible {
+        visibility: hidden;
+      }
+      .hidden {
+        display: none;
+      }
+      esp-web-install-button[install-unsupported] {
+        visibility: inherit;
+      }
+      .content pre {
+        max-width: 100%;
+        overflow-y: scroll;
+      }
+      .footer {
+        margin-top: 24px;
+        border-top: 1px solid #666;
+        padding-top: 24px;
+        text-align: center;
+      }
+      .footer .initiative {
+        font-style: italic;
+        margin-top: 16px;
+      }
+      table {
+        border-spacing: 0;
+      }
+      td {
+        padding: 8px;
+        /*border-bottom: 1px solid #666;*/
+      }
+      .radios li {
+        list-style: none;
+        line-height: 2em;
+      }
+      @media (prefers-color-scheme: light) {
+        body {
+          background-color: #fff;
+          color: #2f3a5a;
+        }
+        a {
+          color: #58a6ff;
+        }
+      }
+    </style>
+    <script type="module" src="js/install-button.js?module"></script>
+    <!--<script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>-->
+
+    <link rel="stylesheet" href="js/jquery/jquery-ui.css">
+    <link rel="stylesheet" href="js/jquery/jquery-ui.theme.css">
+    <script src="js/jquery/external/jquery/jquery.js"></script>
+    <script src="js/jquery/jquery-ui.js"></script>
+  </head>
+  <body>
+    <div class="content" style="min-width: 800px;">
+      <div style="float:left"><a href="https://chatters.io"><img src="images/logo_circular.png" height="75px" width="75px"></a></div>
+      <div style="float:right"><a href="https://chatters.io"><img id="flag" src="images/usa.png" height="75px" width="75px"></a></div>
+      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">Blackout Comms Pager Firmware</h1></div>
+
+      <div>
+      <table border="0" style="background-color:#E5E5E5; " >
+        <tr border="0">
+          <td style="vertical-align: top; text-align: center; font-size: smaller;" width="200px">
+            <b>Where are you located?</b><br>
+          <!--<td width="140px">-->
+          <select name="country" id="country" onchange="configVersion()">
+            <option name="usa" value="usa" selected="selected">Inside USA</option>
+            <option name="international" value="international">Outside USA</option>
+          </select>
+        </td>
+          <td style="vertical-align: top; font-size: smaller;">
+              <i>If you are in the USA, choose the USA version. Otherwise, choose the Non-USA version. Use the same slection for <b>all</b> of your devices!</i>
+          </td>
+      </table>
+      </div>
+    <!--</div>-->
+
+
+
+        <!--<div class="content" style="min-width: 800px;border-radius: 3; border-width: 2px; background-color: bisque;">
+          <p>
+            As of v1.5, SD cards are no longer <i>required</i> on nodes, but still required on T-Decks. Be aware these devices ARE VERY PICKY about SD cards. For new devices, <b>consider buying a new SD card from the <a href="https://www.offgridcomms.club/help/compatible-sd-cards/">known compatible list</a>.</b>
+          </p>
+        </div>-->
+        <div class="content" style="min-width: 800px;">
+          <p style="font-size: smaller;">
+            <b>Note:</b> The Blackout Comms secure off-grid messaging and location firmware is a <a href="https://chatters.io/licensing">licensed product</a>. Certain features may require purchase of a license.
+          </p>
+
+      <table border="1" style="background-color: #ddd">
+          <tr>
+              <td valign="top">
+                  <center>
+                    <img src="images/pager_lg.png" width="300px">
+                  </center>
+              </td>
+              <td width="400px" valign="top" style="min-width: 400px; background-color: #fff;">
+                    <div style="font-size: smaller;">
+                        <div style="background-color: #ffffff;">
+                            <ol>
+                            <li><b>Recommended</b> - SD cards are <b>highly</b> recommended but not required. Only <a href="https://www.offgridcomms.club/help/compatible-sd-cards/">compatible SD cards</a> can be used.</li>
+                            <li>Connect the pager to your PC using a high quality data cable.</li>
+                            <li>The pager will automatically power on (if it's not already on).</li>
+                            <li>On the pager, hold the reset button (left/first button), tap the middle button, then release the reset button.</li>
+                            <li>Click the insall button below and click throug the steps.</li>
+                            </ol>
+                            <br>
+                        </div>
+                    </div>
+                    <p class="button-row" align="center">
+                        <esp-web-install-button manifest="./manifest_pager.json"></esp-web-install-button>
+                    </p>
+
+              </td>
+          </tr>
+          <tr>
+              <td valign="top" colspan="2" style="background-color: white; font-size: x-small;">
+                    <div style="float:right"><a href="https://chatters.io"><img id="flag2" src="images/usa.png" height="75px" width="75px"></a></div>
+                    <p style="font-size: x-small;">
+                        <b>
+                        By downloading this firmware, you are agreeing to <a href="https://www.chatters.io/firmware-terms">the terms</a>,
+                        agreeing to abide by all laws and regulations while using this firmware, and agreeing to hold harmless the developer,
+                        Altware Development LLC.</b>  Altware Development LLC is not responsible for any data loss or other issues that might arise with with <i>your
+                        device</i> before, during, or after flashing. Unless you agree to those terms, don't use this tool or download our firmware.
+                    </p>
+
+                    <div id="binaries_usa">
+                        <b>Alternative Flash Instructions:</b> If you know what you are doing and want to install mesh tdeck firmware
+                        using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binary here (USA): <a href="chatter_pager.bin">Pager</a>
+                    </div>
+                    <div id="binaries_non_usa" style="visibility: hidden;">
+                        <b>Alternative Flash Instructions:</b> If you know what you are doing and want to install mesh tdeck firmware
+                        using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binary here (Non-USA): <a href="chatter_pager_exp.bin">Pager</a>
+                    </div>
+                </td>
+          </tr>
+       </table>
+
+        </div>
+   <!-- tabs -->
+
+</div>    <!-- main -->
+
+<script>
+      function showDevicePreview (deviceName) {
+        document.getElementById("device_preview").innerHTML = "<img src=\"images/" + deviceName + "_sm.png\">";
+      }
+
+      function configVersion () {
+        if (isUsa()) {
+          document.getElementById("flag").src = "images/usa.png";
+          document.getElementById("flag2").src = "images/usa.png";
+          document.getElementById("binaries_non_usa").style = "visibility:hidden;";
+          document.getElementById("binaries_usa").style = "visibility:visible;";
+          document.getElementById("binaries_usa").style = "visibility:visible;";
+
+          const button = document.querySelector('esp-web-install-button');
+          button.manifest = `./manifest_pager.json`;
+        }
+        else {
+          document.getElementById("flag").src = "images/non_usa.png";
+          document.getElementById("flag2").src = "images/non_usa.png";
+          document.getElementById("binaries_non_usa").style = "visibility:visible;";
+          document.getElementById("binaries_usa").style = "visibility:hidden;";
+          const button = document.querySelector('esp-web-install-button');
+          button.manifest = `./intl_manifest_pager.json`;
+        }
+
+      }
+    </script>
+    <script>
+      function isUsa () {
+        return document.getElementById("country").value == "usa";
+      }
+    </script>
+    <script>
+      // config the version to default on load
+      configVersion();
+    </script>
+
+			<!-- Google tag (gtag.js) -->
+       <!-- api site 
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-FT07G9QEL0"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-FT07G9QEL0');
+			</script>    -->
+
+    <!-- comms site -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-56KJN5SG2S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-56KJN5SG2S');
+    </script>
+
+  </body>
+</html>
