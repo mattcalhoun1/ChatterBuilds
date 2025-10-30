@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Blackout Comms Pager Firmware</title>
+    <title>Blackout Comms T-Deck Firmware</title>
     <meta
       name="description"
-      content="Download Blackout Comms secure mesh comms firmware for Lilygo Pager. Encrypted and signed messages and location over LoRa."
+      content="Download Blackout Comms secure mesh comms firmware for Lilygo T-Deck. Encrypted and signed messages and location over LoRa."
     />
     <meta name="viewport" content="width=device-width" />
     <!--<meta name="color-scheme" content="dark light" />-->
@@ -87,7 +87,7 @@
     <div class="content" style="min-width: 800px;">
       <div style="float:left"><a href="https://chatters.io"><img src="images/logo_circular.png" height="75px" width="75px"></a></div>
       <div style="float:right"><a href="https://chatters.io"><img id="flag" src="images/usa.png" height="75px" width="75px"></a></div>
-      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">Blackout Comms Pager Firmware</h1></div>
+      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">Blackout Comms T-Deck Firmware</h1></div>
 
       <div>
       <table border="0" style="background-color:#E5E5E5; " >
@@ -109,11 +109,7 @@
 
 
 
-        <!--<div class="content" style="min-width: 800px;border-radius: 3; border-width: 2px; background-color: bisque;">
-          <p>
-            As of v1.5, SD cards are no longer <i>required</i> on nodes, but still required on T-Decks. Be aware these devices ARE VERY PICKY about SD cards. For new devices, <b>consider buying a new SD card from the <a href="https://www.offgridcomms.club/help/compatible-sd-cards/">known compatible list</a>.</b>
-          </p>
-        </div>-->
+
         <div class="content" style="min-width: 800px;">
           <p style="font-size: smaller;">
             <b>Note:</b> The Blackout Comms secure off-grid messaging and location firmware is a <a href="https://chatters.io/licensing">licensed product</a>. Certain features may require purchase of a license.
@@ -123,30 +119,71 @@
           <tr>
               <td valign="top">
                   <center>
-                    <img src="images/pager_lg.png" width="300px">
+                    <img src="images/tdeck_firmware_types.png" width="400px">
                   </center>
               </td>
-              <td width="400px" valign="top" style="min-width: 400px; background-color: #fff;">
+              <td style="min-width:250px; vertical-align: top;">
+                  <div style="font-size: smaller;">
+                      <!--<h2>Flashing Tool</h2>-->
+                          <center><b>T-Deck Type</b></center>
+                            <div style="font-size: smaller;">
+                                If your device is not listed, choose the <i>All Others</i> option, although we can't guarantee compatibility.
+                            </div>
+
+                            <table><tr><td>
+                      <ul class="radios">
+                        <div style="background-color: #dedede;">
+                          <li>
+                            <label><input type="radio" name="type" value="tdeck_custom" onclick="showDevicePreview ('tdeck_thermal', 'Custom')" /> Custom (& Thermal) </label>
+                        </li>
+                        <li>
+                          <label><input type="radio" name="type" value="tdeck_rokland" onclick="showDevicePreview ('tdeck_rokland', 'Rokland')"/> Rokland Complete</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="type" value="tdeck_plus" onclick="showDevicePreview ('tdeck_plus', 'T-Deck+')" /> Lilygo TDeck+ </label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="type" value="tdeck_m100" onclick="showDevicePreview ('tdeck_m100', 'Others')" /> All Others </label>
+                        </li>
+                        <!--<li style="color: #666666">
+                            <label><input type="radio" name="type" value="tdeck_dfr_rtc" /> DFR Mesh Firmware</label>
+                        </li>-->
+                        </div>
+                    </ul>
+</td><td>
+                        <div style="background-color: #dedede; text-align: center;">
+                            <br>
+                            <div style="visibility: hidden; font-weight: bold; " id="device_title"></div>
+                            <div style="width:102px;" id="device_preview"></div>
+                        </div>
+                      
+</tr>
+<tr><td colspan="2">                    <p class="button-row" align="center">
+                        <esp-web-install-button class="invisible"></esp-web-install-button>
+                    </p>
+</td></tr>
+</table>                      
+                    </div>    
+              <!--</td>
+              <td width="400px" valign="top" style="min-width: 400px; background-color: #fff;">-->
                     <div style="font-size: smaller;">
                         <div style="background-color: #ffffff;">
                             <ol>
                             <li><b>Recommended</b> - SD cards are <b>highly</b> recommended but not required. Only <a href="https://www.chatters.io/compatible-sd-cards">compatible SD cards</a> can be used.</li>
-                            <li>Connect the pager to your PC using a high quality data cable.</li>
-                            <li>The pager will automatically power on (if it's not already on).</li>
-                            <li>On the pager, hold the middle button, tap the reset button (left/first button), then release the middle button.</li>
+                            <li>Connect the T-Deck to your PC using a high quality data cable.</li>
+                            <li>Switch the T-Deck power on.</li>
+                            <li>On the T-Deck, press and hold the trackball button (left/first button), tap the reset button (on the side), then release the trackball button.</li>
                             <li>Click the install button below and click throug the steps.</li>
+                            <li>In some cases, you may need to continue holding the trackball button while the install happens.</li>
                             </ol>
                             <br>
                         </div>
                     </div>
-                    <p class="button-row" align="center">
-                        <esp-web-install-button manifest="./manifest_pager.json"></esp-web-install-button>
-                    </p>
 
               </td>
           </tr>
           <tr>
-              <td valign="top" colspan="2" style="background-color: white; font-size: x-small;">
+              <td valign="top" colspan="3" style="background-color: white; font-size: x-small;">
                     <div style="float:right"><a href="https://chatters.io"><img id="flag2" src="images/usa.png" height="75px" width="75px"></a></div>
                     <p style="font-size: x-small;">
                         <b>
@@ -158,11 +195,25 @@
 
                     <div id="binaries_usa">
                         <b>Alternative Flash Instructions:</b> If you know what you are doing and want to install mesh tdeck firmware
-                        using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binary here (USA): <a href="chatter_pager.bin">Pager</a>
+                        using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binaries here (USA): 
+                        <br><br>
+                        <a href="chatter_tdeck_plus.bin">T-Deck+ Mesh Firmware</a>
+                        <a href="chatter_tdeck_custom.bin">Custom Mesh Firmware</a>
+                        <a href="chatter_tdeck_m100.bin">M100 / All Others</a>
+                        <a href="chatter_altware.bin">Blackout Comm</a>
+                        <a href="chatter_pager.bin">Pager</a>
+                        <a href="chatter_tdeck_dfr_rtc.bin">DFR Mesh Firmware (Deprecated)</a>
                     </div>
                     <div id="binaries_non_usa" style="visibility: hidden;">
                         <b>Alternative Flash Instructions:</b> If you know what you are doing and want to install mesh tdeck firmware
-                        using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binary here (Non-USA): <a href="chatter_pager_exp.bin">Pager</a>
+                        using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binaries here (Non-USA): 
+                        <br><br>
+                        <a href="chatter_tdeck_plus_exp.bin">T-Deck+ Mesh Firmware</a>
+                        <a href="chatter_tdeck_custom_exp.bin">Custom Mesh Firmware</a>
+                        <a href="chatter_tdeck_m100_exp.bin">M100 / All Others</a>
+                        <a href="chatter_altware_exp.bin">Blackout Comm</a>
+                        <a href="chatter_pager_exp.bin">Pager</a>
+                        <a href="chatter_tdeck_dfr_rtc_exp.bin">DFR Mesh Firmware (Deprecated)</a>
                     </div>
                 </td>
           </tr>
@@ -174,8 +225,9 @@
 </div>    <!-- main -->
 
 <script>
-      function showDevicePreview (deviceName) {
-        document.getElementById("device_preview").innerHTML = "<img src=\"images/" + deviceName + "_sm.png\">";
+      function showDevicePreview (manifestName, deviceName) {
+        document.getElementById("device_preview").innerHTML = "<img src=\"images/" + manifestName + "_sm.png\">";
+              document.getElementById("device_title").textContent = deviceName;
       }
 
       function configVersion () {
@@ -184,18 +236,29 @@
           document.getElementById("flag2").src = "images/usa.png";
           document.getElementById("binaries_non_usa").style = "visibility:hidden;";
           document.getElementById("binaries_usa").style = "visibility:visible;";
-          document.getElementById("binaries_usa").style = "visibility:visible;";
-
-          const button = document.querySelector('esp-web-install-button');
-          button.manifest = `./manifest_pager.json`;
+          document.querySelectorAll('input[name="type"]').forEach(radio =>
+          radio.addEventListener("change", () => {
+            const button = document.querySelector('esp-web-install-button');
+            button.manifest = `./manifest_${radio.value}.json`;
+            button.classList.remove('invisible');
+              document.getElementById("device_title").style = "visibility:visible; font-weight: bold;";
+          }
+          ));
         }
         else {
           document.getElementById("flag").src = "images/non_usa.png";
           document.getElementById("flag2").src = "images/non_usa.png";
           document.getElementById("binaries_non_usa").style = "visibility:visible;";
           document.getElementById("binaries_usa").style = "visibility:hidden;";
-          const button = document.querySelector('esp-web-install-button');
-          button.manifest = `./intl_manifest_pager.json`;
+
+          document.querySelectorAll('input[name="type"]').forEach(radio =>
+          radio.addEventListener("change", () => {
+            const button = document.querySelector('esp-web-install-button');
+            button.manifest = `./intl_manifest_${radio.value}.json`;
+            button.classList.remove('invisible');
+            document.getElementById("device_title").style = "visibility:visible; font-weight: bold;";
+          }
+          ));
         }
 
       }
