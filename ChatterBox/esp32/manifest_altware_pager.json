@@ -1,12 +1,12 @@
 {
-    "name": "Lilygo Pager Firmware (USA)",
+    "name": "Altware Pager Firmware (USA)",
     "version": "3.1.4",
     "new_install_prompt_erase":true,
     "builds": [
         {
             "chipFamily": "ESP32-S3",
             "parts": [
-              { "path": "chatter_pager.bin", "offset": 0 }
+              { "path": "chatter_altware_pager.bin", "offset": 0 }
             ]
           }
     ]
