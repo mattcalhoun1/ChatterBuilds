@@ -106,13 +106,13 @@
           <!--<td width="140px">-->
           <select name="country" id="country" onchange="configVersion()">
             <option name="usa" value="usa" selected="selected">Inside USA</option>
-            <!--<option name="international" value="international">Outside USA</option>-->
+            <option name="international" value="international">Outside USA</option>
           </select>
         </td>
           <td width="600px" style="vertical-align: top;">
-              <i>The Blackout Comms Altware Link firmware is currently only available for use within the USA.</i>
+              <i>If you are in the USA, choose the USA version. Otherwise, choose the Non-USA version. Use the same slection for <b>all</b> of your devices!</i>
           </td>
-          <td width="200px" style="font-size:smaller; vertical-align: top; text-align: right;"><b>Link: 2.3.2</b> (08/05/2025)<br><b><a href="../esp32/tdeck_firmware.html">Comm</a>: 2.3.2</b> (08/04/2025)</td>
+          <td width="200px" style="font-size:smaller; vertical-align: top; text-align: right;"><b>Link: 3.1.5</b> (11/22/2025)<br><b><a href="../esp32/tdeck_firmware.html">Comm</a>: 3.1.5</b> (11/22/2025)</td>
         </tr>
       </table>
       </div>
@@ -161,7 +161,7 @@
           </tr>
           <tr>
             <td style="vertical-align: top;" width="33%">
-              <b>2. <a href="node/node_usa.zip"><img style="vertical-align: middle;" height="20" src="images/download.png"></a> <a href="node/node_usa.zip">Download</a> The Firmware</b><br>
+              <b>2. <a id="download1" href="node/node_usa.zip"><img style="vertical-align: middle;" height="20" src="images/download.png"></a> <a id="download2" href="node/node_usa.zip">Download</a> The Firmware</b><br>
                 <br>
                 <div style="font-size: smaller;">
                 Unzip its contents to somewhere on your PC. You will want the <i>CURRENT.UF2</i> file from it, which is the binary compiled firmware.
@@ -174,7 +174,7 @@
             <td style="background-color: #fff; vertical-align: top;">
                 <b>3. Copy Firmware To Your Altware Link</b><br>
                 <div>
-                  <div style="float:left; max-width: 400px;">
+                  <div style="float:left; max-width: 600px;">
                     <ul style="font-size: smaller;">
                         <li>Connect the Altware device to your PC via USB <i>data</i> cable (not charging cable)</li>
                         <li>Power the device on</li>
@@ -187,7 +187,7 @@
                     </ul>
                   </div>
                   <div style="float:right">
-                    <img src="images/reset_button.png" width="200">
+                    <img src="images/reset_button.png" width="150">
                   </div>
                 </div>
                 
@@ -487,6 +487,8 @@
         if (isUsa()) {
           document.getElementById("flag").src = "../esp32/images/usa.png";
           document.getElementById("flag2").src = "../esp32/images/usa.png";
+          document.getElementById("download1").href = "node/node_usa.zip";
+          document.getElementById("download2").href = "node/node_usa.zip";
           document.getElementById("binaries_non_usa").style = "visibility:hidden;";
           document.getElementById("binaries_usa").style = "visibility:visible;";
           document.querySelectorAll('input[name="type"]').forEach(radio =>
@@ -500,6 +502,8 @@
         else {
           document.getElementById("flag").src = "../esp32/images/non_usa.png";
           document.getElementById("flag2").src = "../esp32/images/non_usa.png";
+          document.getElementById("download1").href = "node/node_exp.zip";
+          document.getElementById("download2").href = "node/node_exp.zip";
           document.getElementById("binaries_non_usa").style = "visibility:visible;";
           document.getElementById("binaries_usa").style = "visibility:hidden;";
           document.querySelectorAll('input[name="type"]').forEach(radio =>
