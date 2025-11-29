@@ -1,0 +1,13 @@
+{
+    "name": "T-Beam 1W Link (INTL)",
+    "version": "3.1.5",
+    "new_install_prompt_erase":true,    
+    "builds": [
+        {
+            "chipFamily": "ESP32-S3",
+            "parts": [
+              { "path": "chatter_node_tbeam_1w_exp.bin", "offset": 0 }
+            ]
+          }
+    ]
+ }
