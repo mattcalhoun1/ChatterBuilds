@@ -131,9 +131,12 @@
               <td valign="top">
                   <center>
                     <div style="font-size:larger">Blackout Comms for Heltec v4 Expansion Kit</div>
-                    <img src="images/heltec_v4_ext.png" width="300px">
+                    <img src="images/heltec_v4_firmware_download.jpg" width="500px">
                     <br>
-                    <div style="font-size:smaller">This is <i>not</i> for Lilygo Pager! If you have that device, go to the <a href="pager_firmware_installer.html">Lilygo Pager Firmware Installer</a> page.</div>
+                    <div style="font-size:smaller">
+                      This is the firmware download page for installing Blackout Comms secure off-grid messaging and tracking to your <a href="https://heltec.org/project/wifi-lora-32-v4-expansion-housing/">Heltec v4 Expansion Kit</a>. 
+                      Other devices (not shown here) are also supported. For T-Deck and other devices, go to the main <a href="index.html">Blackout Comms Firmware Download</a> page.
+                    </div>
                   </center>
 
               </td>
@@ -143,14 +146,33 @@
                             <ol>
                             <li>Connect the Heltec to your PC using a high quality data cable.</li>
                             <li>Press and hold the <i>User</i> button, tap the heltec's <i>Reset</i> button, then release the <i>Reset</i> button. It's now ready for a firmware flash.</li>
+                            <li>Select Communicator or Node below.</li>
                             <li>Click the install button below and click through the steps.</li>
                             </ol>
 
                         </div>
                     </div>
+
+                  <div style="font-size: smaller;">
+                      <!--<h2>Flashing Tool</h2>-->
+                      <ul class="radios">
+                        <div style="background-color: #dedede;">
+                          <center><b>Choose Firmware</b></center>
+                        <li>
+                            <label><input type="radio" name="type" value="heltec_v4" onclick="showDevicePreview ('heltec_v4')" /> Heltec V4 Communicator </label>
+                            <div style="font-size: smaller; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Heltec v4 Exp with Touchscreen</div>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="type" value="node_heltec_v4" onclick="showDevicePreview ('node_heltec_v4')" /> Heltec V4 Link/Node </label>
+                            <div style="font-size: smaller; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Heltec v4 Exp with NO Touchscreen</div>
+                        </li>
+                      </div>
+                    </ul>
+                    </div>                    
                     <p class="button-row" align="center">
-                        <esp-web-install-button manifest="./manifest_heltec_v4.json"></esp-web-install-button>
+                        <esp-web-install-button class="invisible"></esp-web-install-button>
                     </p>
+                    <center><div id="device_preview"></div></center>
 
               </td>
           </tr>
@@ -184,7 +206,12 @@
 
 <script>
       function showDevicePreview (deviceName) {
-        document.getElementById("device_preview").innerHTML = "<img src=\"images/" + deviceName + "_sm.png\">";
+        if (deviceName == 'heltec_v4') {
+          document.getElementById("device_preview").innerHTML = "<img src=\"images/" + deviceName + "_sm.png\">";
+        }
+        else {
+          document.getElementById("device_preview").innerHTML = "<img src=\"images/node_heltec_v4.png\">";
+        }
       }
 
       function configVersion () {
@@ -194,19 +221,37 @@
           document.getElementById("binaries_non_usa").style = "visibility:hidden;";
           document.getElementById("binaries_usa").style = "visibility:visible;";
           document.getElementById("binaries_usa").style = "visibility:visible;";
-
-          const button = document.querySelector('esp-web-install-button');
-          button.manifest = `./manifest_heltec_v4.json`;
+          document.querySelectorAll('input[name="type"]').forEach(radio =>
+          radio.addEventListener("change", () => {
+            const button = document.querySelector('esp-web-install-button');
+            button.classList.remove('invisible');
+            if (radio.value == 'heltec_v4') {
+              button.manifest = `./manifest_heltec_v4.json`;
+            }
+            else {
+              button.manifest = `./manifest_node_heltec_v4.json`;
+            }
+          }
+          ));
         }
         else {
           document.getElementById("flag").src = "images/non_usa.png";
           document.getElementById("flag2").src = "images/non_usa.png";
           document.getElementById("binaries_non_usa").style = "visibility:visible;";
           document.getElementById("binaries_usa").style = "visibility:hidden;";
-          const button = document.querySelector('esp-web-install-button');
-          button.manifest = `./intl_manifest_heltec_v4.json`;
+          document.querySelectorAll('input[name="type"]').forEach(radio =>
+          radio.addEventListener("change", () => {
+            const button = document.querySelector('esp-web-install-button');
+            button.classList.remove('invisible');
+          if (radio.value == 'heltec_v4') {
+            button.manifest = `./intl_manifest_heltec_v4.json`;
+          }
+          else {
+            button.manifest = `./intl_manifest_node_heltec_v4.json`;
+          }
+          }
+          ));
         }
-
       }
     </script>
     <script>

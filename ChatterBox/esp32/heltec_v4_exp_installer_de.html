@@ -130,8 +130,14 @@
               <td valign="top">
                   <center>
                     <div style="font-size:larger">Blackout Comms für Heltec v4 Erweiterungsset</div>
-                    <img src="images/heltec_v4_ext.png" width="300px">
+                    <img src="images/heltec_v4_firmware_download_de.jpg" width="500px">
                     <br>
+                    <div style="font-size:smaller">
+                      Dies ist die Firmware-Downloadseite für die Installation von Blackout Comms, einer sicheren Messaging- und Tracking-Software 
+                      für den netzunabhängigen Betrieb, auf Ihrem <a href="https://heltec.org/project/wifi-lora-32-v4-expansion-housing/">Heltec v4 Erweiterungskit</a>.
+                      Auch andere Geräte (hier nicht abgebildet) werden unterstützt. Für T-Deck und andere Geräte besuchen Sie bitte die Hauptseite für 
+                      den <a href="index.html">Blackout Comms Firmware-Download</a>.
+                    </div>
                   </center>
 
               </td>
@@ -141,15 +147,33 @@
                             <ol>
                             <li>Das Heltec wird über ein hochwertiges Datenkabel mit dem PC verbunden.</li>
                             <li>Die Benutzertaste wird gedrückt gehalten, anschließend wird die Reset-Taste des Heltec betätigt und danach wieder losgelassen. Das Gerät ist damit für einen Firmware-Flash bereit.</li>
+                            <li>Wählen Sie unten Kommunikator oder Knoten aus.</li>
                             <li>Unten wird auf die Schaltfläche „Installieren“ geklickt; anschließend wird den Anweisungen gefolgt.</li>
                             </ol>
 
                         </div>
                     </div>
-                    <p class="button-row" align="center">
-                        <esp-web-install-button manifest="./manifest_heltec_v4.json"></esp-web-install-button>
-                    </p>
 
+                  <div style="font-size: smaller;">
+                      <!--<h2>Flashing Tool</h2>-->
+                      <ul class="radios">
+                        <div style="background-color: #dedede;">
+                          <center><b>Firmware auswählen</b></center>
+                        <li>
+                            <label><input type="radio" name="type" value="heltec_v4" onclick="showDevicePreview ('heltec_v4')" /> Heltec V4 Kommunikator </label>
+                            <div style="font-size: smaller; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Heltec v4 Exp mit Touchscreen</div>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="type" value="node_heltec_v4" onclick="showDevicePreview ('node_heltec_v4')" /> Heltec V4 Knoten </label>
+                            <div style="font-size: smaller; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Heltec v4 Exp ohne Touchscreen</div>
+                        </li>
+                      </div>
+                    </ul>
+                    </div>                    
+                    <p class="button-row" align="center">
+                        <esp-web-install-button class="invisible"></esp-web-install-button>
+                    </p>
+                    <center><div id="device_preview"></div></center>                                 
               </td>
           </tr>
           <tr>
@@ -178,7 +202,12 @@
 
 <script>
       function showDevicePreview (deviceName) {
-        document.getElementById("device_preview").innerHTML = "<img src=\"images/" + deviceName + "_sm.png\">";
+        if (deviceName == 'heltec_v4') {
+          document.getElementById("device_preview").innerHTML = "<img src=\"images/" + deviceName + "_sm.png\">";
+        }
+        else {
+          document.getElementById("device_preview").innerHTML = "<img src=\"images/node_heltec_v4.png\">";
+        }
       }
 
       function configVersion () {
@@ -188,25 +217,39 @@
           document.getElementById("binaries_non_usa").style = "visibility:hidden;";
           document.getElementById("binaries_usa").style = "visibility:visible;";
           document.getElementById("binaries_usa").style = "visibility:visible;";
-
-          const button = document.querySelector('esp-web-install-button');
-          button.manifest = `./manifest_heltec_v4.json`;
+          document.querySelectorAll('input[name="type"]').forEach(radio =>
+          radio.addEventListener("change", () => {
+            const button = document.querySelector('esp-web-install-button');
+            button.classList.remove('invisible');
+            if (radio.value == 'heltec_v4') {
+              button.manifest = `./manifest_heltec_v4.json`;
+            }
+            else {
+              button.manifest = `./manifest_node_heltec_v4.json`;
+            }
+          }
+          ));
         }
         else {
           document.getElementById("flag").src = "images/non_usa.png";
           document.getElementById("flag2").src = "images/non_usa.png";
           document.getElementById("binaries_non_usa").style = "visibility:visible;";
           document.getElementById("binaries_usa").style = "visibility:hidden;";
-          const button = document.querySelector('esp-web-install-button');
-          button.manifest = `./intl_manifest_heltec_v4.json`;
+          document.querySelectorAll('input[name="type"]').forEach(radio =>
+          radio.addEventListener("change", () => {
+            const button = document.querySelector('esp-web-install-button');
+            button.classList.remove('invisible');
+          if (radio.value == 'heltec_v4') {
+            button.manifest = `./intl_manifest_heltec_v4.json`;
+          }
+          else {
+            button.manifest = `./intl_manifest_node_heltec_v4.json`;
+          }
+          }
+          ));
         }
+      }
 
-      }
-    </script>
-    <script>
-      function isUsa () {
-        return document.getElementById("country").value == "usa";
-      }
     </script>
     <script>
       // config the version to default on load
