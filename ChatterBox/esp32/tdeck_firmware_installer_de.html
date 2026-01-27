@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <title>Blackout Comms T-Deck Firmware</title>
@@ -107,9 +107,16 @@
         </td>
           <td style="vertical-align: top; font-size: smaller;">
               <i>Befinden Sie sich in den USA, ist die USA-Version auszuwählen. In allen anderen Fällen ist die Nicht-USA-Version auszuwählen. Für <b>alle</b> Geräte ist dieselbe Auswahl zu verwenden.</i>
-              <br>
-              <a href="tdeck_firmware_installer.html">English</a>
-
+          </td>
+          <td width="200px" style="font-size: smaller;">
+            Language:
+              <select id="lang-redirect" onchange="redirectToLang()">
+                  <option value="tdeck_firmware_installer.html">English</option>
+                  <option value="tdeck_firmware_installer_es.html">Español</option>
+                  <option selected="true" value="tdeck_firmware_installer_de.html">Deutsch</option>
+                  <option value="tdeck_firmware_installer_fr.html">French</option>
+                  <option value="tdeck_firmware_installer_po.html">Polish</option>
+              </select>              
           </td>
       </table>
       </div>
@@ -300,5 +307,16 @@
       gtag('config', 'G-56KJN5SG2S');
     </script>
 
+    <script>
+    function redirectToLang() {
+        var selectElement = document.getElementById("lang-redirect");
+        var selectedUrl = selectElement.value;
+
+        // Check if a valid option (with a non-empty value) was selected
+        if (selectedUrl) {
+            window.location.href = selectedUrl;
+        }
+    }      
+    </script>
   </body>
 </html>

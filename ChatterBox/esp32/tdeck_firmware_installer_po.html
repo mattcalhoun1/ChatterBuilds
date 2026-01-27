@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
   <head>
     <meta charset="utf-8" />
-    <title>Blackout Comms T-Deck Firmware</title>
+    <title>Oprogramowanie sprzętowe Blackout Comms T-Deck</title>
     <meta
       name="description"
-      content="Download Blackout Comms secure mesh firmware for your Lilygo T-Deck. Encrypted and signed messages and location over LoRa."
+      content="Pobierz bezpieczne oprogramowanie układowe Blackout Comms dla swojego urządzenia Lilygo T-Deck. Szyfrowane i podpisane wiadomości oraz dane lokalizacyjne przesyłane za pośrednictwem technologii LoRa."
     />
     <meta
       name="keywords"
@@ -92,34 +92,34 @@
     <div class="content" style="min-width: 800px;">
       <div style="float:left"><a href="https://chatters.io"><img src="images/logo_circular.png" height="75px" width="75px"></a></div>
       <div style="float:right"><a href="https://chatters.io"><img id="flag" src="images/usa.png" height="75px" width="75px"></a></div>
-      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">Blackout Comms T-Deck Firmware</h1></div>
+      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">Oprogramowanie sprzętowe Blackout Comms T-Deck</h1></div>
 
       <div>
       <table border="0" style="background-color:#E5E5E5; " >
         <tr border="0">
           <td style="vertical-align: top; text-align: center; font-size: smaller;" width="200px">
-            <b>Where are you located?</b><br>
+            <b>Gdzie się znajdujesz?</b><br>
           <!--<td width="140px">-->
           <select name="country" id="country" onchange="configVersion()">
-            <option name="usa" value="usa" selected="selected">Inside USA</option>
-            <option name="international" value="international">Outside USA</option>
+            <option name="usa" value="usa" selected="selected">Wewnątrz USA</option>
+            <option name="international" value="international">Poza USA</option>
           </select>
         </td>
           <td style="vertical-align: top; font-size: smaller;">
-              <i>If you are in the USA, choose the USA version. Otherwise, choose the Non-USA version. Use the same selection for <b>all</b> of your devices!</i>
+              <i>Jeśli znajdujesz się w USA, wybierz wersję USA. W przeciwnym razie wybierz wersję spoza USA. Użyj tego samego wyboru dla <b>wszystkich</b> swoich urządzeń!</i>
           </td>
           <td width="200px" style="font-size: smaller;">
             Language:
               <select id="lang-redirect" onchange="redirectToLang()">
-                  <option selected="true" value="tdeck_firmware_installer.html">English</option>
+                  <option value="tdeck_firmware_installer.html">English</option>
                   <option value="tdeck_firmware_installer_es.html">Español</option>
                   <option value="tdeck_firmware_installer_de.html">Deutsch</option>
                   <option value="tdeck_firmware_installer_fr.html">French</option>
-                  <option value="tdeck_firmware_installer_po.html">Polish</option>
+                  <option selected="true" value="tdeck_firmware_installer_po.html">Polish</option>
               </select>              
           </td>
 
-        </table>
+      </table>
       </div>
     <!--</div>-->
 
@@ -128,7 +128,7 @@
 
         <div class="content" style="min-width: 800px;">
           <p style="font-size: smaller;">
-            <b>Note:</b> The Blackout Comms secure off-grid messaging and location firmware is a <a href="https://chatters.io/licensing">licensed product</a>. Certain features may require purchase of a license.
+            <b>Uwaga:</b> Oprogramowanie Blackout Comms do bezpiecznego przesyłania wiadomości i lokalizacji poza siecią jest <a href="https://chatters.io/licensing">produktem licencjonowanym</a>. Niektóre funkcje mogą wymagać zakupu licencji.
           </p>
 
       <table border="1" style="background-color: #ddd">
@@ -141,16 +141,16 @@
               <td style="min-width:250px; vertical-align: top;">
                   <div style="font-size: smaller;">
                       <!--<h2>Flashing Tool</h2>-->
-                          <center><b>T-Deck Type</b></center>
+                          <center><b>Typ T-Deck</b></center>
                             <div style="font-size: smaller;">
-                                If your device is not listed, choose the <i>All Others</i> option, although we can't guarantee compatibility.
+                                Jeśli Twojego urządzenia nie ma na liście, wybierz opcję Wszystkie inne, choć nie możemy zagwarantować kompatybilności.
                             </div>
 
                             <table><tr><td>
                       <ul class="radios">
                         <div style="background-color: #dedede;">
                           <li>
-                            <label><input type="radio" name="type" value="tdeck_custom" onclick="showDevicePreview ('tdeck_thermal', 'Custom')" /> Custom (& Thermal) </label>
+                            <label><input type="radio" name="type" value="tdeck_custom" onclick="showDevicePreview ('tdeck_thermal', 'Custom')" /> Niestandardowe (i termiczne) </label>
                         </li>
                         <li>
                           <label><input type="radio" name="type" value="tdeck_rokland" onclick="showDevicePreview ('tdeck_rokland', 'Rokland')"/> Rokland Complete</label>
@@ -159,7 +159,7 @@
                             <label><input type="radio" name="type" value="tdeck_plus" onclick="showDevicePreview ('tdeck_plus', 'T-Deck+')" /> Lilygo TDeck+ </label>
                         </li>
                         <li>
-                            <label><input type="radio" name="type" value="tdeck_m100" onclick="showDevicePreview ('tdeck_m100', 'Others')" /> All Others </label>
+                            <label><input type="radio" name="type" value="tdeck_m100" onclick="showDevicePreview ('tdeck_m100', 'Others')" /> Wszystkie pozostałe </label>
                         </li>
                         <!--<li style="color: #666666">
                             <label><input type="radio" name="type" value="tdeck_dfr_rtc" /> DFR Mesh Firmware</label>
@@ -185,12 +185,12 @@
                     <div style="font-size: smaller;">
                         <div style="background-color: #ffffff;">
                             <ol>
-                            <li><b>Recommended</b> - SD cards are <b>highly</b> recommended but not required. Only <a href="https://www.chatters.io/compatible-sd-cards">compatible SD cards</a> can be used.</li>
-                            <li>Connect the T-Deck to your PC using a high quality data cable.</li>
-                            <li>Switch the T-Deck power on.</li>
-                            <li>On the T-Deck, press and hold the trackball button (left/first button), tap the reset button (on the side), then release the trackball button.</li>
-                            <li>Click the install button below and click through the steps.</li>
-                            <li>In some cases, you may need to continue holding the trackball button while the install happens.</li>
+                            <li><b>Zalecane</b> - karty SD są <b>wysoce</b> zalecane, ale nie wymagane. Można używać wyłącznie <a href="https://www.chatters.io/compatible-sd-cards">kompatybilnych kart SD</a>.</li>
+                            <li>Podłącz T-Deck do komputera za pomocą wysokiej jakości kabla do transmisji danych.</li>
+                            <li>Włącz zasilanie urządzenia T-Deck.</li>
+                            <li>Na urządzeniu T-Deck naciśnij i przytrzymaj przycisk trackballa (lewy/pierwszy przycisk), dotknij przycisku resetowania (z boku), a następnie zwolnij przycisk trackballa.</li>
+                            <li>Kliknij przycisk instalacji poniżej i postępuj zgodnie z instrukcjami.</li>
+                            <li>W niektórych przypadkach może być konieczne przytrzymanie przycisku trackballa podczas instalacji.</li>
                             </ol>
                             <br>
                         </div>
@@ -203,15 +203,13 @@
                     <div style="float:right"><a href="https://chatters.io"><img id="flag2" src="images/usa.png" height="75px" width="75px"></a></div>
                     <p style="font-size: x-small;">
                         <b>
-                        By downloading this firmware, you are agreeing to <a href="https://www.chatters.io/firmware-terms">the terms</a>,
-                        agreeing to abide by all laws and regulations while using this firmware, and agreeing to hold harmless the developer,
-                        Altware Development LLC.</b>  Altware Development LLC is not responsible for any data loss or other issues that might arise with with <i>your
-                        device</i> before, during, or after flashing. Unless you agree to those terms, don't use this tool or download our firmware.
+                        Pobierając to oprogramowanie sprzętowe, zgadzasz się na <a href="https://www.chatters.io/firmware-terms">warunki</a>, zgadzasz się przestrzegać wszystkich praw i przepisów podczas korzystania z tego oprogramowania sprzętowego i zgadzasz się nie szkodzić deweloperowi, Altware Development LLC.</b>
+                        Altware Development LLC nie ponosi odpowiedzialności za utratę danych lub inne problemy, które mogą pojawić się na twoim urządzeniu przed, w trakcie lub po flashowaniu. Jeśli nie zgadzasz się na te warunki, nie używaj tego narzędzia ani nie pobieraj naszego oprogramowania układowego.
                     </p>
 
                     <div id="binaries_usa">
-                        <b>Alternative Flash Instructions:</b> If you know what you are doing and want to install mesh tdeck firmware
-                        using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binaries here (USA): 
+                        <b>Alternatywne instrukcje flash:</b> Jeśli wiesz, co robisz i chcesz zainstalować oprogramowanie mesh tdeck
+                        za pomocą <a href="https://www.espressif.com/en/support/download/other-tools">innego narzędzia instalacyjnego</a>, możesz pobrać gotowe pliki binarne tutaj (USA):
                         <br><br>
                         <a href="chatter_tdeck_plus.bin">T-Deck+ Mesh Firmware</a>
                         <a href="chatter_tdeck_custom.bin">Custom Mesh Firmware</a>
@@ -221,8 +219,8 @@
                         <a href="chatter_tdeck_dfr_rtc.bin">DFR Mesh Firmware (Deprecated)</a>
                     </div>
                     <div id="binaries_non_usa" style="visibility: hidden;">
-                        <b>Alternative Flash Instructions:</b> If you know what you are doing and want to install mesh tdeck firmware
-                        using a <a href="https://www.espressif.com/en/support/download/other-tools">different install tool</a>, you may download the pre-built binaries here (Non-USA): 
+                        <b>Alternatywne instrukcje flash:</b> Jeśli wiesz, co robisz i chcesz zainstalować oprogramowanie mesh tdeck
+                        za pomocą <a href="https://www.espressif.com/en/support/download/other-tools">innego narzędzia instalacyjnego</a>, możesz pobrać gotowe pliki binarne tutaj (Non-USA):
                         <br><br>
                         <a href="chatter_tdeck_plus_exp.bin">T-Deck+ Mesh Firmware</a>
                         <a href="chatter_tdeck_custom_exp.bin">Custom Mesh Firmware</a>

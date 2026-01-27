@@ -91,7 +91,7 @@
     <div class="content" style="min-width: 800px;">
       <div style="float:left"><a href="https://chatters.io"><img src="images/logo_circular.png" height="75px" width="75px"></a></div>
       <div style="float:right"><a href="https://chatters.io"><img id="flag" src="images/usa.png" height="75px" width="75px"></a></div>
-      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">Heltec v4 Expansion Kit Firmware</h1></div>
+      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">Blackout Comms Para Heltec v4 Expansion Kit</h1></div>
 
       <div>
       <table border="0" style="background-color:#E5E5E5; " >
@@ -106,10 +106,18 @@
         </td>
           <td style="vertical-align: top; font-size: smaller;">
               <i>Si te encuentras en Estados Unidos, elige la versión para Estados Unidos. De lo contrario, elige la versión para otros países. ¡Utiliza la misma opción para <b>todos</b> tus dispositivos!</i>
-              <br>
-              <a href="heltec_v4_exp_installer.html">In English</a>
           </td>
-      </table>
+          <td width="200px" style="font-size: smaller;">
+            Language:
+              <select id="lang-redirect" onchange="redirectToLang()">
+                  <option value="heltec_v4_exp_installer.html">English</option>
+                  <option selected="true" value="heltec_v4_exp_installer_es.html">Español</option>
+                  <option value="heltec_v4_exp_installer_de.html">Deutsch</option>
+                  <option value="heltec_v4_exp_installer_fr.html">French</option>
+                  <option value="heltec_v4_exp_installer_po.html">Polish</option>
+              </select>              
+          </td>
+        </table>
       </div>
     <!--</div>-->
 
@@ -289,5 +297,16 @@
       gtag('config', 'G-56KJN5SG2S');
     </script>
 
+    <script>
+    function redirectToLang() {
+        var selectElement = document.getElementById("lang-redirect");
+        var selectedUrl = selectElement.value;
+
+        // Check if a valid option (with a non-empty value) was selected
+        if (selectedUrl) {
+            window.location.href = selectedUrl;
+        }
+    }      
+    </script>
   </body>
 </html>
