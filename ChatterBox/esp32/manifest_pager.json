@@ -1,6 +1,6 @@
 {
     "name": "Lilygo Pager Firmware (USA)",
-    "version": "3.3.3",
+    "version": "3.3.4",
     "new_install_prompt_erase":true,
     "builds": [
         {
