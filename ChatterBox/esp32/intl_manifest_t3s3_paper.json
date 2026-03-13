@@ -1,6 +1,6 @@
 {
     "name": "T3S3 E-Paper Link (INTL)",
-    "version": "2.3.8",
+    "version": "3.3.4",
     "new_install_prompt_erase":true,    
     "builds": [
         {
