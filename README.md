@@ -21,8 +21,6 @@ All messages, whether direct (to a specific device) or broadcast are encrypted d
 
 ![Mesh Communicators](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/images/blackout_comms_github_devices.png?raw=true)
 
-![Blackout Comms - Mesh Links](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/images/blackout_comms_github_links.png?raw=true)
-
 ### Clusters
 A Chatters Cluster is a group of associated devices, each with a unique address, with access given by a "root" device.
 The root device is the one that initialized the cluster. Only a root can onboard new identifiable devices.
@@ -75,21 +73,16 @@ Chatters automatically uses best path, but each device along the way decides whi
 will be used, since it is faster and more likely to succeed than any wireless hop.
 
 ## Chatters Devices
-All devices within Chatters support the distributed mesh cache, path planning, and other important features.
+All devices within Chatters support the distributed mesh cache, path planning, and other important features. Learn to [build your own off-grid encrypted communication devices](https://chatterbuilds.pages.dev/ChatterBox/esp32/).
 
 ### Communicators
-Blackout Comms [Mesh Communicators](https://www.offgridcomms.club/help/t-deck-assembly/) are devices you can carry around and use to share location, send/receive messages, and interact with other devices/sensors in a cluster or channel.
-They have a touchscreen and keypad for easy use.
+Blackout Comms [Mesh Communicators](https://chatterbuilds.pages.dev/ChatterBox/esp32/tdeck_firmware) are devices you can carry around and use to share location, send/receive messages, and interact with other devices/sensors in a cluster or channel.
+They usually have a touchscreen and keypad for easy use.
 
-We also have [T-Deck Plus](https://www.offgridcomms.club/help/setting-up-t-deck-plus/) firmware that doesn't require any soldering/assembly.
+### Mesh Links (Nodes)
+Blackout Comms [Mesh Links](https://chatterbuilds.pages.dev/ChatterBox/esp32/mesh_node_firmware) are devices that work in the background to extend the range and resilience of your cluster or channel. You may want to use one as a base station and connect a good LoRa antenna or LoRa amplifier to it for best results.
 
-### Nodes
-Blackout Comms Mesh Nodes are devices that work in the background to extend the range and resilience of your cluster or channel.
-You may want to use one as a base station and connect a good LoRa antenna or LoRa amplifier to it for best results.
-Currently, you can follow our instructions to build yourself...
-* [Mesh GPS Node](https://www.offgridcomms.club/help/t-beam-assembly/)
-* [Mesh E-Paper Node](https://www.offgridcomms.club/help/e-paper-mini-node/)
-* [Mesh Proximity Sensor](https://www.offgridcomms.club/help/proximity-sensing-node/)
+![Blackout Comms - Mesh Links](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/images/blackout_comms_github_links.png?raw=true)
 
 ### Hardware Compatibility
 In order to fully support the Blackout Comms protocol, devices that are going to run it must have a few key components that allow the meshing and caching to work properly, and allow the cluster to remain secure and private. 
