@@ -3,7 +3,7 @@ This repo contains prebuilt binary firmware for Blackout Comms devices. See [htt
 # What is Blackout Comms?
 Blackout Comms is a protocol and firmware designed to allow private text-based communication, location sharing, and remote circuit control that is independent of any grid, internet, or cell service. Transmissions in Blackout Comms are encrypted and digitally signed.
 
-[<img src="https://img.youtube.com/vi/9tA2zRDCW6Q/maxresdefault.jpg" width="30%">](https://youtu.be/9tA2zRDCW6Q) [<img src="https://img.youtube.com/vi/ilig2YCvYEw/maxresdefault.jpg" width="30%">](https://youtu.be/ilig2YCvYEw)
+[<img src="https://img.youtube.com/vi/PC1gccxTL68/maxresdefault.jpg" width="30%">](https://youtu.be/PC1gccxTL68) [<img src="https://img.youtube.com/vi/JMSKM4LN3Uc/maxresdefault.jpg" width="30%">](https://youtu.be/JMSKM4LN3Uc)
 
 Although you can download the firmware binaries from this repo, you
 will find it much easier to install from one of our download sites:
@@ -112,6 +112,6 @@ In order to fully support the Blackout Comms protocol, devices that are going to
 | 2025-04-23 | Amp Control | Add ability to power amps on/off on demand for nodes |
 | 2025-05-01 | UI Improvements | Critical device tagging, GPS improvements, more |
 | 2025-05-04 | Fix battery level indicator on tdeck |
-| 2025-05-05 | Make SD cards portable between T-Decks, fix flash storage issue |
-| 2025-08-?? | ChatterBox is now Blackout Comms
-| 2026-03-?? | Capability to use MeshCore repeaters & many more changes |
+| 2025-05-05 | Storage Portability | Make SD cards portable between T-Decks, fix flash storage issue |
+| 2025-08-?? | Name Change| | ChatterBox is now Blackout Comms
+| 2026-03-?? | Protocol, Heltec, More | Capability to use MeshCore repeaters, support for Heltec v4, more |
