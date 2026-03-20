@@ -19,9 +19,9 @@ These keys allow for secure group communication and unpredictable (to outsiders)
 ### Direct Messages / Broadcasts
 All messages, whether direct (to a specific device) or broadcast are encrypted during transmission and at rest.
 
-![Mesh Communicators](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/blackout_comms_github_devices.png?raw=true)
+![Mesh Communicators](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/images/blackout_comms_github_devices.png?raw=true)
 
-![Blackout Comms - Mesh Links](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/blackout_comms_github_links.png?raw=true)
+![Blackout Comms - Mesh Links](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/images/blackout_comms_github_links.png?raw=true)
 
 ### Clusters
 A Chatters Cluster is a group of associated devices, each with a unique address, with access given by a "root" device.
@@ -35,8 +35,7 @@ though they can assist with delivery.
 
 
 ### Channels
-Channels is a newer feature of Chatters, and allows for encrypted/signed broadcasts and unpredictable synchronized frequency
-hopping without the necessity of a cluster. There is no "root" device in a channel. Instead, a channel ID and set of passwords
+Channels allow encrypted/signed broadcasts and unpredictable synchronized frequency hopping without the necessity of a cluster. There is no "root" device in a channel. Instead, a channel ID and set of passwords
 are shared however people want, and those allow devices to have secure communication. Within a channel, there is only
 symmetric encryption and only broadcasts (no DM), so everyone in the channel within mesh range can see the message.
 
@@ -57,6 +56,13 @@ Within a channel, location can optionally be shared with each broadcast message.
 Chatters uses a couple of advanced mesh algorithms and techniques, allowing it to route messages through paths that are shortest and most
 likely to succeed. Each Chatters device maintains a live ever-changing mesh graph, which is the device's view of how other devices are 
 connected. This graph is constructed and maintained by monitoring traffic, pings, and other techniques.
+
+![Mesh Protocol Mixing](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/images/protocol_modes.png?raw=true)
+
+As of March 2026, Blackout Comms allows use of MeshCore repeaters, as well as
+a [mesh network mixed mode](https://youtu.be/Q1fMCrBZGD0) that automatically hops between Blackout Comms native
+protocol and MeshCore's fixed-frequency mode, to allow both anti-jamming and
+increased range that may be offered by nearby MeshCore repeaters.
 
 Chatters uses a distributed mesh cache, where each device in the cluster is responsible for holding encrypted packets,
 as requested, for delivery throughout the cluster. Typically, these packets are asymmetrically encrypted, so even the
