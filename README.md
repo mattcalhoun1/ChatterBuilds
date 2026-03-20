@@ -1,7 +1,7 @@
-This repo contains prebuilt binary firmware for devices that support the Chatters protocol. See [http://chatters.io](https://www.chatters.io/).
+This repo contains prebuilt binary firmware for Blackout Comms devices. See [http://chatters.io](https://www.chatters.io/).
 
-# What is Blackout Comms and Chatters?
-Note: Not all documentation has been updated yet, but "ChatterBox" has been renamed to Blackout Comms, but still uses the Chatters protocol.
+# What is Blackout Comms?
+Blackout Comms is a protocol and firmware designed to allow private text-based communication, location sharing, and remote circuit control that is independent of any grid, internet, or cell service. Transmissions in Blackout Comms are encrypted and digitally signed.
 
 [<img src="https://img.youtube.com/vi/9tA2zRDCW6Q/maxresdefault.jpg" width="30%">](https://youtu.be/9tA2zRDCW6Q) [<img src="https://img.youtube.com/vi/ilig2YCvYEw/maxresdefault.jpg" width="30%">](https://youtu.be/ilig2YCvYEw)
 
