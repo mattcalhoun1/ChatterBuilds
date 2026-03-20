@@ -19,9 +19,9 @@ These keys allow for secure group communication and unpredictable (to outsiders)
 ### Direct Messages / Broadcasts
 All messages, whether direct (to a specific device) or broadcast are encrypted during transmission and at rest.
 
-![Mesh Communicators](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/images/blackout_comms_github_devices.png?raw=true)
+![Mesh Communicators](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/images/blackout_comms_github_devices.png?raw=true)
 
-![Blackout Comms - Mesh Links](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/images/blackout_comms_github_links.png?raw=true)
+![Blackout Comms - Mesh Links](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/images/blackout_comms_github_links.png?raw=true)
 
 ### Clusters
 A Chatters Cluster is a group of associated devices, each with a unique address, with access given by a "root" device.
@@ -57,7 +57,7 @@ Chatters uses a couple of advanced mesh algorithms and techniques, allowing it t
 likely to succeed. Each Chatters device maintains a live ever-changing mesh graph, which is the device's view of how other devices are 
 connected. This graph is constructed and maintained by monitoring traffic, pings, and other techniques.
 
-![Mesh Protocol Mixing](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/images/protocol_modes.png?raw=true)
+![Mesh Protocol Mixing](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/images/protocol_modes.png?raw=true)
 
 As of March 2026, Blackout Comms allows use of MeshCore repeaters, as well as
 a [mesh network mixed mode](https://youtu.be/Q1fMCrBZGD0) that automatically hops between Blackout Comms native
