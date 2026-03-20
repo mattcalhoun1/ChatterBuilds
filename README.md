@@ -19,9 +19,9 @@ These keys allow for secure group communication and unpredictable (to outsiders)
 ### Direct Messages / Broadcasts
 All messages, whether direct (to a specific device) or broadcast are encrypted during transmission and at rest.
 
-![home screen - tdeck](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/tdeck_plus_external.png?raw=true)
+![Mesh Communicators](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/blackout_comms_github_devices.png?raw=true)
 
-![home screen - pager](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/pager_transparent.png?raw=true)
+![Blackout Comms - Mesh Links](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/blackout_comms_github_links.png?raw=true)
 
 ### Clusters
 A Chatters Cluster is a group of associated devices, each with a unique address, with access given by a "root" device.
