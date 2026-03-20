@@ -19,13 +19,15 @@ These keys allow for secure group communication and unpredictable (to outsiders)
 ### Direct Messages / Broadcasts
 All messages, whether direct (to a specific device) or broadcast are encrypted during transmission and at rest.
 
-![home screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/screen_home.png?raw=true)
+![home screen - tdeck](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/tdeck_plus_external.png?raw=true)
+
+![home screen - pager](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/pager_transparent.png?raw=true)
 
 ### Clusters
 A Chatters Cluster is a group of associated devices, each with a unique address, with access given by a "root" device.
 The root device is the one that initialized the cluster. Only a root can onboard new identifiable devices.
 
-![neighbors screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/screen_neighbors.png?raw=true)
+![neighbors screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/neighbors_screen.png?raw=true)
 
 Within a cluter, each device has its own asymmetric elliptic curve keypair. This allows direct messages 
 to be end-to-end asymmetrically encrypted. This means trusted on-cluster devices assisting in mesh delivery are not able to decrypt the payloads, even
@@ -45,9 +47,9 @@ For broadcasts (such as within a Channel) there is no confirmation that a specif
 receive confirmation that another device has picked up and accepted the transmission, so it will continue to travel until expiry.
 
 ### Location
-![location screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/screen_location.png?raw=true)
+![location screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/location_screen.png?raw=true)
 
-Unless disabled, all on-cluster ChatterBox devices are sharing GPS data of themselves and others regularly for all GPS-equipped nodes and communicators.
+Unless disabled, all on-cluster Blackout Comms devices are sharing GPS data of themselves and others regularly for all GPS-equipped nodes and communicators.
 Within a channel, location can optionally be shared with each broadcast message.
 
 
@@ -61,7 +63,7 @@ as requested, for delivery throughout the cluster. Typically, these packets are 
 devices holding mesh packets in their cache are not able to decrypt the packet payloads.
 
 ### Connectivity
-Within a Chatters cluster, devices can be connected to other cluster devices using any combination of the following: LoRa, UDP, Wired via Serial, CAN (wired). Currently, only the LoRa option is active in the UI of ChatterBox.
+Within a Chatters cluster, devices can be connected to other cluster devices using any combination of the following: LoRa, UDP, Wired via Serial, CAN (wired). Currently, only the LoRa option is active in the UI of Blackout Comms.
 
 Chatters automatically uses best path, but each device along the way decides which medium will be used for the next hop. For instance, if the cluster is generally LoRa based, but two devices are connected via CAN, it is likely that CAN connection
 will be used, since it is faster and more likely to succeed than any wireless hop.
@@ -70,13 +72,13 @@ will be used, since it is faster and more likely to succeed than any wireless ho
 All devices within Chatters support the distributed mesh cache, path planning, and other important features.
 
 ### Communicators
-ChatterBox [Mesh Communicators](https://www.offgridcomms.club/help/t-deck-assembly/) are devices you can carry around and use to share location, send/receive messages, and interact with other devices/sensors in a cluster or channel.
+Blackout Comms [Mesh Communicators](https://www.offgridcomms.club/help/t-deck-assembly/) are devices you can carry around and use to share location, send/receive messages, and interact with other devices/sensors in a cluster or channel.
 They have a touchscreen and keypad for easy use.
 
 We also have [T-Deck Plus](https://www.offgridcomms.club/help/setting-up-t-deck-plus/) firmware that doesn't require any soldering/assembly.
 
 ### Nodes
-ChatterBox Mesh Nodes are devices that work in the background to extend the range and resilience of your cluster or channel.
+Blackout Comms Mesh Nodes are devices that work in the background to extend the range and resilience of your cluster or channel.
 You may want to use one as a base station and connect a good LoRa antenna or LoRa amplifier to it for best results.
 Currently, you can follow our instructions to build yourself...
 * [Mesh GPS Node](https://www.offgridcomms.club/help/t-beam-assembly/)
@@ -84,7 +86,7 @@ Currently, you can follow our instructions to build yourself...
 * [Mesh Proximity Sensor](https://www.offgridcomms.club/help/proximity-sensing-node/)
 
 ### Hardware Compatibility
-In order to fully support the ChatterBox protocol, devices that are going to run it must have a few key components that allow the meshing and caching to work properly, and allow the cluster to remain secure and private. 
+In order to fully support the Blackout Comms protocol, devices that are going to run it must have a few key components that allow the meshing and caching to work properly, and allow the cluster to remain secure and private. 
 * GPS and/or a realtime clock to guarantee accurate time. Both is best.
 * Storage for frequently-updated encrypted data. FRAM and SD cards are supported, SPIFFS flash is experimental.
 * A decent amount of memory. If FRAM is available, 192 KB of memory is sufficient. If SD is utilized, closer to 1 MB is required.
@@ -112,3 +114,4 @@ In order to fully support the ChatterBox protocol, devices that are going to run
 | 2025-05-04 | Fix battery level indicator on tdeck |
 | 2025-05-05 | Make SD cards portable between T-Decks, fix flash storage issue |
 | 2025-08-?? | ChatterBox is now Blackout Comms
+| 2026-03-?? | Capability to use MeshCore repeaters & many more changes |
