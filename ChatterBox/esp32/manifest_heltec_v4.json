@@ -1,6 +1,6 @@
 {
     "name": "Heltec v4 Communicator (USA)",
-    "version": "3.3.7",
+    "version": "3.3.8",
     "new_install_prompt_erase":true,
     "builds": [
         {
