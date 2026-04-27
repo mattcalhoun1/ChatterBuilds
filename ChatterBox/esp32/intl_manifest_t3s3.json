@@ -1,6 +1,6 @@
 {
     "name": "T3S3 OLED Link (INTL)",
-    "version": "3.3.6",
+    "version": "3.3.9",
     "new_install_prompt_erase":true,    
     "builds": [
         {

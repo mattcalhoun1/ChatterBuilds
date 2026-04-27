@@ -1,6 +1,6 @@
 {
     "name": "T-Beam 1W Link (USA)",
-    "version": "3.3.6",
+    "version": "3.3.9",
     "new_install_prompt_erase":true,    
     "builds": [
         {
