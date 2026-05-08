@@ -27,10 +27,11 @@ The root device is the one that initialized the cluster. Only a root can onboard
 
 ![neighbors screen](https://github.com/mattcalhoun1/ChatterBuilds/blob/main/ChatterBox/esp32/images/neighbors_screen.png?raw=true)
 
+You can toggle between direct / in-range neighbors, meaning within RF range, and mesh-range neighbors, meaning they're out of direct RF range, but likely (or have been before) within mesh range.
+
 Within a cluter, each device has its own asymmetric elliptic curve keypair. This allows direct messages 
 to be end-to-end asymmetrically encrypted. This means trusted on-cluster devices assisting in mesh delivery are not able to decrypt the payloads, even
 though they can assist with delivery.
-
 
 ### Channels
 Channels allow encrypted/signed broadcasts and unpredictable synchronized frequency hopping without the necessity of a cluster. There is no "root" device in a channel. Instead, a channel ID and set of passwords
@@ -114,3 +115,4 @@ In order to fully support the Blackout Comms protocol, devices that are going to
 | 2025-05-05 | Storage Portability | Make SD cards portable between T-Decks, fix flash storage issue |
 | 2025-08-?? | Name Change| | ChatterBox is now Blackout Comms
 | 2026-03-?? | Protocol, Heltec, More | Capability to use MeshCore repeaters, support for Heltec v4, more |
+| 2026-05-09 | Propagate Mesh Info | Show indirect neighbors, propagate temp, motion, relay status |
