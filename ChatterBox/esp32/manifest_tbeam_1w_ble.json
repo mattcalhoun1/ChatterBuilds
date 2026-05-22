@@ -1,13 +1,13 @@
 {
-    "name": "Blackout Comms Custom (INTL)",
-    "version": "3.5.4",
+    "name": "T-Beam 1W Link (USA)",
+    "version": "3.5.0",
     "new_install_prompt_erase":true,    
     "builds": [
         {
             "chipFamily": "ESP32-S3",
             "parts": [
-              { "path": "chatter_tdeck_custom_exp.bin", "offset": 0 }
+              { "path": "chatter_node_tbeam_1w_ble_usa.bin", "offset": 0 }
             ]
           }
     ]
-  }
+ }

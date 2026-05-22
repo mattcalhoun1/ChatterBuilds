@@ -1,13 +1,13 @@
 {
-    "name": "Blackout Comms M100 (INTL)",
-    "version": "3.5.4",
+    "name": "Heltec E290 Link (USA)",
+    "version": "3.5.0",
     "new_install_prompt_erase":true,
     "builds": [
         {
             "chipFamily": "ESP32-S3",
             "parts": [
-              { "path": "chatter_tdeck_m100_exp.bin", "offset": 0 }
+              { "path": "chatter_node_e290_ble_usa.bin", "offset": 0 }
             ]
           }
     ]
-  }
+ }
