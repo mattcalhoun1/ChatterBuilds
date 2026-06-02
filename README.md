@@ -168,7 +168,7 @@ This same RF topology data powers the connection line visualization in the Black
 
 **Blackout Comms Live** is the free Android companion app for Blackout Comms clusters.
 
-[![Get it on Google Play](https://img.shields.io/badge/Google_Play-Get_it_Free-3DDC84?style=flat&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.altware.blackoutcommslive)
+[![Get it on Google Play](https://img.shields.io/badge/Google_Play-Get_it_Free-3DDC84?style=flat&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.blackoutcomms.live)
 
 ### Connection
 
@@ -359,7 +359,7 @@ The pre-built binaries in this repository may be downloaded and flashed freely f
 | Resource | URL |
 |---|---|
 | Website & documentation | [chatters.io](https://chatters.io) |
-| Blackout Comms Live (Google Play) | [Google Play](https://play.google.com/store/apps/details?id=com.altware.blackoutcommslive) |
+| Blackout Comms Live (Google Play) | [Google Play](https://play.google.com/store/apps/details?id=com.blackoutcomms.live) |
 | Getting Started | [chatters.io/docs](https://www.chatters.io/build) |
 | DIY Hardware | [chatters.io/hardware](https://chatters.io/diy) |
 | Mesh Memory explained | [chatters.io/mesh-memory](https://chatters.io/mesh-memory) |
