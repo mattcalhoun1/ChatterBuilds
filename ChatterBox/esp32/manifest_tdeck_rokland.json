@@ -1,6 +1,6 @@
 {
-    "name": "Blackout Comms Rokland (USA)",
-    "version": "3.5.4",
+    "name": "T-Deck CYPHER-M8K (USA)",
+    "version": "3.5.6",
     "new_install_prompt_erase":true,
     "builds": [
         {
