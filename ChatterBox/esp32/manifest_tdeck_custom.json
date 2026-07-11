@@ -1,6 +1,6 @@
 {
     "name": "Blackout Comms Custom (USA)",
-    "version": "3.6.1",
+    "version": "3.6.3",
     "new_install_prompt_erase":true,
     "builds": [
         {
