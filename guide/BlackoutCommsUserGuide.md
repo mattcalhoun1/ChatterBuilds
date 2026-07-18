@@ -132,7 +132,9 @@ Blackout Comms automatically boots up to the home screen. If your device is alre
 
 ### Home Screen
 This is your default view on a comm. Any time, click the scroll wheel to return to this screen.
+
 ![Home Screen on a T-Deck Plus](images/tdeck_plus_home.jpg)
+
 - One-touch access to messages, neighbors, location, contacts, settings, or commands
 - A red star indicates you've received a message
 - Colored GPS icon means you've got a good location fix
@@ -141,7 +143,9 @@ This is your default view on a comm. Any time, click the scroll wheel to return 
 
 ### Viewing Neighbors
 This shows you who is currently within direct RF range. Toggle the switch at the bottom of the screen to see beyond-range (mesh range) devices.
+
 ![Home Screen on a T-Deck Plus](images/tdeck_plus_neighbors.jpg)
+
 - Icon for each neighbor shows the device type (see appendix for icons)
 - Strength signal, device name/nickname, and timestamp for last ping received are shown
 - Battery level is shown (if other device supports it)
@@ -151,15 +155,20 @@ This shows you who is currently within direct RF range. Toggle the switch at the
 
 ### Viewing Location
 Locations can be viewed directly on the device, or on Blackout Comms Live app, if you are connected via BLE. This guide shows on-device location information. Watch a [video demo](https://youtu.be/-HE9BgHpe80) showing how mapping works on T-Deck.
+
 ![Ways to Access Location](images/bc_firmware_gps_location_icons.jpg)
+
 - You can view location on device as a map (if you have a licensed device and have downloaded maps)
 - You can also touch the QR button to view a QR code, which contains scannable lat/lon coordinates for any device
 - Alongside the QR or map, you can see the coordinates, heading, speed, and timestamp of the location
+
 ![Viewing Map on T-Deck](images/tdeck_plus_location.jpg)
 
 ### Contacts
 The contacts screen shows all the known contacts in your cluster. If new devices are onboarded by your root device, they'll eventually show up in your contacts list automatically, due to zero touch trust (unless you lock your truststore).
+
 ![Viewing Map on T-Deck](images/tdeck_plus_contacts.jpg)
+
 - Scroll to see all contacts
 - Touch the icon next to their alias to set a nickname
 - Marking contacts as critical makes them appear on your default map, and allows you to filter quickly in other locations of the firmware
@@ -171,12 +180,16 @@ The contacts screen shows all the known contacts in your cluster. If new devices
 - The command/game button allows you to issue a remote command to the selected device. The selected device must have remote commands enabled.
 
 ### Viewing Messages
-Touch any message icon in the firmware to begin sending a message. If you choose 
+On the messages screen, scroll up and down by swiping. You can reply, delete, or filter to specific people.
+
 ![Viewing Mesages on T-Deck](images/tdeck_plus_messages.jpg)
+
 
 ### Sending Messages
 Touch any message icon in the firmware to begin sending a message. If you choose "All Devices", you'll be sending a secure broadcast. Otherwise, you'll be sending a direct message. Scroll down to the message types in the appendix to see the difference.
+
 ![Sending Mesages on Blackout Comms](images/sending_messages.png)
+
 - Expiry controls how long the message delivery should be attempted before failing. In a large, moving, or intermittently-connected mesh network, you may want to allow hours for the receiving device to power-on or come within range
 - When devices are within direct range, delivery usually happens and is confirmed within seconds
 - Force mesh skips immediate delivery attempt, and queues it for mesh delivery
@@ -195,6 +208,7 @@ Configuration of comms can be changed on the settings screen. For links, configu
 
 ### Device Settings
 These are settings specific to just your device (display settings, alerts, etc).
+
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | Firmware Version | Displays version of Blackout Comms you're running (read-only)
@@ -215,6 +229,7 @@ These are settings specific to just your device (display settings, alerts, etc).
 
 ### Cluster Settings
 These are settings related to the private cluster(s) your device is part of.
+
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | Enable Nicknames | On any comm, you can choose private "nicknames" for other devices. They're only visible on YOUR comm. Nicknames can be set on the contacts screen.
@@ -251,6 +266,7 @@ This group of settings is for controlling interaction between this device and Me
 
 ### Smart Mesh Settings
 These settings control how your device interacts with your Blackout Comms cluster. 
+
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | Stealth Mode | To avoid detection (or just reduce RF footprint) you may want to experiment with [stealth modes](https://www.chatters.io/stealth-modes). See the appendix for more info. Stealth Disabled is the default and allows full normal functionality. Stealth Low stops pings if no trusted devices are around. Medium disables pings, but still allows messaging, acknowledgements, and mesh forwarding. High basically makes the radio invisible, even to trusted devices, but allows you to receive pings and broadcasts (not DMs).
@@ -276,6 +292,7 @@ The default security settings are good for most cases. If you are very concerned
 
 ### Location Settings
 You can enable/disable various location-related features of your device, as well as how it does (or doesn't) display maps. Some mapping features require a pro license. See the [Blackout Comms Location](https://www.chatters.io/location) page for more information about mapping and location features.
+
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | GNSS Type | Which GNSS receiver (if any) is detected on the device
@@ -294,6 +311,7 @@ You can enable/disable various location-related features of your device, as well
 
 ### Storage Settings
 All potentially sensitive data is stored encrypted on your SD card or flash memory.
+
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | Clear Messages | Removes all messages from storage. This does not remove stored locations.
@@ -313,6 +331,7 @@ Blackout Comms supports [encrypted/open channel](https://www.chatters.io/blackou
 
 ### LoRa Settings
 LoRa is the default way Blackout Comms devices communicate, but there are other ways.
+
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | LoRa Enabled | At least one communication method must be enabled. If your device has Cloud, MQTT, or UDP enabled, you may disable LoRa.
@@ -321,6 +340,7 @@ LoRa is the default way Blackout Comms devices communicate, but there are other 
 If you want to use WiFi for downloading maps or using Cloud/MQTT, this is where you add WiFi connections. Only 2.4 GHz is supported, and the devices are quite picky about which routers can work.
 
 WiFi uses additional battery and can make your device sluggish when joining a network.
+
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | Add Network | Configure a new SSID / network
@@ -331,6 +351,7 @@ WiFi uses additional battery and can make your device sluggish when joining a ne
 
 ### Mesh Cloud Settings
 In addition to LoRa communication, Blackout Comms supports [MQTT](https://www.chatters.io/blackout-comms-mqtt) and [Cloud](https://www.chatters.io/cloud). These options allow you to form long distance bridges between devices or device groups in your cluster. All messages and locations are still E2E encrypted.
+
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | Cloud Setup | Configure cloud or MQTT on your device. For cloud, configuration is simply scanning a QR code. For MQTT, you'll enter MQTT server settings.
@@ -341,6 +362,7 @@ In addition to LoRa communication, Blackout Comms supports [MQTT](https://www.ch
 
 ### Backpack Settings
 For DIY setups, you can add various sensors and other hardware modules (known as _backpacks_) directly to a communicator. This allows you to enable/disable backpack-related settings.
+
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | Remote Commands | Whether to allow any attached backpacks to auto-respond to remote commands from trusted devices
@@ -427,8 +449,8 @@ After onboarding, your new device will be able to fully participaate in your pri
 
 # Troubleshooting
 
-| Issue                        | Possible Cause                     | Solution |
-|-----------------------------|------------------------------------|----------|
+| Issue         | Possible Cause  |  Solution                                 |
+|---------------|-----------------|-------------------------------------------|
 | Device Invisible to Others | Not yet onboarded | Onboard the device |
 | Device Invisible to Others | Inaccurate Time | Verify the time/date are correct, reset to day zero and reacquire time if necessary, check RTC battery |
 | Mapping not working on device | A Pro License and WiFi are required | Get a license, check WiFi connectivity |
