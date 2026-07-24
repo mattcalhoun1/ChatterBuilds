@@ -1,6 +1,6 @@
 {
     "name": "T-Deck CYPHER-M8K (INTL)",
-    "version": "3.6.4",
+    "version": "3.6.5",
     "new_install_prompt_erase":true,
     "builds": [
         {
