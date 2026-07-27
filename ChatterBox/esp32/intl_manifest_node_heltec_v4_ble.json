@@ -1,6 +1,6 @@
 {
     "name": "Heltec v4 Link/Node (INTL)",
-    "version": "3.6.6",
+    "version": "3.7.0",
     "new_install_prompt_erase":true,
     "builds": [
         {
