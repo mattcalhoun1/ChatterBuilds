@@ -1,6 +1,6 @@
 {
     "name": "T3S3 E-Paper Link (USA)",
-    "version": "3.7.0",
+    "version": "3.7.1",
     "new_install_prompt_erase":true,
     "builds": [
         {
