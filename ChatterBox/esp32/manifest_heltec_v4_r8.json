@@ -1,0 +1,13 @@
+{
+    "name": "Heltec R8 Communicator (USA)",
+    "version": "3.7.2",
+    "new_install_prompt_erase":true,
+    "builds": [
+        {
+            "chipFamily": "ESP32-S3",
+            "parts": [
+              { "path": "chatter_heltec_r8.bin", "offset": 0 }
+            ]
+          }
+    ]
+  }

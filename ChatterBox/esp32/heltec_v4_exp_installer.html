@@ -141,7 +141,7 @@
                     <img src="images/heltec_v4_firmware_download.jpg" width="500px">
                     <br>
                     <div style="font-size:smaller">
-                      This is the firmware download page for installing Blackout Comms secure off-grid messaging and tracking to your <a href="https://heltec.org/project/wifi-lora-32-v4-expansion-housing/">Heltec v4 Expansion Kit</a>. 
+                      This is the firmware download page for installing Blackout Comms secure off-grid messaging and tracking to your <a href="https://heltec.org/project/v4-r8-ex/">Heltec v4 Expansion Kit</a>. 
                       Other devices (not shown here) are also supported. For T-Deck and other devices, go to the main <a href="index.html">Blackout Comms Firmware Download</a> page.
                     </div>
                   </center>
@@ -166,8 +166,12 @@
                         <div style="background-color: #dedede;">
                           <center><b>Choose Firmware</b></center>
                         <li>
+                            <label><input type="radio" name="type" value="heltec_v4_r8" onclick="showDevicePreview ('heltec_v4_r8')" /> Heltec R8 Communicator </label>
+                            <div style="font-size: smaller; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Heltec v4/r8 Exp with Touchscreen & SD</div>
+                        </li>
+                        <li>
                             <label><input type="radio" name="type" value="heltec_v4" onclick="showDevicePreview ('heltec_v4')" /> Heltec V4 Communicator </label>
-                            <div style="font-size: smaller; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Heltec v4 Exp with Touchscreen</div>
+                            <div style="font-size: smaller; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Older v4 Exp with Touchscreen</div>
                         </li>
                         <li>
                             <label><input type="radio" name="type" value="node_heltec_v4" onclick="showDevicePreview ('node_heltec_v4')" /> Heltec V4 Link/Node </label>
@@ -213,7 +217,10 @@
 
 <script>
       function showDevicePreview (deviceName) {
-        if (deviceName == 'heltec_v4') {
+        if (deviceName == 'heltec_v4_r8') {
+          document.getElementById("device_preview").innerHTML = "<img src=\"images/" + deviceName + "_sm.png\">";
+        }
+        else if (deviceName == 'heltec_v4') {
           document.getElementById("device_preview").innerHTML = "<img src=\"images/" + deviceName + "_sm.png\">";
         }
         else {
@@ -232,7 +239,10 @@
           radio.addEventListener("change", () => {
             const button = document.querySelector('esp-web-install-button');
             button.classList.remove('invisible');
-            if (radio.value == 'heltec_v4') {
+            if (radio.value == 'heltec_v4_r8') {
+              button.manifest = `./manifest_heltec_v4_r8.json`;
+            }
+            else if (radio.value == 'heltec_v4') {
               button.manifest = `./manifest_heltec_v4.json`;
             }
             else {
@@ -250,7 +260,10 @@
           radio.addEventListener("change", () => {
             const button = document.querySelector('esp-web-install-button');
             button.classList.remove('invisible');
-          if (radio.value == 'heltec_v4') {
+          if (radio.value == 'heltec_v4_r8') {
+            button.manifest = `./intl_manifest_heltec_v4_r8.json`;
+          }
+          else if (radio.value == 'heltec_v4') {
             button.manifest = `./intl_manifest_heltec_v4.json`;
           }
           else {

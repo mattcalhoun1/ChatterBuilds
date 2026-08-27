@@ -197,14 +197,20 @@
                       <ul class="radios">
                         <div style="background-color: #dedede;">
                           <center><b>Communicator Firmware</b></center>
-                          <li>
+                        <li>
+                            <label><input type="radio" name="type" value="heltec_v4_r8" onclick="showDevicePreview ('heltec_v4_r8')" /> Heltec R8 Exp Kit </label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="type" value="tdeck_plus" onclick="showDevicePreview ('tdeck_plus')" /> Lilygo TDeck+ </label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="type" value="pager" onclick="showDevicePreview ('pager')" /> Lilygo Pager </label>
+                        </li>
+                        <li>
                             <label><input type="radio" name="type" value="tdeck_custom" onclick="showDevicePreview ('tdeck_custom')" /> Custom (& Thermal) </label>
                         </li>
                         <li>
                           <label><input type="radio" name="type" value="tdeck_rokland" onclick="showDevicePreview ('tdeck_rokland')"/> T-Deck CYPHER-M8K</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="type" value="tdeck_plus" onclick="showDevicePreview ('tdeck_plus')" /> Lilygo TDeck+ </label>
                         </li>
                         <li>
                             <label><input type="radio" name="type" value="altware" onclick="showDevicePreview ('altware')" /> Altware Full Touch </label>
@@ -213,13 +219,10 @@
                             <label><input type="radio" name="type" value="altware_pager" onclick="showDevicePreview ('altware_pager')" /> Altware Pager </label>
                         </li>
                         <li>
-                            <label><input type="radio" name="type" value="pager" onclick="showDevicePreview ('pager')" /> Lilygo Pager </label>
-                        </li>
-                        <li>
                             <label><input type="radio" name="type" value="heltec_v4" onclick="showDevicePreview ('heltec_v4')" /> Heltec V4 Exp Kit </label>
                         </li>
                         <li>
-                            <label><input type="radio" name="type" value="tdeck_m100" onclick="showDevicePreview ('tdeck_m100')" /> All Others </label>
+                            <label><input type="radio" name="type" value="tdeck_m100" onclick="showDevicePreview ('tdeck_m100')" /> T-Deck All Others </label>
                         </li>
                         <!--<li style="color: #666666">
                             <label><input type="radio" name="type" value="tdeck_dfr_rtc" /> DFR Mesh Firmware</label>
@@ -258,6 +261,7 @@
                 <a href="chatter_tdeck_m100.bin">M100 / All Others</a>
                 <a href="chatter_altware.bin">Altware Full Touch</a>
                 <a href="chatter_pager.bin">Pager</a>
+                <a href="chatter_heltec_r8.bin">Heltec R8 Exp Kit</a>
                 <a href="chatter_heltec_v4.bin">Heltec v4 Exp Kit</a>
                 <a href="chatter_tdeck_dfr_rtc.bin">DFR Mesh Firmware (Deprecated)</a>
               </div>
@@ -270,6 +274,7 @@
                 <a href="chatter_tdeck_m100_exp.bin">M100 / All Others</a>
                 <a href="chatter_altware_exp.bin">Blackout Comm</a>
                 <a href="chatter_pager_exp.bin">Pager</a>
+                <a href="chatter_heltec_r8_exp.bin">Heltec R8 Exp Kit</a>
                 <a href="chatter_heltec_v4_exp.bin">Heltec v4 Exp Kit</a>
                 <a href="chatter_tdeck_dfr_rtc_exp.bin">DFR Mesh Firmware (Deprecated)</a>
               </div>
