@@ -2,6 +2,8 @@
 
 **Encrypted · Private · Off-Grid · Mesh Memory · Zero-Touch Trust**
 
+[Full User Guide](https://content.chatters.io/guide/index.html)
+
 Blackout Comms is a secure, private mesh communication firmware for LoRa-capable hardware. It enables encrypted text messaging, GPS location sharing, and broadcast communication between a trusted group of devices — with no cell towers, no internet, no servers, and no external infrastructure of any kind.
 
 This repository contains pre-built firmware binaries for all supported hardware. Full documentation is at **[chatters.io](https://chatters.io)**.
