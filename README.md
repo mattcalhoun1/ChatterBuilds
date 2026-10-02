@@ -157,6 +157,18 @@ Meshtastic and MeshCore operate on fixed LoRa channels. Blackout Comms does not.
 
 ---
 
+### Stealth Modes
+
+Blackout Comms allows you to reduce or silence your RF footprint using stealth modes. A stealth mode can be instantly toggled on and off, or can be scheduled so that your cluster regularly enters/leaves stealth modes at coordinated times. Regardless of the mode, full encryption, frequency hopping, and digital signatures are automatically utilized.
+- Disabled (default): Your device/cluster actively optimizes, shares location, and perform meshing functions. Higher RF footprint.
+- Low: Your device becomes fully active if in range of other trusted devices. Otherwise, it generally remains silent (unless you send).
+- Medium: Your device (or cluster) remains silent unless there is message traffic to handle (direct messages / broadcasts)
+- High: RF silence, unless you send a message. Devices in High stealth mode can receive, but will not acknowledge broadcasts. No location sharing. No meshing / re-broadcasts. Only in-direct-range devices can communicate, and only via broadcasts.
+
+Meshtastic and MeshCore operate on fixed LoRa channels. Blackout Comms does not.
+
+---
+
 ### Intelligent Message Routing
 
 RF connectivity data — **signal strength and link reliability between every observed device pair, measured in both directions** — is part of what mesh memory carries and propagates cluster-wide.
