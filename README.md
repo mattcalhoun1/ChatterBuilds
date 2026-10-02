@@ -57,8 +57,9 @@ Blackout Comms is developed and maintained by **Altware Development LLC**.
 | Device | Form Factor | Notes |
 |---|---|---|
 | **Lilygo T-Deck** | Keyboard + display | Full keyboard, touchscreen, preferred for messaging |
+| **Heltec Exp Kit v4** | Touchscreen display | Very powerful & compact |
 | **Lilygo T-Pager** | Pager form factor | Compact, wearable, belt-clip friendly |
-| **Heltec Vision Master T190** | Touchscreen display | Touch interface, compact |
+| **Heltec Vision Master E290** | Touchscreen display | Touch interface, compact |
 | **Compatible DIY LoRa builds** | Custom | See hardware guide at chatters.io |
 
 > All supported devices use LoRa radio for mesh communication. GPS is used for location sharing where hardware supports it.
@@ -306,7 +307,7 @@ You can manually search through this repo for the binary you want or you can use
 
 ## Flashing Instructions
 
-### T-Deck / T-Pager / Heltec T190 — Web Flasher (Recommended)
+### T-Deck / T-Pager / Heltec v4 / Heltec E290 — Web Flasher (Recommended)
 
 The easiest method for most users. No software installation required.
 
