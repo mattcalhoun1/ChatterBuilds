@@ -1,683 +1,379 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Blackout Comms Secure Mesh Firmware</title>
-    <meta
-      name="description"
-      content="Download encrypted mesh comms firmware for T-Deck and node firmware for Lilygo, Heltec, and others."
-    />
-    <meta name="viewport" content="width=device-width" />
-    <!--<meta name="color-scheme" content="dark light" />-->
-    <style>
-      body {
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Ubuntu, sans-serif;
-        padding: 0;
-        margin: 0;
-        line-height: 1.4;
-      }
-      .content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 12px;
-      }
-      h2 {
-        margin-top: 2em;
-      }
-      h3 {
-        margin-top: 1.5em;
-      }
-      a {
-        color: #03a9f4;
-      }
-      .invisible {
-        visibility: hidden;
-      }
-      .hidden {
-        display: none;
-      }
-      esp-web-install-button[install-unsupported] {
-        visibility: inherit;
-      }
-      .content pre {
-        max-width: 100%;
-        overflow-y: scroll;
-      }
-      .footer {
-        margin-top: 24px;
-        border-top: 1px solid #666;
-        padding-top: 24px;
-        text-align: center;
-      }
-      .footer .initiative {
-        font-style: italic;
-        margin-top: 16px;
-      }
-      table {
-        border-spacing: 0;
-      }
-      td {
-        padding: 8px;
-        /*border-bottom: 1px solid #666;*/
-      }
-      .radios li {
-        list-style: none;
-        line-height: 2em;
-      }
-      @media (prefers-color-scheme: light) {
-        body {
-          background-color: #fff;
-          color: #2f3a5a;
-        }
-        a {
-          color: #58a6ff;
-        }
-      }
-    </style>
-    <script type="module" src="js/install-button.js?module"></script>
-    <!--<script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>-->
-
-    <link rel="stylesheet" href="js/jquery/jquery-ui.css">
-    <link rel="stylesheet" href="js/jquery/jquery-ui.theme.css">
-    <script src="js/jquery/external/jquery/jquery.js"></script>
-    <script src="js/jquery/jquery-ui.js"></script>
-    <script>
-    $( function() {
-      $( "#tabs" ).tabs();
-    } );
-    </script>    
-  </head>
-  <body>
-    <div class="content" style="min-width: 800px;">
-      <div style="float:left"><a href="https://chatters.io"><img src="images/logo_circular.png" height="75px" width="75px"></a></div>
-      <div style="float:right"><a href="https://chatters.io"><img id="flag" src="images/usa.png" height="75px" width="75px"></a></div>
-      <div style="background-color: #2f3a5a;"><h1 style="text-align: center; color: #fff;">Blackout Comms Secure Mesh Firmware</h1></div>
-
-
-    <div id="tabs" style="min-width: 800px;">
-      <ul>
-        <li><a href="#tab-flash"><img style="vertical-align: text-top;" src="images/download.png" height="18">&nbsp;Firmware Flasher</a></li>
-        <li><a href="#tab-using"><img style="vertical-align: text-top;" src="images/logo_circular.png" height="18">&nbsp;Using Blackout Comms</a></li>
-        <li><a href="#tab-video"><img style="vertical-align: text-top;" src="images/youtube.png" height="18">&nbsp;Demo Videos</a></li>
-        <li><a href="#tab-flash-help"><img style="vertical-align: text-top;" src="images/information.png" height="18">&nbsp;Flash Instructions</a></li>
-        <li><a href="#tab-assembly"><img style="vertical-align: text-top;" src="images/robot.png" height="18">&nbsp;Assembling Devices</a></li>
-      </ul>
-      <div id="tab-flash">
-        <!--<div class="content" style="min-width: 800px;border-radius: 3; border-width: 2px; background-color: bisque;">
-          <p>
-            As of v1.5, SD cards are no longer <i>required</i> on nodes, but still required on T-Decks. Be aware these devices ARE VERY PICKY about SD cards. For new devices, <b>consider buying a new SD card from the <a href="https://www.offgridcomms.club/help/compatible-sd-cards/">known compatible list</a>.</b>
-          </p>
-        </div>-->
-        <div class="content" style="min-width: 800px;">
-
-      <table border="1">
-          <tr>
-            <th width="50%" style="background-color: #ddd;">
-              <center>
-              <table><tr><td style="text-align: right;"><a href="tdeck_firmware.html"><img src="images/download.png" height="22"></a></td><td style="text-align: left;"><a href="tdeck_firmware.html">Download</a> communicator firmware</td></tr></table>
-              </center>
-            </th>
-            <th width="50%" style="background-color: #ddd;">
-              <center>
-              <table><tr><td style="text-align: right;"><a href="mesh_node_firmware.html"><img src="images/download.png" height="22"></a></td><td style="text-align: left;"><a href="mesh_node_firmware.html">Download</a> link firmware</td></tr></table>
-              </center>              
-            </th>
-          </tr>
-          <tr>
-            <td style="vertical-align: top;">
-              <center>
-                <a alt="Download tdeck mesh firmware" href="tdeck_firmware.html"><img width="390" src="images/tdeck_firmware.png"></a>
-
-              </center>
-              <center>
-                <br>
-                <a href="tdeck_firmware.html"><img src="images/download_button.png" width="175"></a>
-              </center>
-
-              <center>
-              <table style="background: #dedede; font-size: smaller;"><tr><td style="text-align: right;"><a href="docs/Onboard_Communicator.pdf"><img src="images/pdf.png"></a></td><td><a href="docs/Onboard_Communicator.pdf">Onboard a Communicator</a> - How to add a new communicator to your cluster</td></tr></table>
-              </center>
-
-              <ul style="font-size: smaller;">
-                <li>Encrypted / signed messaging for T-Deck</li>
-                <li>Secure location sharing</li>
-                <li>Issue remote mesh commands</li>
-                <li>Smart auto-learning mesh algorithm</li>
-                <li><a href="https://chatters.io">Learn more</a></li>
-              </ul>
-              <hr>
-              <center>
-              <table style="width: 80%;">
-                <tr style="height:15px;"><td style="text-align: right;" width="5%"><a href="https://chatters.io/products"><img height="20" style="vertical-align: text-top;" src="images/tdeck_rokland_sm.png"></a></td><td style="font-size: smaller;" width="95%"><a href="https://chatters.io/products">Buy</a> a fully-assembled T-Deck Complete from <a href="https://chatters.io/products">us</a> or <a href="https://store.rokland.com/products/lilygo-t-deck-portable-microcontroller-programmer-lora-915-mhz-h642?ref=lufoqrur&variant=42122265690195">Rokland</a></td></tr>
-                <tr style="height:15px;"><td style="text-align: right;"><a href="https://chatters.io/products"><img height="20" style="vertical-align: text-top;" src="images/tdeck_plus_sm.png"></a></td><td style="font-size: smaller;"><a href="https://chatters.io/products">Buy</a> a fully-assembled T-Deck Plus from <a href="https://chatters.io/products">us</a> <a href="https://amzn.to/4eWMhEF">Amazon</a>, or <a href="https://store.rokland.com/products/lilygo-t-deck-portable-microcontroller-programmer-lora-915-mhz-h642?ref=lufoqrur&variant=42283977834579">Rokland</a></td></tr>
-              </table>
-            </center>                
-
-            </td>
-            <td style="vertical-align: top;">
-              <center>
-                <a alt="Download mesh link firmware" href="mesh_node_firmware.html"><img width="450" src="images/mesh_node_firmware.png"></a>
-                </center>
-                <center>
-                  <br>
-                  <a href="mesh_node_firmware.html"><img src="images/download_button.png" width="175"></a>
-                </center>
-
-                <center>
-                <table style="background: #dedede; font-size: smaller;"><tr><td style="text-align: right;"><a href="docs/Onboard_Link.pdf"><img src="images/pdf.png"></a></td><td><a href="docs/Onboard_Link.pdf">Onboard a Link</a> - How to add a new node to your cluster</td></tr></table>
-                </center>
-
-                <ul style="font-size: smaller;">
-                  <li>Blackout Comms firmware for T-Beam Supreme, T3S3, T3S3 E-Paper, and Heltec e290</li>
-                  <li>Packet caching, forwarding, and repeating</li>
-                  <li>Hold messages for up to 24 hours</li>
-                  <li>Asymmetric encryption means nodes cannot decrypt direct messages</li>
-                  <li><a href="https://chatters.io">Learn more</a></li>
-                </ul>
-
-                <hr>
-                <center>
-                <table style="width: 80%;">
-                  <tr style="height:15px;"><td style="text-align: right;" width="5%"><a href="https://chatters.io/products"><img height="20" style="vertical-align: text-top;" src="images/logo_circular.png"></a></td><td style="font-size: smaller;" width="95%"><a href="https://chatters.io/products">Buy</a> fully-assembled secure Blackout Comms links from <a href="https://chatters.io/products">us</a></td></tr>
-                </table>
-              </center>                
-
-              </td>
-          </tr>
-          </table>
-          <br>
-
-        </div>
-      </div>
-  <div id="tab-using">
-    <table>
-      <tr>
-        <td valign="top">
-
-          <table style="font-size: smaller; width: 500px;">
-            <tr>
-              <td colspan="2">
-                <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">How Blackout Comms Works</div>
-              </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td>
-                <b><a href="docs/blackout_comms_protocol_lora_mqtt.pdf">Blackout Comms Communication Protocol</a></b><br>
-                Blackout Comms communicates securely by combining mesh, encryption, and digital signatures with LoRa and MQTT.
-              </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td>
-                <b><a href="docs/BlackoutComms_Message_Types.pdf">Message Types</a></b><br>
-                A direct message is targeted to a specific person/device, and uses asymmetric encryption.
-                A broadcast is sent to the entire cluster, using symmetric encryption, so all devices can read it.
-                Message expiry (you select) controls how long a message stays "alive".
-              </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td><b><a href="docs/Activate_Blackout_Comms_Cloud.pdf">MQTT and Cloud Connectivity</a></b><br>
-               Any device in your cluster/channel can become an MQTT/cloud-enabled bridge, allowing your messages to
-               securely travel across a hop of any distance, while still maintaining device-level payload encryption and signatures.
-              </td>
-            </tr>
-      
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td><b><a href="docs/blackout_comms_clusters_vs_channels.pdf">Private Clusters vs Channels</a></b><br>
-              Your devices can exist within private clusters and/or they can utilize open (but secure) channels.
-              Clusters offer <i>much</i> more functionality and better performance, but are limited to 90 devices.
-              Channels can be unlimited in size, but are limited to broadcast messages.
-              </td>
-            </tr>
-      
-            <tr>
-              <td colspan="2">
-                <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Basic Usage</div>
-              </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td>
-                <b><a href="docs/Using_Blackout_Comms.pdf">Using a Communicator</a></b><br>
-                Basic operation of a Blackout Comms communicator
-              </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td>
-                <b><a href="docs/blackout_comms_settings.pdf">Blackout Comms Settings</a></b><br>
-                Complete list of settings for Blackout Comms firmware
-              </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td>
-                <b><a href="docs/blackout_comms_data_storage.pdf">Data Storage</a></b><br>
-                How to backup your device or transfer your data to another device
-              </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td><b><a href="docs/Using_Proximity_Sensors.pdf">Blackout Comms Proximity Sensors</a></b><br>
-              Some Blackout Comms devices have pulsed radar proximity sensing
-            </td>
-
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td><b><a href="docs/blackout_comms_commands.pdf">Blackout Comms Remote Commands</a></b><br>
-              Blackout Comms supports sending remote commands to other on-cluster devices
-            </td>
-      
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td><b><a href="docs/blackout_comms_channels.pdf">Setting Up and Using Channels</a></b><br>
-              How to set up and use a new or existing channel on communicators and links
-            </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td>
-                <b><a href="docs/Using_Location.pdf">Using Location</a></b><br>
-                How GNSS is integrated with Blackout Comms and how you can make use of it
-              </td>
-            </tr>
-      
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td>
-                <b><a href="docs/Time_Synchronization.pdf">Time Synchronization</a></b><br>
-                How to keep proper time on your devices. This is important!
-              </td>
-            </tr>
-      
-            <tr>
-              <td colspan="2">
-                <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Nodes</div>
-              </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td>
-                <b><a href="docs/GPS_Link_Buttons.pdf">Using a GPS-Enabled Link</a></b><br>
-                Basic operation of a Blackout Comms GPS-Enabled Link (T-Beam Supreme)
-              </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td>
-                <b><a href="docs/Utilizing_Link.pdf">Utilizing a Link</a></b><br>
-                How to position and use a link for delivery assistance, packet caching, location caching, and more
-              </td>
-            </tr>
-            <tr>
-              <td valign="middle" align="right"><img src="images/pdf.png"></td>
-              <td>
-                <b><a href="docs/Utilizing_Multiple_Links.pdf">Utilizing Multiple Links</a></b><br>
-                Using multiple mesh links presents more opportunities for assuring delivery
-              </td>
-            </tr>
-          </table>
-      
-        </td>
-  <td valign="top">
-    <div style="float:right;">
-      <a href="docs/Using_Blackout_Comms.pdf"><img style="min-width:400px; max-width: 400px;" src="images/home_annotated.png"></a>
-    </div>
-    <div style="float:right; background-color: #dedede;">
-      <a href="docs/Using_Blackout_Comms.pdf"><img style="min-width:400px; max-width: 400px;" src="images/neighbors_annotated.png"></a>
-    </div>
-    <div style="float:right;">
-      <a href="docs/Using_Blackout_Comms.pdf"><img style="min-width:400px; max-width: 400px;" src="images/devices_annotated.png"></a>
-    </div>
-    <div style="float:right; background-color: #dedede;">
-      <a href="docs/Using_Location.pdf"><img style="min-width:400px; max-width: 400px;" src="images/location_screen_annotated.png"></a>
-    </div>
-  </td>
-</tr>
-</table>
-
-  </div>
-  <div id="tab-video">
-    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">How Messages are Delivered</div>
-    <div style="text-align: center;">
-      <iframe width="420" height="315" src="https://www.youtube.com/embed/gRAa39CzoDg"></iframe>
-    </div>
-
-    <br>
-    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Onboarding a Device</div>
-    <div style="text-align: center;">
-      <iframe width="420" height="315" src="https://www.youtube.com/embed/-j3iASWbda4"></iframe>
-    </div>
-    <br>
-    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Creating a Private Cluster</div>
-    <div style="text-align: center;">
-      <iframe width="420" height="315" src="https://www.youtube.com/embed/7yGMLj9mc-c"></iframe>
-    </div>
-
-    <br>
-    <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Configuring a Secure / Open Channel</div>
-    <div style="text-align: center;">
-      <iframe width="420" height="315" src="https://www.youtube.com/embed/qik1Gu3WmEk"></iframe>
-    </div>
-
-  </div>
-
-  <div id="tab-flash-help">
-    <center><p><a href="https://www.offgridcomms.club/help/flashing-t-deck-2/">View a video</a> demonstration of flashing a T-Deck Plus</p></center>
-    <table>
-      <tr style="background-color: #dedede;">
-        <td colspan="3"><h3>1. If using an SD card (recommended), ensure you have a <i>compatible</i> card installed</h3></td>
-      </tr>
-      <tr>
-        <td style="width: 20px;"></td>
-          <td style="font-size: smaller;">
-              These devices ARE VERY PICKY about SD cards. <b>Consider buying a new SD card from the <a href="https://www.offgridcomms.club/help/compatible-sd-cards/">known compatible list</a>.</b>
-              SD cards are cheap, and your time is not. The cards on that list typically work right out of the box. However, if your device seems to have trouble using the SD card (gets stuck mounting/decrypting),
-              reformat the card using <a href="https://www.offgridcomms.club/help/formatting-sd-card/">these instructions</a>.
-          </td>
-          <td align="middle"><img src="images/micro-sd.png"></td>
-      </tr>
-      <tr style="background-color: #dedede;">
-          <td colspan="3"><h3>2. Open a supported browser</h3></td>
-      </tr>
-      <tr>
-        <td style="width: 20px;"></td>
-          <td style="font-size: smaller;">You must be using a "standard" browser, such as Chrome, etc.</td>
-          <td align="middle"><img src="images/chrome.png"></td>
-      </tr>
-      <tr style="background-color: #dedede;">
-          <td colspan="3"><h3>3. Plug your device into a USB connection</h3></td>
-      </tr>
-      <tr>
-        <td style="width: 20px;"></td>
-          <td style="font-size: smaller;">IMPORTANT: You must be using a good quality <b>data transmission cable</b>, not just a power cable. I use <a href="https://a.co/d/hlZNtWH">these</a>.</td>
-          <td align="middle"><img src="images/flash_tdeck.png"></td>
-      </tr>
-      <tr style="background-color: #dedede;">
-          <td colspan="3"><h3>4. Put the device in "boot mode"</h3></td>
-      </tr>
-      <tr>
-        <td style="width: 20px;"></td>
-          <td style="font-size: smaller;">
-              <table>
-                <tr>
-                  <th>T-Deck or T-Deck Plus</th><th>GPS Node</th><th>E-Paper Mini Node</th></tr>
-                  <td style="vertical-align: top;">
-                    <ol>
-                      <li>Power off the device</li>
-                      <li>Press and hold trackball button</li>
-                      <li>Power on the device</li>
-                      <li>Release the trackball button</li>
-                      <li>Device is now in boot mode</li>
-                    </ol>
-                  </td>
-                  <td style="vertical-align: top;">
-                    <ol>
-                      <li>Press and hold boot button</li>
-                      <li>Press and release reset button</li>
-                      <li>Release the boot button</li>
-                      <li>Device is now in boot mode</li>
-                    </ol>
-                  </td>
-                  <td style="vertical-align: top;">
-                    <ol>
-                      <li>Power off the device</li>
-                      <li>Press and hold the boot button (back of device, press with paper clip/etc)</li>
-                      <li>Power on the device</li>
-                      <li>Release the boot button</li>
-                      <li>Device is now in boot mode</li>
-                    </ol>
-                  </td>
-                </tr>
-              </table>
-          </td>
-          <td align="middle"><img src="images/t-beam-buttons.png"></td>
-      </tr>
-      <tr style="background-color: #dedede;">
-          <td colspan="3"><h3>5. Use the <i>Flashing Tool</i> to execute the flash</h3></td>
-      </tr>
-      <tr>
-        <td style="width: 20px;"></td>
-          <td colspan="2" style="font-size: smaller;">
-            When prompted, select the USB port that is connected to your device.
-            The firmware flashing tool should properly recognize the device, and you should be able to click through the prompts to complete the install.
-            If it fails or of your device doesn't come back on properly after the flashing, it doesn't mean your device is destroyed, just repeat the steps
-            carefully again from start to finish, and <b>make sure you select the proper device</b>.
-            <br><br>
-            For instance, if you have a T-Deck with the M100 module onboard, and you select to install the Blackout Comms Custom firmware, the flashing
-            tool will happily install the wrong firmware, and then your device won't boot. It's no problem, just repeat the instructions with the correct options.
-          </td>
-      </tr>
-      <tr style="background-color: #dedede;">
-          <td colspan="3"><h3>6. Restart the device</h3></td>
-      </tr>
-      <tr>
-        <td style="width: 20px;"></td>
-          <td style="font-size: smaller;">The flashing tool doesn't normally restart the devices properly, so wait for the flasher to say it's done, then disconnect your device, then power it off and back on.</td>
-          <td></td>
-      </tr>
-    </table>
-
-<div class="footer">
-  <a href="https://chatters.io">Blackout Comms Secure Off-Grid Texting</a> &mdash;
-  Installer powered by <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a>.
-</div>
-
-</div>
-
-<div id="tab-assembly">
-  <center>
-    <div style="clear:left;">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/-meAce5T6i4?si=BklgB3JyBc0PFFRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-  
-    <div style="clear:left; width:5%; min-width:30px; height:220px; float:left;"></div>
-    <div style="float:left; width:40%; min-width:350px; background-color: #dedede; border-radius: 5px; border-color: #000; border-style: solid;">
-      <table>
-        <tr><td colspan="3" style="text-align: center; font-size: larger;">Communicators</td></tr>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_thermal_sm.png"></td><td style="font-size: smaller;"><a href="assembly/blackout_comms_tdeck_thermal.pdf">T-Deck Thermal</a></td><td style="font-size: smaller;">Build your own Blackout Comms communicator (with Thermal Cam)</td></tr>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_custom_sm.png"></td><td style="font-size: smaller;"><a href="assembly/tdeck_custom_assembly.pdf">T-Deck Custom</a></td><td style="font-size: smaller;">Build your own Blackout Comms communicator</a></td></tr>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_rokland_sm.png"></td><td style="font-size: smaller;"><a href="https://chatters.io/products">T-Deck Complete</a></td><td style="font-size: smaller;">Buy a fully-assembled T-Deck Complete from <a href="https://chatters.io/products">us</a> or <a href="https://store.rokland.com/products/lilygo-t-deck-portable-microcontroller-programmer-lora-915-mhz-h642?ref=lufoqrur&variant=42122265690195">Rokland</a></td></tr>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_plus_sm.png"></td><td style="font-size: smaller;"><a href="https://chatters.io/products">T-Deck Plus</a></td><td style="font-size: smaller;">Buy a fully-assembled T-Deck Plus from <a href="https://chatters.io/products">us</a> <a href="https://amzn.to/4eWMhEF">Amazon</a>, or <a href="https://store.rokland.com/products/lilygo-t-deck-portable-microcontroller-programmer-lora-915-mhz-h642?ref=lufoqrur&variant=42283977834579">Rokland</a></td></tr>
-        <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/tdeck_amped_sm.png"></td><td style="font-size: smaller;"><a href="assembly/blackout_comms_tdeck_amped.pdf">T-Deck Amped</a></td><td style="font-size: smaller;">Build a Blackout Comms communicator with integrated Amp</td></tr>
-      </table>
-
-    </div>
- 
-    <div style="float:left; height: 220px; width: 5%; min-width: 10px;"></div>
-
-    <div style="float:left; width:40%; min-width:350px; background-color: #dedede; border-radius: 5px; border-color: #000; border-style: solid;">
-    <table>
-      <tr><td colspan="3" style="text-align: center; font-size: larger;">Nodes</td></tr>
-      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/location.png"></td><td style="font-size: smaller;"><a href="assembly/Basic_BlackoutComms_Link.pdf">Basic / GPS</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a simple mesh link with no soldering or built on Lilygo T3S3 or E-Paper T3S3</td></tr>
-      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/proximity.png"></td><td style="font-size: smaller;"><a href="assembly/heltec_e290_blackout_comms_link_v2.pdf">Proximity Link</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a mesh link with Proximity sensing capabilities, using a doppler-based sensor</td></tr>
-      <tr style="height:15px;"><td style="text-align: right;"><img height="20" style="vertical-align: text-top;" src="images/robot.png"></td><td style="font-size: smaller;"><a href="assembly/Blackout_Comms_Remote_Switch.pdf">Remote Switch</a></td><td style="font-size: smaller;">Build (or <a href="https://chatters.io/products">buy</a>) a link with the ability to remotely control a switch (proximity sensing nodes can also do this)</td></tr>
-    </table>
-    </div>
-
-    <table style="clear:left;">
-      <tr><td>&nbsp;</td></tr>
-      <tr><td colspan="3" style="font-size: larger; background-color: #dedede; text-align: center;">More Build DIY Options</td></tr>
-      <tr>
-        <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Custom Communicator</div>
-          <div style="float:right;"><img src="images/communicator.png"></div>
-          <table style="font-size: smaller;">
-            <tr><td colspan="2">Based on T-Deck. Communicate messages and location securely.</td></tr>
-            <tr><td align="right"><a href="assembly/tdeck_custom_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/tdeck_custom_assembly.pdf">Assembly Instructions</a></td></tr>
-            <tr><td align="right"><a href="docs/Using_Blackout_Comms.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="docs/Using_Blackout_Comms.pdf">User Guide</a></td></tr>
-            <tr><td align="right"><a href="assembly/custom_communicator_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/custom_communicator_3d.zip">Printable Enclosure</a></td></tr>
-          </table>
-        </td>
-        <td width="33%" valign="top">
-
-            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">GPS Link</div>
-            <div style="float:right;"><img src="images/node_gps.png"></div>
-            <table style="font-size: smaller;">
-              <tr><td colspan="2">Fully functional link with GPS based on T-Beam Supreme</td></tr>
-              <tr><td align="right"><a href="assembly/gps_link_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/gps_link_assembly.pdf">Assembly Instructions</a></td></tr>
-              <tr><td align="right"><a href="docs/GPS_Link_Buttons.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="docs/GPS_Link_Buttons.pdf">User Guide</a></td></tr>
-              <tr><td align="right"><a href="assembly/gps_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/gps_node_3d.zip">Printable Enclosure</a></td></tr>
-            </table>
-        </td>
-        <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">E-Paper Mini Link</div>
-          <div style="float:right;"><img src="images/node_paper.png"></div>
-          <table style="font-size: smaller;">
-            <tr><td colspan="2">Non-GPS, low power node with E-Paper display. Based on T3S3 E-Paper.</td></tr>
-            <tr><td align="right"><a href="assembly/epaper_mini_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/epaper_mini_node_assembly.pdf">Assembly Instructions</a></td></tr>
-            <tr><td align="right"><a href="assembly/UserGuides/Paper_Mini_Node_Buttons.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/Paper_Mini_Node_Buttons.pdf">User Guide</a></td></tr>
-            <tr><td align="right"><a href="assembly/paper_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/paper_node_3d.zip">Printable Enclosure</a></td></tr>
-          </table>
-        </td>
-      </tr>
-
-      <tr>
-        <td width="33%" valign="top">
-            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay GPS Link</div>
-            <div style="float:right;"><img src="images/node_proximity.png"></div>
-            <table style="font-size: smaller;">
-              <tr><td colspan="2">GPS link with added mmwave proximity senser and (optionally) relay/switch function</td></tr>
-              <tr><td align="right"><a href="assembly/proximity_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/proximity_node_assembly.pdf">Assembly Instructions</a></td></tr>
-              <tr><td align="right"><a href="assembly/relay_prox_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/relay_prox_node_3d.zip">Printable Enclosure</a></td></tr>
-            </table>
-        </td>
-        <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">GPS Relay Link</div>
-          <div style="float:right;"><img src="images/node_proximity.png"></div>
-
-          <table style="font-size: smaller;">
-            <tr><td colspan="2">GPS link with relay (switch) functionality.</td></tr>
-            <tr><td align="right"><a href="assembly/gps_relay_node.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/gps_relay_node.pdf">Assembly Instructions</a></td></tr>
-            <tr><td align="right"><a href="assembly/relay_prox_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/relay_prox_node_3d.zip">Printable Enclosure</a></td></tr>
-          </table>
-        </td>
-        <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Solar Link</div>
-          <div style="float:right;"><img src="images/solar_node.png"></div>
-
-          <table style="font-size: smaller;">
-            <tr><td colspan="2"><i>Solar powered</i> link (non-GPS). Based on T3S3.</td></tr>
-            <tr><td align="right"><a href="assembly/UserGuides/Solar_Instructions.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/Solar_Instructions.pdf">User Guide</a></td></tr>
-            <tr><td align="right"><a href="assembly/build_mesh_solar_node.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/build_mesh_solar_node.pdf">Assembly Instructions</a></td></tr>
-          </table>
-        </td>
-
-      </tr>
-
-
-
-      <tr>
-        <td width="33%" valign="top">
-            <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Proximity/Relay Paper Link</div>
-            <div style="float:right;"><img src="images/node_paper.png"></div>
-            <table style="font-size: smaller;">
-              <tr><td colspan="2">T3S3 paper node with added mmwave proximity senser and (optionally) relay/switch function</td></tr>
-              <tr><td align="right"><a href="assembly/epaper_proximity_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/epaper_proximity_node_assembly.pdf">Assembly Instructions</a></td></tr>
-              <tr><td align="right"><a href="assembly/proximity_paper_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/proximity_paper_3d.zip">Printable Enclosure</a></td></tr>
-            </table>
-        </td>
-        <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Heltec Vision e290 Paper Link</div>
-          <div style="float:right;"><img width="100" src="images/e290.png"></div>
-
-          <table style="font-size: smaller;">
-            <tr><td colspan="2">Larger paper screen, larger battery, can be equipped with proximity sensor.</td></tr>
-            <tr><td align="right"><a href="assembly/heltec_e290_blackout_comms_link_v2.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/heltec_e290_blackout_comms_link_v2.pdf">Assembly Instructions</a></td></tr>
-            <tr><td align="right"><a href="assembly/heltec_blackout_comms.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/heltec_blackout_comms.zip">Printable Enclosure</a></td></tr>
-          </table>
-        </td>
-        <td width="33%" valign="top">
-          <div style="font-size: larger; text-align: center; color: #fff; background-color: #2f3a5a;">Mini Link</div>
-          <div style="float:right;"><img src="images/node_mini.png"></div>
-
-          <table style="font-size: smaller;">
-            <tr><td colspan="2">Non-GPS, low power node. Based on T3S3.</td></tr>
-            <tr><td align="right"><a href="assembly/UserGuides/Mini_Node_Buttons.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/UserGuides/Mini_Node_Buttons.pdf">User Guide</a></td></tr>
-            <tr><td align="right"><a href="assembly/chatterbox_mini_node_assembly.pdf"><img width="20" src="images/pdf.png"></a></td><td><a href="assembly/chatterbox_mini_node_assembly.pdf">Assembly Instructions</a></td></tr>
-            <tr><td align="right"><a href="assembly/mini_node_3d.zip"><img width="20" src="images/3d.png"></a></td><td><a href="assembly/mini_node_3d.zip">Printable Enclosure</a></td></tr>
-          </table>
-        </td>
-
-      </tr>
-
-    </table>
-
-  </center>  
-
-</div>
-
-</div>    <!-- tabs -->
-
-</div>    <!-- main -->
-
-<script>
-      function configVersion () {
-        if (isUsa()) {
-          document.getElementById("flag").src = "images/usa.png";
-          document.getElementById("flag2").src = "images/usa.png";
-          document.getElementById("binaries_non_usa").style = "visibility:hidden;";
-          document.getElementById("binaries_usa").style = "visibility:visible;";
-          document.querySelectorAll('input[name="type"]').forEach(radio =>
-          radio.addEventListener("change", () => {
-            const button = document.querySelector('esp-web-install-button');
-            button.manifest = `./manifest_${radio.value}.json`;
-            button.classList.remove('invisible');
-          }
-          ));
-        }
-        else {
-          document.getElementById("flag").src = "images/non_usa.png";
-          document.getElementById("flag2").src = "images/non_usa.png";
-          document.getElementById("binaries_non_usa").style = "visibility:visible;";
-          document.getElementById("binaries_usa").style = "visibility:hidden;";
-          document.querySelectorAll('input[name="type"]').forEach(radio =>
-          radio.addEventListener("change", () => {
-            const button = document.querySelector('esp-web-install-button');
-            button.manifest = `./intl_manifest_${radio.value}.json`;
-            button.classList.remove('invisible');
-          }
-          ));
-        }
-
-      }
-    </script>
-    <script>
-      function isUsa () {
-        return document.getElementById("country").value == "usa";
-      }
-    </script>
-    <script>
-      // config the version to default on load
-      configVersion();
-    </script>
-
-			<!-- Google tag (gtag.js) -->
-       <!-- api site 
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-FT07G9QEL0"></script>
-			<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-FT07G9QEL0');
-			</script>    -->
-
-    <!-- comms site -->
-
+<html lang="en">
+<head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-56KJN5SG2S"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P713GTKMP6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-56KJN5SG2S');
+      gtag('config', 'G-P713GTKMP6');
     </script>
 
-  </body>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flash Blackout Comms</title>
+<meta name="description" content="Pick your board. Connect it. Flash Blackout Comms firmware.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script type="module" src="js/install-button.js?module"></script>
+<style>
+  :root {
+    --bg: #141311;
+    --bg-2: #1c1b18;
+    --line: #2c2a26;
+    --text: #f3efe6;
+    --muted: #a39c90;
+    --dim: #6f695f;
+    --accent: #e7a15a;
+    --card: #1f1d1a;
+    --ok: #7dba8a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Instrument Sans", system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 0; border-bottom: 1px solid var(--line);
+  }
+  .mark { font-weight: 600; letter-spacing: -0.02em; font-size: 15px; }
+  .mark span { color: var(--dim); font-weight: 400; }
+  nav { display: flex; gap: 22px; font-size: 14px; }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--text); }
+  .hero { padding: 56px 0 24px; text-align: center; }
+  .kicker { color: var(--accent); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 14px; }
+  h1 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400; font-size: 56px; line-height: 0.95;
+    letter-spacing: -0.02em; margin: 0 0 14px;
+  }
+  .lede { color: var(--muted); font-size: 18px; max-width: 460px; margin: 0 auto 32px; }
+  .tool {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 28px 28px 24px;
+    text-align: left;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+  .tab {
+    flex: 1; background: var(--bg); color: var(--muted); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px; font-family: inherit; font-size: 14px; cursor: pointer;
+  }
+  .tab.active { background: var(--text); color: var(--bg); border-color: var(--text); font-weight: 600; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .picker { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 16px; }
+  .pick {
+    display: flex; align-items: center; gap: 12px; text-align: left;
+    background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
+    padding: 8px 12px; cursor: pointer; color: var(--muted); font-size: 13px;
+  }
+  .pick.active { border-color: var(--accent); color: var(--text); }
+  .pick img { width: 56px; height: 72px; object-fit: contain; border-radius: 8px; background: #111; flex-shrink: 0; margin: 0; }
+  .preview {
+    display: flex; gap: 14px; align-items: center;
+    background: #3a2f22; border: 2px solid var(--accent); border-radius: 12px;
+    padding: 14px; margin-bottom: 16px;
+  }
+  .preview img { width: 72px; height: 96px; object-fit: contain; border-radius: 8px; background: #111; }
+  .preview .sel-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 2px; }
+  .preview p { margin: 0; font-size: 14px; color: var(--muted); }
+  .preview strong { color: var(--text); display: block; font-size: 16px; }
+  select, .btn, esp-web-install-button {
+    width: 100%;
+    font-family: inherit;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  esp-web-install-button {
+    display: block;
+  }
+  esp-web-install-button::part(button) {
+    width: 100%;
+    background: var(--text);
+    color: var(--bg);
+    border: 0;
+    padding: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 16px;
+  }
+  select {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    appearance: none;
+  }
+  .btn {
+    background: var(--text);
+    color: var(--bg);
+    border: 0;
+    padding: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn:hover { opacity: 0.92; }
+  .quiet {
+    text-align: center;
+    color: var(--dim);
+    font-size: 14px;
+    margin: 18px 0 0;
+  }
+  .quiet a { color: var(--muted); }
+  .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 36px 0 8px; }
+  .step { background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 14px; color: var(--muted); }
+  .step b { display: block; color: var(--text); font-weight: 600; margin-bottom: 2px; }
+  details { border-top: 1px solid var(--line); padding: 18px 0; }
+  details summary { cursor: pointer; color: var(--muted); font-size: 15px; }
+  details p, details li { color: var(--muted); font-size: 14.5px; }
+  .success {
+    display: none;
+    background: var(--card);
+    border: 1px solid #2e3d32;
+    border-radius: 18px;
+    padding: 28px;
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .success.show { display: block; }
+  .success h2 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 32px; margin: 0 0 8px; }
+  .success p { color: var(--muted); margin: 0 0 12px; }
+  .ok { color: var(--ok); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; margin-top: 40px; color: var(--dim); font-size: 13px; display: flex; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  .intro {
+    display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px;
+    align-items: center; margin: 8px 0 28px; text-align: left;
+  }
+  .intro img { width: 100%; border-radius: 14px; border: 1px solid var(--line); }
+  .intro h2 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 28px; margin: 0 0 8px; }
+  .intro p { color: var(--muted); margin: 0 0 8px; font-size: 15px; }
+  .pick span { display: block; font-weight: 600; color: var(--text); }
+  .pick .desc { display: block; font-weight: 400; color: var(--dim); font-size: 12px; margin-top: 2px; line-height: 1.3; }
+  @media (max-width: 700px) {
+    h1 { font-size: 40px; }
+    .steps, .intro { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark">Blackout Comms <span>· firmware</span></div>
+      <nav>
+        <a href="https://content.chatters.io/guide/index.html">User Guide</a>
+        <a href="docs/user_guide_blackout_comms_touch.pdf">Quick Start (PDF)</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p class="kicker">Firmware</p>
+      <h1>Pick your board.<br>Connect it. Flash.</h1>
+      <p class="lede">Private mesh texting and location. No cell. No internet.</p>
+
+      <div class="intro">
+        <div>
+          <h2>Your Private Off-Grid Mesh</h2>
+          <p><a href="https://chatters.io">Blackout Comms</a> is a private off-grid mesh-based texting & tracking system that runs on LoRa hardware from <a href="https://lilygo.cc">Lilygo</a>, <a href="https://heltec.org">Heltec</a>, and <a href="https://www.altwaredevelopment.com">Altware</a>.</p>
+          <ul>
+            <li><a href="https://x.com/altwaredev/status/2068417264643424606">Quick start guide</a>: Flash your first device, it will be the <i>root</i> (admin), then <a href="https://www.chatters.io/onboarding">onboard</a> additional devices.</li>
+            <li><a href="https://youtu.be/2AsGazsySR0?si=N6lSDgJ1wATOdFyH">Tracking Demo</a> | <a href="https://youtu.be/745SW_azf0M?si=6XApBhtbVLv3iOPO">Onboarding / Texting Demo</a></li>
+            <li><a href="https://content.chatters.io/guide/index.html">User Guide</a></li>
+          </ul>
+        </div>
+        <img src="images/firmware-devices.jpg" style="max-width: 400px; height: auto;" alt="Two Blackout Comms devices">
+      </div>
+
+      <div class="tool" id="tool">
+        <label>What are you flashing?</label>
+        <div class="tabs">
+          <button class="tab active" data-tab="communicator">Communicator</button>
+          <button class="tab" data-tab="link">Link / Node</button>
+        </div>
+
+        <div class="panel active" id="panel-communicator">
+          <div class="picker">
+            <div class="pick active" data-device="T-Deck Plus" data-img="images/tdeck_plus_sm.png" data-manifest="tdeck_plus"><img src="images/tdeck_plus_sm.png" alt="T-Deck Plus"><span>T-Deck Plus</span><span class="desc">Most common type of T-Deck, fully built and assembled by Lilygo.</span></div>
+            <div class="pick" data-device="LilyGO Pager" data-img="images/pager_sm.png" data-manifest="pager"><img src="images/pager_sm.png" alt="Pager"><span>LilyGO Pager</span><span class="desc">Lilygo's pocket-sized pager. Small screen and keypad.</span></div>
+            <div class="pick" data-device="Heltec v4 R8 touchscreen" data-img="images/heltec_v4_r8_sm.png" data-manifest="heltec_v4_r8"><img src="images/heltec_v4_r8_sm.png" alt="Heltec touch"><span>Heltec v4 R8 touch</span><span class="desc">Heltec's newest touchscreen kit (R8).</span></div>
+            <div class="pick" data-device="Heltec v4 touch (OLDER)" data-img="images/heltec_v4_sm.png" data-manifest="heltec_v4"><img src="images/heltec_v4_sm.png" alt="Heltec touch"><span>Heltec v4 OLDER touch</span><span class="desc">Heltec's previous touchscreen kit.</span></div>
+            <div class="pick" data-device="T-Deck Custom" data-img="images/tdeck_custom_sm.png" data-manifest="tdeck_custom"><img src="images/tdeck_custom_sm.png" alt="T-Deck Plus"><span>T-Deck Custom</span><span class="desc">Built by Altware or if you followed <a href="https://www.printables.com/model/1635139-blackout-comms-t-deck-off-grid-encrypted-mesh-comm">this DIY guide</a>.</span></div>
+            <div class="pick" data-device="Altware Pager" data-img="images/altware_pager_sm.png" data-manifest="altware_pager"><img src="images/altware_pager_sm.png" alt="Pager"><span>Altware Pager</span><span class="desc">Altware's pocket-sized pager.</span></div>
+            <div class="pick" data-device="Rokland T-Deck" data-img="images/tdeck_rokland_sm.png" data-manifest="tdeck_m100"><img src="images/tdeck_rokland_sm.png" alt="Rokland T-Deck"><span>Rokland Cypher M8K</span><span class="desc">Prebuilt T-Deck from Rokland.</span></div>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-link">
+          <div class="picker">
+            <div class="pick" data-device="Heltec v4 (older, NOT the R8)" data-img="images/heltec_v4_node_sm.png" data-manifest="node_heltec_v4_ble"><img src="images/heltec_v4_node_sm.png" alt="Heltec v4"><span>Heltec v4 (older)</span><span class="desc">OLED node. Relay and range extender.</span></div>
+            <div class="pick" data-device="T-Beam Supreme" data-img="images/tbeam_node.png" data-manifest="tbeam_supreme_ble"><img src="images/tbeam_node.png" alt="T-Beam Supreme"><span>T-Beam Supreme</span><span class="desc">GPS link with strong radio.</span></div>
+            <div class="pick" data-device="Heltec Vision Master E290" data-img="images/node_e290.png" data-manifest="e290_ble"><img src="images/node_e290.png" alt="E290"><span>Heltec E290</span><span class="desc">Vision Master E290 link.</span></div>
+            <div class="pick" data-device="T-Beam 1W" data-img="images/tbeam_1w.png" data-manifest="tbeam_1w_ble"><img src="images/tbeam_1w.png" alt="T-Beam 1W"><span>T-Beam 1W</span><span class="desc">1W amplified link for more range.</span></div>
+            <div class="pick" data-device="Altware" data-img="images/altware.png" data-manifest="altware"><img src="images/altware.png" alt="Altware"><span>Altware</span><span class="desc">Altware link hardware.</span></div>
+            <div class="pick" data-device="T3S3 E-Paper" data-img="images/node_paper.png" data-manifest="t3s3_paper"><img src="images/node_paper.png" alt="T3S3 E-Paper"><span>T3S3 E-Paper</span><span class="desc">Low-power e-paper link.</span></div>
+            <div class="pick" data-device="T3S3 OLED" data-img="images/node_t3s3.png" data-manifest="t3s3"><img src="images/node_t3s3.png" alt="T3S3 OLED"><span>T3S3 OLED</span><span class="desc">T3S3 with OLED screen.</span></div>
+            <!--<div class="pick" data-device="Anon T3S3 E-Paper" data-img="heltec-node.jpg" data-manifest="anon_t3s3_paper"><img src="heltec-node.jpg" alt="Anon T3S3 E-Paper"><span>Anon T3S3 E-Paper</span><span class="desc">Anonymous-mode e-paper link.</span></div>
+            <div class="pick" data-device="Anon T-Beam Supreme" data-img="heltec-node.jpg" data-manifest="anon_tbeam_supreme"><img src="heltec-node.jpg" alt="Anon T-Beam Supreme"><span>Anon T-Beam Supreme</span><span class="desc">Anonymous-mode T-Beam Supreme.</span></div>
+            <div class="pick" data-device="Anon T3S3 OLED" data-img="heltec-node.jpg" data-manifest="anon_t3s3"><img src="heltec-node.jpg" alt="Anon T3S3 OLED"><span>Anon T3S3 OLED</span><span class="desc">Anonymous-mode T3S3 OLED.</span></div>
+            <div class="pick" data-device="Anon Heltec Vision Master E290" data-img="heltec-node.jpg" data-manifest="anon_e290"><img src="heltec-node.jpg" alt="Anon E290"><span>Anon Heltec E290</span><span class="desc">Anonymous-mode E290 link.</span></div>-->
+          </div>
+        </div>
+
+
+        <div class="preview" id="preview">
+          <img id="preview-img" src="images/tdeck_plus_sm.png" alt="">
+          <div>
+            <div class="sel-label">Selected device</div>
+            <p><strong id="preview-name">T-Deck Plus</strong>Confirm this matches the board in your hand.</p>
+          </div>
+        </div>
+
+        <label for="region">Region</label>
+        <select id="region">
+          <option value="usa">USA</option>
+          <option value="intl">Non-USA</option>
+        </select>
+        <esp-web-install-button id="install"></esp-web-install-button>
+        <p class="quiet">By connecting you agree to the <a href="#terms">terms</a>. Use a data cable. Chrome or Edge.</p>
+      </div>
+
+      <div class="success" id="done">
+        <div class="ok">Flashed</div>
+        <h2>Your cluster is ready.</h2>
+        <p>Name this device. Then open the second board and flash it the same way. They will find each other.</p>
+        <p class="quiet" style="text-align:left; margin-top:8px;">Stuck? <a href="https://www.chatters.io/">The 15-minute guide</a> · or <a href="https://blackout-comms.com/">get the ready pair</a>.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step"><b>1. Cable</b>USB data cable, not charge-only.</div>
+        <div class="step"><b>2. Boot</b>Hold the trackball button while you plug in.</div>
+        <div class="step"><b>3. Connect</b>Chrome or Edge. Allow the serial port.</div>
+      </div>
+      <p class="quiet">Don’t want to flash it? <a href="https://chatters.io/">Let us build it</a>.</p>
+    </section>
+
+    <details>
+      <summary>Versions, SD cards, and device notes</summary>
+      <p>Current communicator firmware 3.7.8. Link firmware 3.7.6. SD cards are recommended. These boards are picky about cards — a known-good card avoids most failures.</p>
+      <ul>
+        <li>T-Deck and T-Deck Plus use the communicator build.</li>
+        <li>Heltec v4 touchscreen uses the expansion-kit build.</li>
+        <li>Nodes and links use the link build.</li>
+      </ul>
+    </details>
+
+    <details id="terms">
+      <summary>Terms</summary>
+      <p>By downloading this firmware you agree to abide by applicable laws while using it, and you agree to hold harmless Altware Development LLC. This is experimental software for private mesh use.</p>
+    </details>
+
+    <details class="bins">
+      <summary>Direct binary downloads</summary>
+      <p>If you prefer a different flashing tool, download the pre-built binary. Use the same region for every device in a cluster.</p>
+
+      <div class="bin-group">
+        <h3>Communicators · USA</h3>
+        <div class="bin-row"><span>T-Deck (All Others)</span>: <a href="chatter_tdeck_m100.bin">chatter_tdeck_m100.bin</a></div>
+        <div class="bin-row"><span>T-Deck Plus</span>: <a href="chatter_tdeck_plus.bin">chatter_tdeck_plus.bin</a></div>
+        <div class="bin-row"><span>LilyGO Pager</span>: <a href="chatter_pager.bin">chatter_pager.bin</a></div>
+        <div class="bin-row"><span>Heltec v4 touch (R8)</span>: <a href="chatter_heltec_r8.bin">chatter_heltec_r8.bin</a></div>
+        <div class="bin-row"><span>Heltec v4 Exp Kit</span>: <a href="chatter_heltec_v4.bin">chatter_heltec_v4.bin</a></div>
+        <div class="bin-row"><span>Custom / Thermal</span>: <a href="chatter_tdeck_custom.bin">chatter_tdeck_custom.bin</a></div>
+        <div class="bin-row"><span>Altware Full Touch</span>: <a href="chatter_altware.bin">chatter_altware.bin</a></div>
+      </div>
+
+      <div class="bin-group">
+        <h3>Communicators · Non-USA</h3>
+        <div class="bin-row"><span>T-Deck (All Others)</span>: <a href="chatter_tdeck_m100_exp.bin">chatter_tdeck_m100_exp.bin</a></div>
+        <div class="bin-row"><span>T-Deck Plus</span>: <a href="chatter_tdeck_plus_exp.bin">chatter_tdeck_plus_exp.bin</a></div>
+        <div class="bin-row"><span>LilyGO Pager</span>: <a href="chatter_pager_exp.bin">chatter_pager_exp.bin</a></div>
+        <div class="bin-row"><span>Heltec v4 touch (R8)</span>: <a href="chatter_heltec_r8_exp.bin">chatter_heltec_r8_exp.bin</a></div>
+        <div class="bin-row"><span>Heltec v4 Exp Kit</span>: <a href="chatter_heltec_v4_exp.bin">chatter_heltec_v4_exp.bin</a></div>
+        <div class="bin-row"><span>Custom / Thermal</span>: <a href="chatter_tdeck_custom_exp.bin">chatter_tdeck_custom_exp.bin</a></div>
+        <div class="bin-row"><span>Altware Full Touch</span>: <a href="chatter_altware_exp.bin">chatter_altware_exp.bin</a></div>
+      </div>
+
+      <div class="bin-group">
+        <h3>Links / Nodes · USA</h3>
+        <div class="bin-row"><span>Heltec v4 / GPS Link</span>: <a href="chatter_node_ble_usa.bin">chatter_node_ble_usa.bin</a></div>
+        <div class="bin-row"><span>T-Beam 1W</span>: <a href="chatter_node_tbeam_1w_ble_usa.bin">chatter_node_tbeam_1w_ble_usa.bin</a></div>
+        <div class="bin-row"><span>Heltec E290</span>: <a href="chatter_node_e290_ble_usa.bin">chatter_node_e290_ble_usa.bin</a></div>
+        <div class="bin-row"><span>T3S3 E-Paper</span>: <a href="chatter_node_t3s3_paper_usa.bin">chatter_node_t3s3_paper_usa.bin</a></div>
+        <div class="bin-row"><span>T3S3 OLED</span>: <a href="chatter_node_t3s3_usa.bin">chatter_node_t3s3_usa.bin</a></div>
+        <div class="bin-row"><span>Anon GPS Link</span>: <a href="chatter_anon_node_usa.bin">chatter_anon_node_usa.bin</a></div>
+        <div class="bin-row"><span>Anon T3S3 E-Paper</span>: <a href="chatter_anon_node_t3s3_paper_usa.bin">chatter_anon_node_t3s3_paper_usa.bin</a></div>
+        <div class="bin-row"><span>Anon T3S3 OLED</span>: <a href="chatter_anon_node_t3s3_usa.bin">chatter_anon_node_t3s3_usa.bin</a></div>
+        <div class="bin-row"><span>Anon Heltec E290</span>: <a href="chatter_anon_node_e290_usa.bin">chatter_anon_node_e290_usa.bin</a></div>
+      </div>
+
+      <div class="bin-group">
+        <h3>Links / Nodes · Non-USA</h3>
+        <div class="bin-row"><span>Heltec v4 / GPS Link</span>: <a href="chatter_node_ble_exp.bin">chatter_node_ble_exp.bin</a></div>
+        <div class="bin-row"><span>T-Beam 1W</span>: <a href="chatter_node_tbeam_1w_ble_exp.bin">chatter_node_tbeam_1w_ble_exp.bin</a></div>
+        <div class="bin-row"><span>Heltec E290</span>: <a href="chatter_node_e290_ble_exp.bin">chatter_node_e290_ble_exp.bin</a></div>
+        <div class="bin-row"><span>T3S3 E-Paper</span>: <a href="chatter_node_t3s3_paper_exp.bin">chatter_node_t3s3_paper_exp.bin</a></div>
+        <div class="bin-row"><span>T3S3 OLED</span>: <a href="chatter_node_t3s3_exp.bin">chatter_node_t3s3_exp.bin</a></div>
+        <div class="bin-row"><span>Anon GPS Link</span>: <a href="chatter_anon_node_exp.bin">chatter_anon_node_exp.bin</a></div>
+        <div class="bin-row"><span>Anon T3S3 E-Paper</span>: <a href="chatter_anon_node_t3s3_paper_exp.bin">chatter_anon_node_t3s3_paper_exp.bin</a></div>
+        <div class="bin-row"><span>Anon T3S3 OLED</span>: <a href="chatter_anon_node_t3s3_exp.bin">chatter_anon_node_t3s3_exp.bin</a></div>
+        <div class="bin-row"><span>Anon Heltec E290</span>: <a href="chatter_anon_node_e290_exp.bin">chatter_anon_node_e290_exp.bin</a></div>
+      </div>
+    </details>
+
+    <footer>
+      <div>Blackout Comms · Altware Development</div>
+      <div><a href="https://www.chatters.io/">All guides and docs</a></div>
+    </footer>
+  </div>
+  <script>
+    function setManifest() {
+      var active = document.querySelector('.pick.active');
+      var region = document.getElementById('region').value;
+      var btn = document.getElementById('install');
+      if (!active || !btn) return;
+      var key = active.dataset.manifest;
+      var prefix = region === 'intl' ? 'intl_manifest_' : 'manifest_';
+      btn.manifest = './' + prefix + key + '.json';
+    }
+    document.querySelectorAll('.tab').forEach(function(tab){
+      tab.addEventListener('click', function(){
+        document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
+        document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+        var first = document.querySelector('#panel-' + tab.dataset.tab + ' .pick');
+        if (first) first.click();
+      });
+    });
+    document.querySelectorAll('.pick').forEach(function(el){
+      el.addEventListener('click', function(){
+        document.querySelectorAll('.pick').forEach(function(p){ p.classList.remove('active'); });
+        el.classList.add('active');
+        document.getElementById('preview-img').src = el.dataset.img;
+        document.getElementById('preview-name').textContent = el.dataset.device;
+        setManifest();
+      });
+    });
+    document.getElementById('region').addEventListener('change', setManifest);
+    setManifest();
+  </script>
+</body>
 </html>
