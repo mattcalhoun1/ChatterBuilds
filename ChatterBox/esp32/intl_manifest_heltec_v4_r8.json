@@ -1,6 +1,6 @@
 {
     "name": "Heltec R8 Communicator (INTL)",
-    "version": "3.7.8",
+    "version": "3.7.9",
     "new_install_prompt_erase":true,
     "builds": [
         {
