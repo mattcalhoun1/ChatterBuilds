@@ -1,6 +1,6 @@
 {
     "name": "Heltec E290 Link (INTL)",
-    "version": "3.8.1",
+    "version": "3.8.2",
     "new_install_prompt_erase":true,    
     "builds": [
         {
