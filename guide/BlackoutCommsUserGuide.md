@@ -1,8 +1,8 @@
 # Blackout Comms User Guide
 **Off-Grid Mesh Communications**
 
-**Firmware Version:** 3.6.3  
-**Date:** July 2026  
+**Firmware Version:** 3.7.6  
+**Date:** Sept 2026  
 **Author:** Matt Calhoun – Altware Development LLC
 
 ![Blackout Comms logo or hero image showing T-Deck and Heltec devices](images/cover-hero.jpg)
@@ -128,7 +128,7 @@ Real-world range with Blackout Comms depends on many variables. Here are practic
 
 # Using Blackout Comms
 
-Blackout Comms automatically boots up to the home screen. If your device is already part of the cluster, it will immediately join up with any nearby devices and you'll see connectivity established (antenna icon in lower-right area of the screen)
+Blackout Comms automatically boots up to the home screen. If your device is already part of the cluster, it will immediately join up with any nearby devices and you'll see connectivity established (antenna icon in lower-right area of the screen).  
 
 ### Home Screen
 This is your default view on a comm. Any time, click the scroll wheel to return to this screen.
@@ -154,7 +154,7 @@ This shows you who is currently within direct RF range. Toggle the switch at the
 - Touch the message icon to send a text message to the device
 
 ### Viewing Location
-Locations can be viewed directly on the device, or on Blackout Comms Live app, if you are connected via BLE. This guide shows on-device location information. Watch a [video demo](https://youtu.be/-HE9BgHpe80) showing how mapping works on T-Deck.
+Locations can be viewed directly on the device, on [Blackout Comms Live](https://github.com/mattcalhoun1/BlackoutCommsLive) (for Android), or on [Blackout Comms Overlook](https://github.com/mattcalhoun1/BlackoutCommsOverlook). This guide shows on-device location information. Watch a [video demo](https://youtu.be/-HE9BgHpe80) showing how mapping works on T-Deck.
 
 ![Ways to Access Location](images/bc_firmware_gps_location_icons.jpg)
 
@@ -167,7 +167,7 @@ Locations can be viewed directly on the device, or on Blackout Comms Live app, i
 ### Contacts
 The contacts screen shows all the known contacts in your cluster. If new devices are onboarded by your root device, they'll eventually show up in your contacts list automatically, due to zero touch trust (unless you lock your truststore).
 
-![Viewing Map on T-Deck](images/tdeck_plus_contacts.jpg)
+![Viewing Contacts on T-Deck](images/tdeck_plus_contacts.jpg)
 
 - Scroll to see all contacts
 - Touch the icon next to their alias to set a nickname
@@ -200,6 +200,25 @@ Touch any message icon in the firmware to begin sending a message. If you choose
 ### Remote Commands
 _This section is coming soon._
 
+### Blackout Comms Live
+Blackout Comms Live is an Android app that can optionally be connected to any compatible communicator or link that supports BLE.
+![Blackout Comms Live](images/bc_live.jpg)
+To use Blackout Comms Live:
+- Enable BLE on your Blackout Comms Device (Settings/Device)
+- Make note of the device ID / PIN on your device's home screen
+- [Install Blackout Comms](https://play.google.com/store/apps/details?id=com.blackoutcomms.live) Live from the play store or [get the APK](https://www.chatters.io/using-blackout-comms-live) from chatters.io.
+- Do not try to directly pair your phone/tablet with Blackout Comms. Instead, open the Blackout Comms Live app, and it will prompt you for the device/PIN
+
+### Blackout Comms Overlook
+Blackout Comms Overlook is a desktop app that connects to your Blackout Comms device via BLE. It currently works on Linux or Windows, and is designed for larger monitors (such as a wall display).
+![Blackout Comms Overlook](images/bc_overlook.jpg)
+To use Blackout Comms Overlook:
+- Enable BLE on your Blackout Comms Device (Settings/Device)
+- Make note of the device ID / PIN on your device's home screen
+- Windows: [Download Blackout Comms Overlook](https://www.offgridcomms.club/overlook/Overlook_Win.zip)
+- Linux: see the [github page](https://github.com/mattcalhoun1/BlackoutCommsOverlook/) (It's python-based, pretty easy to set up)
+- Do not try to directly pair your PC with Blackout Comms. Instead, open the Blackout Comms Overlook app, you will enter the device ID/PIN there
+
 --- 
 
 ## Configuration
@@ -220,9 +239,11 @@ These are settings specific to just your device (display settings, alerts, etc).
 | Screen Sleep | Length of inactivity before the screen powers off
 | DST Enabled | Whether DST is enabled or not. This must be manually enabled/disabled as necessary
 | Time Zone | Which timezone the device is in. This is for display only, as all devices follow GMT
+| Metric System | Whether to use metric measurements. The default is imperial
 | Language | Language of the device
 | Device ID | The unique ID of the device
 | Uptime | How long the device has been running since last reboot
+| Ham Mode | Disables encryption so licensed operators can use higher tx power
 | Time | Current time - only the root can manually change time
 | Reset Day Zero | If your device has somehow skipped ahead in time, you may want to choose this to force it to sense the current time again
 | Factory Reset | Deletes all device settings (including license). You can also do this simply by replacing the SD card or deleting SD card contents.
@@ -270,6 +291,7 @@ These settings control how your device interacts with your Blackout Comms cluste
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | Stealth Mode | To avoid detection (or just reduce RF footprint) you may want to experiment with [stealth modes](https://www.chatters.io/stealth-modes). See the appendix for more info. Stealth Disabled is the default and allows full normal functionality. Stealth Low stops pings if no trusted devices are around. Medium disables pings, but still allows messaging, acknowledgements, and mesh forwarding. High basically makes the radio invisible, even to trusted devices, but allows you to receive pings and broadcasts (not DMs).
+| Stealth Schedule | Creates a daily stealth window where the selected mode is enabled. This is useful if you want your device(s) to be quieter during certain time periods automatically. Time is UTC. See more about [stealth modes](https://www.chatters.io/stealth-modes) to learn what each one does. Note that the stealth schedule only applies to the device it's set up on UNLESS you push the setting to other devices via a remote command.
 | Prompt Before Mesh | If you send a DM and it's not immediately acknlowledged, your device will queue it for automatic meshing. If you'd rather be prompted in this case (to resend or cancel), enable this.
 | Clear Mesh Cache | If you want to remove any cached packets from your mesh queue, this will do it. You can also touch the _mesh cache_ icon on the home screen
 | Mesh Syncing | If you want to disable meshing and only to immediate / RF range messaging, you can disable meshing here. This will also disable your location sharing, since that's done using meshing.
