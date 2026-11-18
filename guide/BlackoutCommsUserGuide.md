@@ -1,8 +1,8 @@
 # Blackout Comms User Guide
 **Off-Grid Mesh Communications**
 
-**Firmware Version:** 3.7.6  
-**Date:** Sept 2026  
+**Firmware Version:** 3.8.3  
+**Date:** Nov 2026  
 **Author:** Matt Calhoun – Altware Development LLC
 
 ![Blackout Comms logo or hero image showing T-Deck and Heltec devices](images/cover-hero.jpg)
@@ -59,7 +59,8 @@ Blackout Comms supports a range of devices for both **Comms** (messaging devices
 ### Communicator Options
 - **Lilygo T-Deck / T-Deck Plus** — Popular choice with keyboard and display. SD card highly recommended for T-Deck Plus.
 - **Lilygo Pager** — Nice form factor, portable. SD card highly recommended.
-- **Heltec V4 Touchscreen** — Easy setup, compact. No SD card support.
+- **Heltec V4 Touchscreen** — Easy setup, compact. Older versions have no SD card support, newer R8 _does_. This model also has a built-in amp, which increases range quite a bit.
+- **Altware Pager** — Custom-built touchscreen devices that have a few additional features. 
 
 ### Link / Repeater Options
 - **Lilygo T-Beam Supreme** — Easy to deploy, good performance, GPS capable. Ready to go right out of the box.
@@ -67,6 +68,8 @@ Blackout Comms supports a range of devices for both **Comms** (messaging devices
 - **Heltec V4** — Versatile for both Comms and Links. Ready right out of the box.
 - **Lilygo T-Beam 1W** — Higher power option. Realtime clock recommended, but ready to go right out of the box (add a battery).
 - **Lilygo T3S3 OLED / ePaper** — Good for compact or low-power setups. Requires adding GPS and/or realtime clock.
+- **Heltec v4 OLED** - Small and powerful. Features a built-in amp for extended range. Only the older v4 is supported (not the newer R8).
+- **Altware Custom** - Custom-built mesh link with GPS and RTC, light indicating neighbors nearby, optimized for low power consumption.
 
 **Note:** [Compatible SD cards](https://www.chatters.io/compatible-sd-cards) are recommended for many communicators for easy backup and device swapping (PNY Elite is good, max of 32 GB). [Full DIY](https://chatters.io/diy) builds are also supported for custom communicators and mesh links.
 
@@ -269,6 +272,10 @@ These are settings related to the private cluster(s) your device is part of.
 ### Mesh Settings
 This group of settings is for controlling interaction between this device and Meshcore nodes. For more information about this capability, see [here](https://www.chatters.io/meshcore). 
 
+![Blackout Comms Network Mixing](images/blackout_comms_network_mixing_graphic.jpg)
+
+_Important Considerations: MeshCore is a shared public network. Rather than enabling it on all your devices, consider enabling it on the mimimum number necessary to acheive your goals. For instance, in the graph above, enabling network mixing on just 3 of the devices (one in each mini-cluster) would allow connectivity between all 6 devices shown. Also, consider using stealth modes as appropriate to further reduce RF load._
+
 **Blackout Comms Native** is the default protocol for Blackout Comms, offering the best functionality and highest security. It enforces encryption + digital signatures + frequency hopping.
 
 **Blackout Comms via MeshCore** enables Blackout Comms to float atop the MeshCore protocol, by using MeshCore's channel feature. This can allow Blackout Comms to utilize MeshCore repeaters, depending on their configuration. In this mode, all messages are still encrypted and signed, but are also wrapped inside a MeshCore message (or set of messages).
@@ -315,6 +322,8 @@ The default security settings are good for most cases. If you are very concerned
 ### Location Settings
 You can enable/disable various location-related features of your device, as well as how it does (or doesn't) display maps. Some mapping features require a pro license. See the [Blackout Comms Location](https://www.chatters.io/location) page for more information about mapping and location features.
 
+![Blackout Comms Location Sharing](images/blackout_comms_offline_mapping.jpg)
+
 | Name                        | Description                     
 |-----------------------------|------------------------------------
 | GNSS Type | Which GNSS receiver (if any) is detected on the device
@@ -325,7 +334,6 @@ You can enable/disable various location-related features of your device, as well
 | Altware Map | Experimental feature, which can make your cluster device positions visible publicly via a web browser. This is not recommended, except for experimentation purposes.
 | Tracking Mode | Increases the number of location broadcasts coming from this device, so other devices have a more live picture of where the device is located
 | Location Log | Logs all device locations to serial (if connected)
-| Publish Locations | Experimental feature, which can make your cluster device positions visible publicly via a web browser. This is not recommended, except for experimentation purposes.
 | Location Enabled | Enables or disables GNSS on the device. This can save battery, but you lose location capability.
 | Use GPS | Use GPS (American) satellites for location
 | Use Glonass | Use Glonass (Russian) satellites for location
@@ -359,7 +367,7 @@ LoRa is the default way Blackout Comms devices communicate, but there are other 
 | LoRa Enabled | At least one communication method must be enabled. If your device has Cloud, MQTT, or UDP enabled, you may disable LoRa.
 
 ### WiFi Settings
-If you want to use WiFi for downloading maps or using Cloud/MQTT, this is where you add WiFi connections. Only 2.4 GHz is supported, and the devices are quite picky about which routers can work.
+If you want to use WiFi for downloading maps or using Cloud/MQTT, this is where you add WiFi connections. Only 2.4 GHz is supported, and the devices can be picky about which routers work.
 
 WiFi uses additional battery and can make your device sluggish when joining a network.
 
@@ -373,6 +381,8 @@ WiFi uses additional battery and can make your device sluggish when joining a ne
 
 ### Mesh Cloud Settings
 In addition to LoRa communication, Blackout Comms supports [MQTT](https://www.chatters.io/blackout-comms-mqtt) and [Cloud](https://www.chatters.io/cloud). These options allow you to form long distance bridges between devices or device groups in your cluster. All messages and locations are still E2E encrypted.
+
+![Blackout Comms Mesh Cloud](images/blackout_comms_cloud_bridge.jpg)
 
 | Name                        | Description                     
 |-----------------------------|------------------------------------
@@ -475,7 +485,7 @@ After onboarding, your new device will be able to fully participaate in your pri
 |---------------|-----------------|-------------------------------------------|
 | Device Invisible to Others | Not yet onboarded | Onboard the device |
 | Device Invisible to Others | Inaccurate Time | Verify the time/date are correct, reset to day zero and reacquire time if necessary, check RTC battery |
-| Mapping not working on device | A Pro License and WiFi are required | Get a license, check WiFi connectivity |
+| Mapping not working on device | A Cluster License and WiFi are required | Get a license, check WiFi connectivity or download map tiles directly from chatters.io/map |
 
 ---
 
@@ -491,9 +501,8 @@ In the USA, it is recommended to use the "Simple" option during cluster setup, w
 - Use SD cards on all devices possible and back them up. If you lose a device, you can insert a backed-up SD card into a new T-Deck / Pager / etc, and you're still up and running.
 
 **Support:**  
-Website / Updates: 
-https://chatters.io
-https://x.com/altwaredev
+- Website: https://chatters.io
+- Updates: https://x.com/altwaredev
 
 ---
 
