@@ -1,0 +1,13 @@
+{
+    "name": "ThinkNode M5 Link (INTL)",
+    "version": "3.8.3",
+    "new_install_prompt_erase":true,
+    "builds": [
+        {
+            "chipFamily": "ESP32-S3",
+            "parts": [
+              { "path": "chatter_node_thinknode_m5_exp.bin", "offset": 0 }
+            ]
+          }
+    ]
+}
